@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer components {
+    .center {
+        @apply flex flex-col items-center justify-center h-screen
+    }
+
+    .button {
+        @apply bg-white text-black px-2 py-2 rounded-md
+    }
+
+    .input {
+        @apply outline-none text-black px-2 py-2 rounded-md
+    }
+}
+
+@layer utilities {
+    .hide-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+
+    .hide-scrollbar{
+        scrollbar-width: none;
+    }
+}
+
