@@ -1,0 +1,1 @@
+export const languages: string[] = ['English', 'France', 'German', 'Japanese', 'Korean', 'Brazil', 'Latin America', 'Spain']

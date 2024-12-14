@@ -35,6 +35,12 @@ body {
     }
 
     .dropdown-text {
-        @apply py-3 px-3 transition-all duration-300 hover:bg-gray-100 rounded-md
+        @apply py-3 px-3 w-full text-start transition-all duration-300 hover:bg-gray-100 rounded-md cursor-pointer
+    }
+}
+
+@layer components {
+    .credential-btn {
+        @apply rounded-md border px-2 py-2 text-[0.95rem] flex flex-row items-center justify-center gap-2 w-full
     }
 }

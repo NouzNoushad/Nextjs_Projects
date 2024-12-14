@@ -1,5 +1,6 @@
 import React from 'react'
 import { DropdownDownIcon, MenuIcon } from '../lib/svgs'
+import Link from 'next/link'
 
 export default function Navbar() {
     return (
@@ -135,16 +136,16 @@ export default function Navbar() {
                                 <span className='text-[0.95rem] font-[500]'>Request a demo</span>
                             </button>
                             <div className="h-5 w-[0.05rem] bg-gray-300"></div>
-                            <button className='flex flex-row items-center px-2 py-1 rounded-md gap-1 hover:bg-gray-100 hover:transition-all hover:duration-300 cursor-pointer'>
+                            <Link href={'/login'} className='flex flex-row items-center px-2 py-1 rounded-md gap-1 hover:bg-gray-100 hover:transition-all hover:duration-300 cursor-pointer'>
                                 <span className='text-[0.95rem] font-[500]'>Log in</span>
-                            </button>
+                            </Link>
                             <button className='px-2 py-1 bg-blue-500 rounded-md gap-1 hover:bg-blue-600 text-white hover:transition-all hover:duration-300 cursor-pointer shadow-md'>
                                 <span className='text-[0.95rem] font-[500]'>Get Notion free</span>
                             </button>
                         </div>
                     </div>
                     <div className="lg:hidden inline-block">
-                        <MenuIcon className='size-5'/>
+                        <MenuIcon className='size-5' />
                     </div>
                 </div>
             </div>
