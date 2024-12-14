@@ -43,4 +43,8 @@ body {
     .credential-btn {
         @apply rounded-md border px-2 py-2 text-[0.95rem] flex flex-row items-center justify-center gap-2 w-full
     }
+
+    .nav-btn {
+        @apply px-2 py-1 rounded-md gap-1 hover:bg-gray-100 hover:transition-all hover:duration-300 cursor-pointer text-[0.95rem] font-[500]
+    }
 }

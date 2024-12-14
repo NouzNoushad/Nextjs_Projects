@@ -3,9 +3,9 @@ import { ArrowLeft } from '@/app/lib/svgs'
 import Link from 'next/link'
 import React from 'react'
 
-const BlogPage = async ({ params }: { params: { id: number } }) => {
+const BlogPage = async ({ params }: { params: Promise<{ id: number }> }) => {
 
-    const { id } = await params
+    const id = (await params).id
     return (
         <main className='pt-[10vh]'>
             <div className="container-md py-[4rem] relative">

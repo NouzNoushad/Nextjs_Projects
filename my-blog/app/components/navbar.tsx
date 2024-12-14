@@ -1,8 +1,12 @@
 import React from 'react'
 import { DropdownDownIcon, MenuIcon } from '../lib/svgs'
 import Link from 'next/link'
+import { auth, signOut } from '@/auth'
 
-export default function Navbar() {
+export default async function Navbar() {
+
+    const session = await auth()
+
     return (
         <nav className='h-[10vh] py-6 fixed w-full bg-white border-b z-50'>
             <div className="container h-full">
@@ -136,9 +140,22 @@ export default function Navbar() {
                                 <span className='text-[0.95rem] font-[500]'>Request a demo</span>
                             </button>
                             <div className="h-5 w-[0.05rem] bg-gray-300"></div>
-                            <Link href={'/login'} className='flex flex-row items-center px-2 py-1 rounded-md gap-1 hover:bg-gray-100 hover:transition-all hover:duration-300 cursor-pointer'>
-                                <span className='text-[0.95rem] font-[500]'>Log in</span>
-                            </Link>
+                            {
+                                session && session?.user ? (
+                                    <div className="flex flex-row items-center gap-2">
+                                        <Link href={'/create'} className='nav-btn'>Create</Link>
+                                        <form action={async () => {
+                                            'use server'
+
+                                            await signOut({ redirectTo: '/' })
+                                        }}>
+                                            <button className='nav-btn'>Logout</button>
+                                        </form>
+                                    </div>
+                                ) : <Link href={'/login'} className='nav-btn'>
+                                    Log in
+                                </Link>
+                            }
                             <button className='px-2 py-1 bg-blue-500 rounded-md gap-1 hover:bg-blue-600 text-white hover:transition-all hover:duration-300 cursor-pointer shadow-md'>
                                 <span className='text-[0.95rem] font-[500]'>Get Notion free</span>
                             </button>
