@@ -13,7 +13,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-@layer components {
+@layer utilities {
     .nav-subtext {
         @apply px-3 py-2 w-full transition-all duration-300 hover:bg-gray-100 rounded-md text-[0.9rem]
     }
@@ -28,6 +28,10 @@ body {
 
     .container-lg {
         @apply max-w-[1100px] mx-auto px-5 xl:px-0
+    }
+
+    .container-sm {
+        @apply max-w-[700px] mx-auto
     }
 
     .dropdown-text {
