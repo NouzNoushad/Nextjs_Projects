@@ -33,3 +33,20 @@ export const POST = async (request: NextRequest) => {
         return NextResponse.json({ error: 'Failed to create blog' }, { status: 500 })
     }
 }
+
+// get blogs
+export const GET = async () => {
+    try {
+        const blogs = await prisma.blog.findMany({
+            orderBy: [
+                {
+                    createdAt: 'desc'
+                }
+            ]
+        })
+        return NextResponse.json({ blogs }, { status: 200 })
+    } catch (error) {
+        console.log('Error: ', error)
+        return NextResponse.json({ error: 'Failed to fetch blogs' }, { status: 500 })
+    }
+}
