@@ -37,6 +37,18 @@ body {
     .dropdown-text {
         @apply py-3 px-3 w-full text-start transition-all duration-300 hover:bg-gray-100 rounded-md cursor-pointer
     }
+
+    .blog-text {
+        @apply font-bold text-[0.9rem]
+    }
+
+    .blog-input {
+        @apply border px-3 py-2 rounded-md w-full
+    }
+
+    .form-error {
+        @apply text-[0.8rem] text-red-500 mt-2;
+    }
 }
 
 @layer components {
