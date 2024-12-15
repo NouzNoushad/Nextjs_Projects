@@ -1,5 +1,5 @@
 import React from 'react'
-import { DropdownDownIcon, MenuIcon } from '../lib/svgs'
+import { DropdownDownIcon, MenuIcon } from './svgs'
 import Link from 'next/link'
 import { auth, signOut } from '@/auth'
 

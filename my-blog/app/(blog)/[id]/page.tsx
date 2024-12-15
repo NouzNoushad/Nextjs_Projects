@@ -1,5 +1,5 @@
 import SharePost from '@/app/components/sharePost'
-import { ArrowLeft } from '@/app/lib/svgs'
+import { ArrowLeft } from '@/app/components/svgs'
 import Link from 'next/link'
 import React from 'react'
 

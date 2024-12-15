@@ -1,8 +1,9 @@
 import BlogForm from '@/app/components/blogForm'
+import { auth } from '@/auth'
 import React from 'react'
 
-export default function CreateBlog() {
-
+export default async function CreateBlog() {
+    const session = await auth()
     return (
         <main className='pt-[10vh]'>
             <div className="py-[4rem]">
@@ -11,7 +12,7 @@ export default function CreateBlog() {
                         <h2 className='text-center uppercase font-bold text-[0.98rem] mb-3'>
                             Create Blog
                         </h2>
-                        <BlogForm/>
+                        <BlogForm session={session}/>
                     </div>
                 </div>
             </div>

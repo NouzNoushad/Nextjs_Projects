@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
-import { ArrowRight, DropdownDownIcon, Facebook, Instagram, LanguageIcon, LinkedIn, XTwitter, Youtube } from '../lib/svgs'
+import { ArrowRight, DropdownDownIcon, Facebook, Instagram, LanguageIcon, LinkedIn, XTwitter, Youtube } from './svgs'
 
 export default function Footer() {
     const [showDropdown, setShowDropdown] = useState(false)
@@ -98,7 +98,7 @@ export default function Footer() {
                         </div>
                     </div>
                 </div>
-                
+
             </div>
         </footer>
     )

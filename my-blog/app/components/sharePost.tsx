@@ -1,5 +1,5 @@
 import React from 'react'
-import { Email, Facebook, LinkedIn, XTwitter } from '../lib/svgs'
+import { Email, Facebook, LinkedIn, XTwitter } from './svgs'
 
 export default function SharePost() {
     return (

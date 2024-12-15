@@ -1,5 +1,5 @@
 import React from 'react'
-import { ArrowLeft, ArrowRight } from '../lib/svgs'
+import { ArrowLeft, ArrowRight } from './svgs'
 
 interface PaginationProps {
     totalPages: number;

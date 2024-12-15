@@ -1,5 +1,5 @@
 import Localization from "@/app/components/localization";
-import { Github, Google } from "@/app/lib/svgs";
+import { Github, Google } from "@/app/components/svgs";
 import { signIn } from "@/auth";
 
 export default async function Login() {

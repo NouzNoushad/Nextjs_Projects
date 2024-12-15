@@ -1,45 +1,13 @@
 'use client'
 
 import MDEditor from '@uiw/react-md-editor'
-import React, { useState } from 'react'
-import { BlogFormError, BlogFormState, BlogValidationSchema } from '../lib/validationSchema'
+import React from 'react'
+import { Session } from 'next-auth'
+import { BlogFormAction } from '../action/blogFormAction'
 
-export default function BlogForm() {
+export default function BlogForm({ session }: { session: Session | null }) {
 
-    const [content, setContent] = useState('')
-    const [category, setCategory] = useState('')
-    const [errors, setErrors] = useState<Partial<Record<keyof BlogFormError, string[]>>>({})
-
-    const BlogFormValidation = async (state: BlogFormState, formData: FormData) => {
-        const validationFields = await BlogValidationSchema.safeParseAsync({
-            title: formData.get('title') as string,
-            description: formData.get('description') as string,
-            category: formData.get('category') as string,
-            image: formData.get('image') as string,
-            content: content,
-        })
-
-        if (!validationFields.success) {
-            return {
-                errors: validationFields.error.flatten().fieldErrors,
-            }
-        }
-    }
-
-    const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault()
-
-        const formData = new FormData(e.currentTarget)
-
-        const response = await BlogFormValidation({}, formData)
-
-        if (response?.errors) {
-            setErrors(response.errors)
-            return
-        }
-
-        
-    }
+    const { category, content, setCategory, setContent, handleFormSubmit, errors, isLoading } = BlogFormAction(session)
 
     return (
         <form onSubmit={handleFormSubmit} className='py-5 space-y-3'>
@@ -82,7 +50,11 @@ export default function BlogForm() {
                 {errors?.content && <p className='form-error'>{errors.content}</p>}
             </div>
             <div className="pt-5">
-                <button type='submit' className='w-full bg-black rounded-md text-white py-2'>Save Blog</button>
+                <button type='submit' className='w-full bg-black rounded-md text-white py-2'>
+                    {
+                        isLoading ? 'Saving...' : 'Save Blog'
+                    }
+                </button>
             </div>
         </form>
     )
