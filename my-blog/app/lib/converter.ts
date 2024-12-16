@@ -16,3 +16,14 @@ export const convertCategory = (category: string) => {
             return 'First Blog'
     }
 }
+
+export const convertDate = (date: Date): string => {
+    const newDate = new Date(date)
+    const dateString = newDate.toLocaleDateString("en-US", {
+        year: "numeric",
+        month: "long",
+        day: "numeric"
+    })
+
+    return dateString
+}
