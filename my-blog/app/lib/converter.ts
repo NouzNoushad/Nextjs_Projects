@@ -1,5 +1,7 @@
 export const convertCategory = (category: string) => {
     switch (category) {
+        case 'all':
+            return 'All'
         case 'latest':
             return 'Latest'
         case 'notionHq':

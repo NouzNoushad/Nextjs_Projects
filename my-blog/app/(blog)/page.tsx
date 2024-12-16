@@ -1,6 +1,5 @@
 import { Blog } from "@prisma/client";
-import LeftSection from "../components/leftSection"
-import RightSection from "../components/rightSection";
+import BlogSection from "../components/blogSection";
 
 export default async function Home() {
     const response = await fetch('http://localhost:3000/api/blog')
@@ -11,10 +10,7 @@ export default async function Home() {
         <>
             <main className="pt-[10vh]">
                 <div className="container-md">
-                    <div className="flex lg:flex-row flex-col h-auto">
-                        <LeftSection />
-                        <RightSection blogs={blogs} />
-                    </div>
+                    <BlogSection blogs={blogs} />
                 </div>
             </main>
         </>

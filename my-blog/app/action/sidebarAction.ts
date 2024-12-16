@@ -1,7 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from "react";
 
 export const SidebarAction = () => {
+    const bottomHeight: number = 50
 
+    // sidebar actions
     const [sidebarStyle, setSidebarStyle] = useState<React.CSSProperties>({
         position: "static",
     });
@@ -23,7 +25,7 @@ export const SidebarAction = () => {
             setSidebarStyle({ position: "static" });
             return;
         }
-        setSidebarStyle({ position: "fixed", bottom: "100px" });
+        setSidebarStyle({ position: "fixed", bottom: `${bottomHeight}px` });
 
         const handleScroll = () => {
             const footer = document.getElementById("footer");
@@ -37,13 +39,13 @@ export const SidebarAction = () => {
             const viewportBottom = window.scrollY + window.innerHeight;
 
             if (viewportBottom >= footerTop) {
-                const calc = footerTop - (sidebarHeight + 100);
+                const calc = footerTop - (sidebarHeight + bottomHeight);
                 setSidebarStyle({
                     position: "absolute",
                     top: calc,
                 });
             } else {
-                setSidebarStyle({ position: "fixed", bottom: "100px" });
+                setSidebarStyle({ position: "fixed", bottom: `${bottomHeight}px` });
             }
         };
 
@@ -53,7 +55,7 @@ export const SidebarAction = () => {
     }, [isFullScreen]);
 
     return {
-        isFullScreen,
         sidebarStyle,
+        isFullScreen,
     }
 }
