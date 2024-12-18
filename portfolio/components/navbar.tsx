@@ -4,7 +4,7 @@ import { MenuIcon } from './svgs'
 
 export default function Navbar() {
     return (
-        <header className='fixed top-0 left-0 w-full primary-color py-3 shadow-sm'>
+        <header className='fixed top-0 left-0 w-full primary-color py-3 shadow-sm transition-shadow duration-500 z-50'>
             <div className="container-lg">
                 <div className="flex flex-row items-center justify-between">
                     <div className="flex flex-row items-center gap-3">
