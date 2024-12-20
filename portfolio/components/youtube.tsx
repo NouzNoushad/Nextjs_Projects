@@ -3,7 +3,7 @@ import React from 'react'
 export default function Youtube() {
     return (
         <main>
-            <div className="max-w-[1200px] mx-auto px-5 xl:px-0">
+            <div className="container-md">
                 <h1 className="text-center md:text-start  text-[2rem] font-bold drop-shadow-[0_1px_1px_rgba(0,0,0,0.8)] text-white">My Youtube Videos</h1>
                 <div className="my-5 grid lg:grid-cols-3 md:grid-cols-2 md:w-full md:mx-0 sm:w-[400px] sm:mx-auto xs:w-[400px] xs:mx-auto grid-cols-1 gap-4">
                     <div className="bg-white rounded-lg drop-shadow-[0_1px_1px_rgba(0,0,0,0.8)]">

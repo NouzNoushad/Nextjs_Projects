@@ -1,3 +1,4 @@
+import Contact from "@/components/contact";
 import { FlutterIcon, YoutubeIcon } from "@/components/svgs";
 import Youtube from "@/components/youtube";
 import Image from "next/image";
@@ -30,6 +31,7 @@ export default function Home() {
                 </div>
             </main>
             <Youtube />
+            <Contact />
         </>
     );
 }

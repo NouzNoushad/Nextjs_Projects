@@ -38,6 +38,10 @@ body {
         @apply max-w-[1250px] mx-auto px-5 xl:px-0
     }
 
+    .container-md {
+        @apply max-w-[1200px] mx-auto px-5 xl:px-0
+    }
+
     .nav-link {
         @apply text-white drop-shadow-[0_0.5px_1px_rgba(0,0,0,0.5)] font-bold transition-all duration-300 hover:drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] text-[1.05rem]
     }
