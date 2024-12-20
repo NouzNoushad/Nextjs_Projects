@@ -12,9 +12,9 @@ export default {
                 background: "var(--background)",
                 foreground: "var(--foreground)",
             },
-            fontFamily: {
-                roboto: ['var(--roboto-font)'],
-            },
+            screens: {
+                'xs': '450px'
+            }
         },
     },
     plugins: [],

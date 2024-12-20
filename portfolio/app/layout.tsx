@@ -1,12 +1,5 @@
 import type { Metadata } from "next";
-import { Roboto } from "next/font/google";
 import "./globals.css";
-
-export const roboto = Roboto({
-    variable: "--font-roboto",
-    weight: ['400', '700'],
-    subsets: ["latin"],
-})
 
 export const metadata: Metadata = {
     title: "Noushad",
@@ -21,7 +14,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body
-                className={`${roboto.variable} font-sans`}
+                className={`font-sans`}
             >
                 {children}
             </body>
