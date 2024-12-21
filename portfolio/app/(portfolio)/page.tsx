@@ -1,5 +1,6 @@
 import AboutMe from "@/components/about";
 import Contact from "@/components/contact";
+import Projects from "@/components/projects";
 import { FlutterIcon, YoutubeIcon } from "@/components/svgs";
 import Youtube from "@/components/youtube";
 import Image from "next/image";
@@ -32,6 +33,7 @@ export default function Home() {
                 </div>
             </main>
             <AboutMe />
+            <Projects />
             <Youtube />
             <Contact />
         </>
