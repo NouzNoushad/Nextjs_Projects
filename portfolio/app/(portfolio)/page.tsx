@@ -1,3 +1,4 @@
+import AboutMe from "@/components/about";
 import Contact from "@/components/contact";
 import { FlutterIcon, YoutubeIcon } from "@/components/svgs";
 import Youtube from "@/components/youtube";
@@ -6,7 +7,7 @@ import Image from "next/image";
 export default function Home() {
     return (
         <>
-            <main className="mt-[10vh]">
+            <main className="mt-[10vh]" id="home">
                 <div className="flex items-center justify-center h-[calc(100vh-10vh)]">
                     <div className="relative z-10 flex flex-col md:flex-row items-center gap-10">
                         <div className="home-image">
@@ -30,6 +31,7 @@ export default function Home() {
                     </div>
                 </div>
             </main>
+            <AboutMe />
             <Youtube />
             <Contact />
         </>
