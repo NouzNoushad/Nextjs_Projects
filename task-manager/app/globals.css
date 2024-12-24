@@ -3,19 +3,25 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
+  --background: #181818;
   --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+    .bg-panel {
+        @apply bg-[#212121]
+    }
+    .bg-card {
+        @apply bg-[#323232]
+    }
+
+    .sidebar-link {
+        @apply flex flex-row items-center justify-center gap-3 py-2 ps-8 transition-all duration-300 hover:bg-[#333] after:absolute after:right-0 after:top-0 after:h-full after:w-1 after:rounded-tl-md after:rounded-bl-md after:transition-all after:duration-300 hover:after:bg-green-600
+    }
 }
