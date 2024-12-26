@@ -1,11 +1,16 @@
+'use client'
+
 import React from 'react'
 import { AddIcon, DeleteIcon, EditIcon } from './svgs'
 import Model from './model'
+import { useGlobalState } from '@/context/globalProvider'
 
 export default function Tasks() {
+
+    const { modal, openModal } = useGlobalState()
     return (
         <>
-            <Model />
+            {modal && <Model />}
             <div className="lg:w-5/6 w-full bg-panel rounded-lg lg:border-2 lg:border-[#282828] h-full">
                 <div className="py-3 px-5">
                     <h1 className="relative font-bold before:absolute before:bottom-0 before:left-0 before:w-[40px] before:h-[0.2rem] before:rounded-lg before:bg-green-600 py-2">All Tasks</h1>
@@ -29,12 +34,12 @@ export default function Tasks() {
                             ))
                         }
 
-                        <div className="border-[0.2rem] border-dashed border-[#333] px-3 py-3 rounded-lg space-y-3 flex items-center justify-center min-h-[200px]">
+                        <button onClick={openModal} className="border-[0.2rem] border-dashed border-[#333] px-3 py-3 rounded-lg space-y-3 flex items-center justify-center min-h-[200px]">
                             <div className="flex flex-row items-center gap-2">
                                 <AddIcon className="size-4" />
                                 <p className="text-[0.9rem]">Add New Task</p>
                             </div>
-                        </div>
+                        </button>
                     </div>
                 </div>
             </div>
