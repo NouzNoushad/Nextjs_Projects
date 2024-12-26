@@ -24,4 +24,8 @@ body {
     .sidebar-link {
         @apply flex flex-row items-center justify-center gap-3 py-2 ps-8 transition-all duration-300 hover:bg-[#333] after:absolute after:right-0 after:top-0 after:h-full after:w-1 after:rounded-tl-md after:rounded-bl-md after:transition-all after:duration-300 hover:after:bg-green-600
     }
+
+    .form-error {
+        @apply text-[0.8rem] text-red-500 mt-2;
+    }
 }
