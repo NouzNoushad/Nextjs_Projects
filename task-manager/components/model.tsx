@@ -20,7 +20,7 @@ export default function Model() {
 
     const taskMutation = useMutation({
         mutationFn: async (formData: FormData) => {
-            const response = await fetch('/api/', {
+            const response = await fetch('/api/task', {
                 method: 'POST',
                 body: formData
             })

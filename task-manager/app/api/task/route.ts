@@ -1,6 +1,7 @@
 import prisma from "@/lib/prisma"
 import { NextRequest, NextResponse } from "next/server"
 
+// create task
 export const POST = async (request: NextRequest) => {
 
     try {
@@ -25,6 +26,17 @@ export const POST = async (request: NextRequest) => {
             }
         })
         return NextResponse.json({ message: 'Task created', task: newTask }, { status: 201 })
+    } catch (error) {
+        return NextResponse.json({ error: `Error: ${error}` }, { status: 500 })
+    }
+}
+
+// get tasks
+export const GET = async () => {
+    try {
+        const tasks = await prisma.task.findMany()
+
+        return NextResponse.json({ tasks }, { status: 200 })
     } catch (error) {
         return NextResponse.json({ error: `Error: ${error}` }, { status: 500 })
     }
