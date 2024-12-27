@@ -17,7 +17,7 @@ model Task {
     id          String   @id @default(uuid())
     title       String
     description String
-    date        DateTime @default(now())
+    date        DateTime?
     completed   Boolean
     important   Boolean
     createdAt   DateTime @default(now())

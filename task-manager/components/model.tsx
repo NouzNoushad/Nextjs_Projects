@@ -42,7 +42,7 @@ export default function Model() {
             router.push('/')
         },
         onError: (error) => {
-            console.log(`//////// error: ${error}`)
+            console.log(`//////// errorsss: ${error.message}`)
         }
     })
 
