@@ -34,7 +34,13 @@ export const POST = async (request: NextRequest) => {
 // get tasks
 export const GET = async () => {
     try {
-        const tasks = await prisma.task.findMany()
+        const tasks = await prisma.task.findMany({
+            orderBy: [
+                {
+                    updatedAt: 'desc'
+                }
+            ]
+        })
 
         return NextResponse.json({ tasks }, { status: 200 })
     } catch (error) {
