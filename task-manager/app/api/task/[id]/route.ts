@@ -15,3 +15,20 @@ export const DELETE = async (request: NextRequest, { params }: { params: Promise
         return NextResponse.json({ error: `Error: ${error}` }, { status: 500 })
     }
 }
+
+// get task by id
+export const GET = async (request: NextRequest, { params }: { params: Promise<{ id: string }> }) => {
+    try {
+        const { id } = await params;
+
+        const task = await prisma.task.findUnique({
+            where: {
+                id: id
+            }
+        })
+
+        return NextResponse.json({ task }, { status: 200 })
+    } catch (error) {
+        return NextResponse.json({ error: `Error: ${error}` }, { status: 500 })
+    }
+}
