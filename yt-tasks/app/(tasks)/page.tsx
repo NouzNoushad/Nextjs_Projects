@@ -1,12 +1,12 @@
+import MainScreen from "@/components/MainScreen";
 import Sidebar from "@/components/Sidebar";
-import Image from "next/image";
 
 export default function Home() {
     return (
         <main>
-            <div className="flex flex-row h-screen">
+            <div className="flex flex-row">
                 <Sidebar />
-                <div className="w-4/5 h-full">Universe</div>
+                <MainScreen />
             </div>
         </main>
     );

@@ -14,8 +14,12 @@ body {
 }
 
 @layer base {
+    .bg-color {
+        @apply bg-[#18181A]
+    }
+
     .primary-color {
-        @apply bg-[#242425]
+        @apply bg-[#373738]
     }
 
     .text-green {
@@ -23,6 +27,10 @@ body {
     }
 
     .bg-green {
-        @apply bg-[#20cf89]
+        @apply bg-[#20cf89] 
+    }
+
+    .exp {
+        @apply bg-[#ffffff0e]
     }
 }

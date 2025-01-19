@@ -3,9 +3,9 @@ import { CompletedIcon, InProgressIcon, OnHoldIcon, OnReviewIcon, TasksIcon } fr
 
 export default function Sidebar() {
     return (
-        <div className="w-1/5 h-full primary-color">
+        <div className="hidden lg:block lg:w-1/5 h-full primary-color fixed">
             <div className="px-5 py-5">
-                <h1 className='text-green text-[1.4rem] font-[500]'>Task Manager</h1>
+                <h1 className='lg:text-green text-white text-[1.4rem] font-[500]'>Task Manager</h1>
                 <ul className='mt-8 space-y-4'>
                     <li className='py-2 px-2 rounded-lg bg-green'><a href="" className='flex flex-row gap-3'>
                         <TasksIcon className='size-6' />
