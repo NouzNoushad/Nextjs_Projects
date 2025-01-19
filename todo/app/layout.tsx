@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import QueryProvider from "@/context/queryProvider";
+import { GlobalProvider } from "@/context/globalProvider";
 
 export const metadata: Metadata = {
     title: "Create Next App",
@@ -18,7 +19,9 @@ export default function RootLayout({
                 className={`font-sans`}
             >
                 <QueryProvider>
-                    {children}
+                    <GlobalProvider>
+                        {children}
+                    </GlobalProvider>
                 </QueryProvider>
             </body>
         </html>
