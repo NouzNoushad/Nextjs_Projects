@@ -19,7 +19,7 @@ body {
     }
 
     .primary-color {
-        @apply bg-[#373738]
+        @apply bg-[#2a2a2b]
     }
 
     .text-green {
@@ -27,7 +27,7 @@ body {
     }
 
     .bg-green {
-        @apply bg-[#20cf89] 
+        @apply bg-[#20cf89]
     }
 
     .exp {
