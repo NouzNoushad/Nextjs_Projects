@@ -2,7 +2,7 @@ import React from 'react'
 import { AddIcon, CalendarIcon, MenuIcon } from './Icons'
 import Image from 'next/image';
 import { Task } from '@/interface/task_interface';
-import { formatDate } from '@/helpers/task_helpers';
+import { formatDate } from '@/lib/TaskHelpers';
 import Link from 'next/link';
 
 // const items = ["item1", "item2", "item3", "item4", "item5", "item6", "item1", "item2", "item3", "item4", "item5", "item6", "item1", "item2", "item3", "item4", "item5", "item6"]
@@ -45,7 +45,7 @@ export default async function MainScreen() {
                                         <CalendarIcon className='size-3' />
                                         {formatDate(task.due_date)}</div>
                                     <div className="h-[30px] w-[30px] rounded-full bg-slate-500">
-                                        <Image src={`http://localhost:8020/uploads/${task.assignee.image.filename}`} height={30} width={30} alt='profile' />
+                                        {task.assignee.image.filename ? <Image src={`http://localhost:8020/uploads/${task.assignee.image.filename}`} height={30} width={30} alt='profile' /> : null}
                                     </div>
                                 </div>
                             </div>
