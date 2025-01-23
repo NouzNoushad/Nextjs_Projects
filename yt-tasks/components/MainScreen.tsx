@@ -1,9 +1,8 @@
 import React from 'react'
-import { AddIcon, CalendarIcon, MenuIcon } from './Icons'
-import Image from 'next/image';
 import { Task } from '@/interface/task_interface';
-import { formatDate } from '@/lib/TaskHelpers';
 import Link from 'next/link';
+import Tasks from './Tasks';
+import { AddIcon, MenuIcon } from './Icons';
 
 // const items = ["item1", "item2", "item3", "item4", "item5", "item6", "item1", "item2", "item3", "item4", "item5", "item6", "item1", "item2", "item3", "item4", "item5", "item6"]
 
@@ -26,32 +25,7 @@ export default async function MainScreen() {
                 </div>
             </div>
             <div className="mt-8 primary-color rounded-lg px-2 py-5 flex-1">
-                <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-2 ">
-                    {
-                        tasks && tasks.map((task, index) => (
-                            <div key={index} className='bg-color rounded-md px-2 py-2 space-y-2'>
-                                <h1>{task.name}</h1>
-                                <p className='text-[0.7rem]'>{task.description}</p>
-                                <div className="flex flex-row items-center gap-2">
-                                    <div className="text-[0.6rem] px-2 py-1 rounded-md text-green bg-[#20cf8918] inline-block">
-                                        {task.category}
-                                    </div>
-                                    <div className="text-[0.6rem] px-2 py-1 rounded-md text-white bg-[#ffffff0e] inline-block">
-                                        {task.priority}
-                                    </div>
-                                </div>
-                                <div className="flex flex-row items-center justify-between">
-                                    <div className="text-[0.65rem] px-2 py-1 rounded-md primary-color flex flex-row items-center gap-1">
-                                        <CalendarIcon className='size-3' />
-                                        {formatDate(task.due_date)}</div>
-                                    <div className="h-[30px] w-[30px] rounded-full bg-slate-500">
-                                        {task.assignee.image.filename ? <Image src={`http://localhost:8020/uploads/${task.assignee.image.filename}`} height={30} width={30} alt='profile' /> : null}
-                                    </div>
-                                </div>
-                            </div>
-                        ))
-                    }
-                </div>
+                <Tasks tasks={tasks}/>
             </div>
         </div>
     )
