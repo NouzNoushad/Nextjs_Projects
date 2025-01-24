@@ -6,6 +6,7 @@ import React from 'react'
 import { CalendarIcon, DeleteIcon, EditIcon } from './Icons'
 import { Task } from '@/interface/task_interface'
 import { TaskAction } from '@/actions/TaskAction'
+import Link from 'next/link'
 
 export default function Tasks({ tasks }: { tasks: Task[] }) {
 
@@ -16,8 +17,10 @@ export default function Tasks({ tasks }: { tasks: Task[] }) {
                 tasks && tasks.map((task, index) => (
                     <div key={index} className='bg-color rounded-md px-2 py-2 space-y-2 flex flex-col'>
                         <div className="w-full flex flex-row items-start justify-end gap-2">
-                            <EditIcon className='size-3 text-blue-500' />
-                            <button onClick={() => handleTaskDelete(task.id)}>
+                            <Link href={`/add?id=${task.id}`}>
+                                <EditIcon className='size-3 text-blue-500' />
+                            </Link>
+                            <button onClick={() => handleTaskDelete(task.id ?? '')}>
                                 <DeleteIcon className='size-3 text-red-500' />
                             </button>
                         </div>

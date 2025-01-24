@@ -9,7 +9,7 @@ interface Assignee {
 }
 
 export interface Task {
-    id: string;
+    id?: string;
     name: string;
     description: string;
     category: string;
@@ -17,6 +17,6 @@ export interface Task {
     status: string;
     assignee: Assignee;
     due_date: string;
-    updated_at: string;
-    created_at: string;
+    updated_at?: string;
+    created_at?: string;
 }

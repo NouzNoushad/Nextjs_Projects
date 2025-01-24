@@ -1,15 +1,19 @@
-import { useEffect, useState } from "react"
 import { TaskValidation } from "./Validation"
 import { TaskFormError } from "@/lib/ValidationSchema"
-import { categories } from "@/lib/TaskHelpers"
-import { useMutation, useQueryClient } from "@tanstack/react-query"
-import { useRouter } from "next/navigation"
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query"
+import { useRouter, useSearchParams } from "next/navigation"
+import { Task } from "@/interface/task_interface"
+import { useGlobalState } from "@/context/globalProvider"
+import { useState } from "react"
 
 export const TaskFormAction = () => {
     const [errors, setErrors] = useState<Partial<Record<keyof TaskFormError, string[]>>>()
-    const [selectedCategory, setSelectedCategory] = useState(categories[0])
-    const [selectedDate, setSelectedDate] = useState('')
     const [file, setFile] = useState<File | null>(null)
+
+    const { gTask, setGTask, setGCategory, setGDueDate } = useGlobalState()
+
+    const searchParams = useSearchParams()
+    const id = searchParams.get("id")
 
     const queryClient = useQueryClient()
     const router = useRouter()
@@ -59,10 +63,12 @@ export const TaskFormAction = () => {
             return
         }
 
-        formData.append("category", selectedCategory)
+        if (gTask != null) {
+            formData.append("category", gTask.category)
 
-        const [year, month, day] = selectedDate.split('-')
-        formData.append("due_date", `${day}/${month}/${year}`)
+            const [year, month, day] = gTask.due_date.split('-')
+            formData.append("due_date", `${day}/${month}/${year}`)
+        }
 
         if (file) {
             formData.append("image", file)
@@ -77,20 +83,46 @@ export const TaskFormAction = () => {
         taskMutation.mutate(formData)
     }
 
-    useEffect(() => {
-        const date = new Date().toISOString().split('T')[0]
-        setSelectedDate(date)
-    }, [])
+    // get task by id
+    const getTask = async () => {
+        const response = await fetch(`http://localhost:8020/task_details/${id}`)
+        const taskResponse = await response.json()
+        if (!response.ok) {
+            throw new Error(taskResponse.error)
+        }
+
+        const task: Task = taskResponse.data
+        console.log('///////////////////// due date ', task.due_date)
+        //  2024-02-12T05:30:00+05:30
+        const dString = task.due_date.split('T')[0]
+        const [year, month, day] = dString.split('-')
+        const date = `${day.toString().padStart(2, '0')}-${month.toString().padStart(2, '0')}-${year}`
+        console.log('///////////////////// selectedDate ', date)
+        setGTask(task)
+
+        return task
+    }
+
+    const { data: task, error: taskError, isLoading: isTaskLoading } = useQuery({
+        queryKey: ['task', id],
+        queryFn: getTask,
+        staleTime: 1000 * 60 * 5,
+        refetchOnWindowFocus: false,
+        enabled: !!id
+    })
 
     return {
         errors,
         handleTaskSubmit,
         handleImageUpload,
-        setSelectedCategory,
-        setSelectedDate,
-        selectedCategory,
-        selectedDate,
         file,
         isLoading: taskMutation.isPending,
+        task,
+        taskError,
+        isTaskLoading,
+        gTask,
+        setGTask,
+        setGCategory,
+        setGDueDate,
     }
 }

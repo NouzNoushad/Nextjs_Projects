@@ -1,8 +1,12 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+import { useGlobalState } from "@/context/globalProvider"
 import { useMutation, useQueryClient } from "@tanstack/react-query"
+import { useEffect } from "react"
 
 export const TaskAction = () => {
 
     const queryClient = useQueryClient()
+    const { resetGTask } = useGlobalState()
 
     const deleteMutation = useMutation({
         mutationFn: async (id: string) => {
@@ -29,6 +33,10 @@ export const TaskAction = () => {
             console.log(error.message)
         }
     })
+
+    useEffect(() => {
+        resetGTask()
+    }, [])
 
     return {
         handleTaskDelete: deleteMutation.mutate,

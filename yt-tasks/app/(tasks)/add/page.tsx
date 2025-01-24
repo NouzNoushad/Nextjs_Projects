@@ -4,7 +4,7 @@ import { TaskFormAction } from '@/actions/TaskFormAction'
 import { categories } from '@/lib/TaskHelpers'
 export default function AddTask() {
 
-    const { handleTaskSubmit, handleImageUpload, setSelectedCategory, setSelectedDate, selectedCategory, selectedDate, file, errors } = TaskFormAction()
+    const { handleTaskSubmit, handleImageUpload, file, errors, task, gTask, setGCategory,setGDueDate } = TaskFormAction()
 
     return (
         <main className='py-[3rem]'>
@@ -14,7 +14,7 @@ export default function AddTask() {
                     <form onSubmit={handleTaskSubmit} className='mt-5 space-y-3'>
                         <div className="flex flex-col gap-1">
                             <label htmlFor="name" className='text-[0.8rem]'>Name</label>
-                            <input type="text" name='name' placeholder='Task name' className='w-full rounded-md px-2 py-2 bg-color placeholder:text-[0.9rem]' />
+                            <input type="text" name='name' placeholder='Task name' className='w-full rounded-md px-2 py-2 bg-color placeholder:text-[0.9rem]' defaultValue={task?.name} />
                             {errors?.name && <p className="text-[0.8rem] text-red-500 mt-2">{errors.name}</p>}
                         </div>
                         <div className="flex flex-col gap-1">
@@ -22,7 +22,7 @@ export default function AddTask() {
                             <div className="">
                                 {
                                     categories.map((category, index) => (
-                                        <button type='button' onClick={() => setSelectedCategory(category)} className={`rounded-lg px-3 py-2 bg-color inline-block text-[0.8rem] mx-1 my-1 ${selectedCategory == category ? 'border-2 border-white' : 'border-2 border-transparent'}`} key={index} >{category}</button>
+                                        <button type='button' onClick={() => setGCategory(category)} className={`rounded-lg px-3 py-2 bg-color inline-block text-[0.8rem] mx-1 my-1 ${gTask?.category == category ? 'border-2 border-white' : 'border-2 border-transparent'}`} key={index} >{category}</button>
                                     ))
                                 }
                             </div>
@@ -30,7 +30,7 @@ export default function AddTask() {
                         <div className="flex flex-row items-center gap-3">
                             <div className="flex flex-col gap-1 w-[50%]">
                                 <label htmlFor="priority" className='text-[0.8rem]'>Priority</label>
-                                <select name="priority" id="priority" className='bg-color px-1 py-2 rounded-lg text-[0.9rem]'>
+                                <select name="priority" id="priority" className='bg-color px-1 py-2 rounded-lg text-[0.9rem]' defaultValue={task?.priority}>
                                     <option value="high">High</option>
                                     <option value="medium">Medium</option>
                                     <option value="low">Low</option>
@@ -38,7 +38,7 @@ export default function AddTask() {
                             </div>
                             <div className="flex flex-col gap-1 w-[50%]">
                                 <label htmlFor="priority" className='text-[0.8rem]'>Status</label>
-                                <select name="status" id="status" className='bg-color px-1 py-2 rounded-lg text-[0.9rem]'>
+                                <select name="status" id="status" className='bg-color px-1 py-2 rounded-lg text-[0.9rem]' defaultValue={task?.status}>
                                     <option value="completed">Completed</option>
                                     <option value="on review">On review</option>
                                     <option value="on hold">On hold</option>
@@ -48,12 +48,12 @@ export default function AddTask() {
                         </div>
                         <div className="flex flex-col gap-1">
                             <label htmlFor="dueDate" className='text-[0.8rem]'>Due date</label>
-                            <input type="date" value={selectedDate} onChange={(e) => setSelectedDate(e.target.value)} className='w-[50%] rounded-lg px-2 py-2 bg-color text-[0.9rem]' style={{ colorScheme: 'dark' }} />
+                            <input type="date" value={gTask?.due_date} onChange={(e) => setGDueDate(e.target.value)} className='w-[50%] rounded-lg px-2 py-2 bg-color text-[0.9rem]' style={{ colorScheme: 'dark' }} />
                         </div>
                         <div className="flex flex-col gap-1">
                             <label htmlFor="assignee" className='text-[0.8rem]'>Assignee</label>
                             <div className="flex flex-row items-center gap-3">
-                                <input type="text" name='username' placeholder='Assignee name' className='w-[50%] rounded-lg px-2 py-2 bg-color text-[0.9rem] placeholder:text-[0.9rem]' />
+                                <input type="text" name='username' placeholder='Assignee name' className='w-[50%] rounded-lg px-2 py-2 bg-color text-[0.9rem] placeholder:text-[0.9rem]' defaultValue={task?.assignee.username} />
                                 <div className="flex flex-row items-center justify-between gap-2 w-[50%] rounded-lg px-2 py-2 bg-color text-[0.8rem]">
                                     <h4 className={`overflow-hidden text-ellipsis whitespace-nowrap ${file ? 'text-white' : 'text-gray-400'}`}>{file ? file.name : 'Upload image'}</h4>
                                     <label>
@@ -66,11 +66,13 @@ export default function AddTask() {
                         </div>
                         <div className="flex flex-col gap-1">
                             <label htmlFor="description" className='text-[0.8rem]'>Description</label>
-                            <textarea rows={4} name='description' placeholder='Task description' className='w-full rounded-md px-2 py-2 bg-color placeholder:text-[0.9rem]'></textarea>
+                            <textarea rows={4} name='description' placeholder='Task description' className='w-full rounded-md px-2 py-2 bg-color placeholder:text-[0.9rem]' defaultValue={task?.description}></textarea>
                         </div>
                         <div className="pt-5 pb-2">
                             <button type='submit' className='px-2 py-2 rounded-lg bg-green text-[0.9rem] w-full'>
-                                Add Task
+                                {
+                                    task ? 'Edit Task' : 'Add Task'
+                                }
                             </button>
                         </div>
                     </form>
