@@ -6,7 +6,7 @@ import ReactQueryProvider from "@/context/queryProvider";
 const poppins = Poppins({
     subsets: ['latin'],
     weight: ['400', '600', '700'],
-    display: 'swap'
+    variable: '--font-poppins'
 });
 
 export const metadata: Metadata = {
@@ -22,7 +22,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body
-                className={`${poppins.className} antialiased`}
+                className={`${poppins.className}`}
             >
                 <ReactQueryProvider>
                     {children}

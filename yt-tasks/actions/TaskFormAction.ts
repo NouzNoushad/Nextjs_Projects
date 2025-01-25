@@ -10,7 +10,7 @@ export const TaskFormAction = () => {
     const [errors, setErrors] = useState<Partial<Record<keyof TaskFormError, string[]>>>()
     const [file, setFile] = useState<File | null>(null)
 
-    const { gTask, setGTask, setGCategory, setGDueDate } = useGlobalState()
+    const { gTask, setGTask, setGCategory, setGPriority, setGStatus, setGDueDate } = useGlobalState()
 
     const searchParams = useSearchParams()
     const id = searchParams.get("id")
@@ -93,11 +93,16 @@ export const TaskFormAction = () => {
 
         const task: Task = taskResponse.data
         console.log('///////////////////// due date ', task.due_date)
-        //  2024-02-12T05:30:00+05:30
-        const dString = task.due_date.split('T')[0]
-        const [year, month, day] = dString.split('-')
-        const date = `${day.toString().padStart(2, '0')}-${month.toString().padStart(2, '0')}-${year}`
-        console.log('///////////////////// selectedDate ', date)
+
+        const formattedDate = task.due_date.toString().split('T')[0]
+
+        const due_date = new Date().toISOString().split('T')[0]
+
+        console.log(`/////////////////// due-date: ${due_date} d string ${formattedDate}`)
+        setGCategory(task.category)
+        setGPriority(task.priority)
+        setGStatus(task.status)
+        setGDueDate(due_date)
         setGTask(task)
 
         return task
@@ -123,6 +128,8 @@ export const TaskFormAction = () => {
         gTask,
         setGTask,
         setGCategory,
+        setGPriority,
+        setGStatus,
         setGDueDate,
     }
 }

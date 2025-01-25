@@ -45,7 +45,7 @@ export default function Tasks({ tasks }: { tasks: Task[] }) {
                                     task.assignee.username != "" ? <small className='text-[0.7rem]'>{task.assignee.username}</small> : null
                                 }
                                 <div className="h-[30px] w-[30px] rounded-full bg-slate-50">
-                                    {task.assignee.image.file_path != "" ? <Image src={`http://localhost:8020/uploads/${task.assignee.image.filename}`} height={30} width={30} alt='profile' /> : null}
+                                    {task.assignee.image.file_path != "" ? <Image src={`http://localhost:8020/uploads/${task.assignee.image.filename}`} height={30} width={30} alt='profile' className='rounded-full'/> : null}
                                 </div>
                             </div>
                         </div>

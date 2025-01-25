@@ -4,7 +4,7 @@ import { TaskFormAction } from '@/actions/TaskFormAction'
 import { categories } from '@/lib/TaskHelpers'
 export default function AddTask() {
 
-    const { handleTaskSubmit, handleImageUpload, file, errors, task, gTask, setGCategory,setGDueDate } = TaskFormAction()
+    const { handleTaskSubmit, handleImageUpload, file, errors, task, gTask, setGCategory, setGPriority, setGStatus, setGDueDate } = TaskFormAction()
 
     return (
         <main className='py-[3rem]'>
@@ -30,7 +30,7 @@ export default function AddTask() {
                         <div className="flex flex-row items-center gap-3">
                             <div className="flex flex-col gap-1 w-[50%]">
                                 <label htmlFor="priority" className='text-[0.8rem]'>Priority</label>
-                                <select name="priority" id="priority" className='bg-color px-1 py-2 rounded-lg text-[0.9rem]' defaultValue={task?.priority}>
+                                <select name="priority" id="priority" className='bg-color px-1 py-2 rounded-lg text-[0.9rem]' value={task?.priority} onChange={(e) => setGPriority(e.target.value)}>
                                     <option value="high">High</option>
                                     <option value="medium">Medium</option>
                                     <option value="low">Low</option>
@@ -38,7 +38,7 @@ export default function AddTask() {
                             </div>
                             <div className="flex flex-col gap-1 w-[50%]">
                                 <label htmlFor="priority" className='text-[0.8rem]'>Status</label>
-                                <select name="status" id="status" className='bg-color px-1 py-2 rounded-lg text-[0.9rem]' defaultValue={task?.status}>
+                                <select name="status" id="status" className='bg-color px-1 py-2 rounded-lg text-[0.9rem]' value={task?.status} onChange={(e) => setGStatus(e.target.value)}>
                                     <option value="completed">Completed</option>
                                     <option value="on review">On review</option>
                                     <option value="on hold">On hold</option>

@@ -8,6 +8,8 @@ interface GlobalContextType {
     gTask: Task | undefined
     setGTask: (task: Task) => void
     setGCategory: (category: string) => void
+    setGPriority: (priority: string) => void
+    setGStatus: (status: string) => void 
     setGDueDate: (date: string) => void
     resetGTask: () => void
 }
@@ -35,16 +37,24 @@ export const GlobalProvider = ({ children }: Readonly<{ children: React.ReactNod
     }
 
     const setGTask = (task: Task) => setTask(task)
-    const setGCategory = (category: string) => copyWith(initialTask, { category: category })
-    const setGDueDate = (date: string) => copyWith(initialTask, { due_date: date })
+    const setGCategory = (category: string) => setTask(copyWith(initialTask, { category: category }))
+    const setGPriority = (priority: string) => setTask(copyWith(initialTask, {priority: priority}))
+    const setGStatus = (status: string) => setTask(copyWith(initialTask, {status: status}))
+    const setGDueDate = (date: string) => setTask(copyWith(initialTask, { due_date: date }))
 
-    const resetGTask = () => setTask(initialTask)
+    const resetGTask = () => setTask(copyWith(initialTask, {
+        category: categories[0],
+        priority: priorities[0],
+        status: statusList[0],
+    }))
 
     return (
         <GlobalContext.Provider value={{
             gTask,
             setGTask,
             setGCategory,
+            setGPriority,
+            setGStatus,
             setGDueDate,
             resetGTask,
         }}>
