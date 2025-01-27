@@ -22,7 +22,7 @@ export default function AddTask() {
                             <div className="">
                                 {
                                     categories.map((category, index) => (
-                                        <button type='button' onClick={() => setGCategory(category)} className={`rounded-lg px-3 py-2 bg-color inline-block text-[0.8rem] mx-1 my-1 ${gTask?.category == category ? 'border-2 border-white' : 'border-2 border-transparent'}`} key={index} >{category}</button>
+                                        <button type='button' onClick={() => setGCategory(category)} className={`rounded-lg px-3 py-2 bg-color inline-block text-[0.8rem] mx-1 my-1 ${(task ? (task?.category == category) : (gTask?.category == category)) ? 'border-2 border-white' : 'border-2 border-transparent'}`} key={index} >{category}</button>
                                     ))
                                 }
                             </div>
@@ -48,7 +48,7 @@ export default function AddTask() {
                         </div>
                         <div className="flex flex-col gap-1">
                             <label htmlFor="dueDate" className='text-[0.8rem]'>Due date</label>
-                            <input type="date" value={gTask?.due_date} onChange={(e) => setGDueDate(e.target.value)} className='w-[50%] rounded-lg px-2 py-2 bg-color text-[0.9rem]' style={{ colorScheme: 'dark' }} />
+                            <input type="date" value={task ? task.due_date.toString().split('T')[0] : gTask?.due_date} onChange={(e) => setGDueDate(e.target.value)} className='w-[50%] rounded-lg px-2 py-2 bg-color text-[0.9rem]' style={{ colorScheme: 'dark' }} />
                         </div>
                         <div className="flex flex-col gap-1">
                             <label htmlFor="assignee" className='text-[0.8rem]'>Assignee</label>

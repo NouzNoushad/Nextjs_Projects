@@ -92,18 +92,6 @@ export const TaskFormAction = () => {
         }
 
         const task: Task = taskResponse.data
-        console.log('///////////////////// due date ', task.due_date)
-
-        const formattedDate = task.due_date.toString().split('T')[0]
-
-        const due_date = new Date().toISOString().split('T')[0]
-
-        console.log(`/////////////////// due-date: ${due_date} d string ${formattedDate}`)
-        setGCategory(task.category)
-        setGPriority(task.priority)
-        setGStatus(task.status)
-        setGDueDate(due_date)
-        setGTask(task)
 
         return task
     }
