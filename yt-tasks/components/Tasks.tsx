@@ -10,11 +10,11 @@ import Link from 'next/link'
 
 export default function Tasks({ tasks }: { tasks: Task[] }) {
 
-    const { handleTaskDelete } = TaskAction()
+    const { handleTaskDelete, gTasks } = TaskAction(tasks)
     return (
         <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-2 ">
             {
-                tasks && tasks.map((task, index) => (
+                gTasks && gTasks.map((task, index) => (
                     <div key={index} className='bg-color rounded-md px-2 py-2 space-y-2 flex flex-col'>
                         <div className="w-full flex flex-row items-start justify-end gap-2">
                             <Link href={`/add?id=${task.id}`}>
@@ -27,12 +27,17 @@ export default function Tasks({ tasks }: { tasks: Task[] }) {
                         <div className="flex-1 space-y-2">
                             <h1>{task.name}</h1>
                             <p className='text-[0.7rem]'>{task.description}</p>
-                            <div className="flex flex-row items-center gap-2">
-                                <div className="text-[0.6rem] px-2 py-1 rounded-md text-green bg-[#20cf8918] inline-block">
-                                    {task.category}
+                            <div className="flex flex-row items-center justify-between">
+                                <div className="flex flex-row items-center gap-2">
+                                    <div className="text-[0.6rem] px-2 py-1 rounded-md text-green bg-[#20cf8918] inline-block">
+                                        {task.category}
+                                    </div>
+                                    <div className="text-[0.6rem] px-2 py-1 rounded-md text-white bg-[#ffffff0e] inline-block">
+                                        {task.priority}
+                                    </div>
                                 </div>
-                                <div className="text-[0.6rem] px-2 py-1 rounded-md text-white bg-[#ffffff0e] inline-block">
-                                    {task.priority}
+                                <div className="text-[0.45rem] px-2 py-1 rounded-md text-white bg-[#ffffff0e] inline-block">
+                                    {task.status}
                                 </div>
                             </div>
                         </div>

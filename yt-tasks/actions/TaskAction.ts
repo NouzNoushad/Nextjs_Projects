@@ -1,12 +1,13 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useGlobalState } from "@/context/globalProvider"
+import { Task } from "@/interface/task_interface"
 import { useMutation, useQueryClient } from "@tanstack/react-query"
 import { useEffect } from "react"
 
-export const TaskAction = () => {
+export const TaskAction = (tasks: Task[]) => {
 
     const queryClient = useQueryClient()
-    const { resetGTask } = useGlobalState()
+    const { resetGTask, setGTasks, gTasks } = useGlobalState()
 
     const deleteMutation = useMutation({
         mutationFn: async (id: string) => {
@@ -36,9 +37,11 @@ export const TaskAction = () => {
 
     useEffect(() => {
         resetGTask()
+        setGTasks(tasks)
     }, [])
 
     return {
+        gTasks,
         handleTaskDelete: deleteMutation.mutate,
     }
 }

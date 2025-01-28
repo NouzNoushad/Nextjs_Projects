@@ -5,11 +5,15 @@ import { categories, copyWith, priorities, statusList } from "@/lib/TaskHelpers"
 import { createContext, useContext, useState } from "react";
 
 interface GlobalContextType {
+    gTasks: Task[]
     gTask: Task | undefined
+    sidebarStatus: string
     setGTask: (task: Task) => void
+    setGTasks: (tasks: Task[]) => void
     setGCategory: (category: string) => void
     setGPriority: (priority: string) => void
-    setGStatus: (status: string) => void 
+    setGStatus: (status: string) => void
+    setSidebarStatus: (status: string) => void
     setGDueDate: (date: string) => void
     resetGTask: () => void
 }
@@ -18,6 +22,8 @@ export const GlobalContext = createContext<GlobalContextType | undefined>(undefi
 
 export const GlobalProvider = ({ children }: Readonly<{ children: React.ReactNode }>) => {
     const [gTask, setTask] = useState<Task>()
+    const [gTasks, setTasks] = useState<Task[]>([])
+    const [sidebarStatus, setSideStatus] = useState<string>('tasks')
     const due_date = new Date().toISOString().split('T')[0]
 
     const initialTask: Task = {
@@ -37,9 +43,10 @@ export const GlobalProvider = ({ children }: Readonly<{ children: React.ReactNod
     }
 
     const setGTask = (task: Task) => setTask(task)
+    const setGTasks = (tasks: Task[]) => setTasks(tasks)
     const setGCategory = (category: string) => setTask(copyWith(initialTask, { category: category }))
-    const setGPriority = (priority: string) => setTask(copyWith(initialTask, {priority: priority}))
-    const setGStatus = (status: string) => setTask(copyWith(initialTask, {status: status}))
+    const setGPriority = (priority: string) => setTask(copyWith(initialTask, { priority: priority }))
+    const setGStatus = (status: string) => setTask(copyWith(initialTask, { status: status }))
     const setGDueDate = (date: string) => setTask(copyWith(initialTask, { due_date: date }))
 
     const resetGTask = () => setTask(copyWith(initialTask, {
@@ -48,10 +55,16 @@ export const GlobalProvider = ({ children }: Readonly<{ children: React.ReactNod
         status: statusList[0],
     }))
 
+    const setSidebarStatus = (status: string) => setSideStatus(status)
+
     return (
         <GlobalContext.Provider value={{
             gTask,
+            gTasks,
+            sidebarStatus,
+            setSidebarStatus,
             setGTask,
+            setGTasks,
             setGCategory,
             setGPriority,
             setGStatus,

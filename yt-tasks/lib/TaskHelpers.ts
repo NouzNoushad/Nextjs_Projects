@@ -21,11 +21,11 @@ export const priorities =
         "low"]
 
 export const statusList = ["completed",
+    "in progress",
     "on review",
-    "on hold",
-    "in progress",]
+    "on hold",]
 
-export const copyWith = (task: Task, updates: Partial<Task>) : Task => {
+export const copyWith = (task: Task, updates: Partial<Task>): Task => {
     return {
         ...task,
         ...updates,

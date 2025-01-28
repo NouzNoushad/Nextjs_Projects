@@ -6,10 +6,8 @@ import { AddIcon, MenuIcon } from './Icons';
 
 // const items = ["item1", "item2", "item3", "item4", "item5", "item6", "item1", "item2", "item3", "item4", "item5", "item6", "item1", "item2", "item3", "item4", "item5", "item6"]
 
-export default async function MainScreen() {
-    const response = await fetch('http://localhost:8020/get_tasks')
-    const responseJson = await response.json()
-    const tasks: Task[] = responseJson.data
+export default async function MainScreen({ tasks }: { tasks: Task[] }) {
+    
     return (
         <div className="lg:w-4/5 w-full min-h-svh py-8 px-4 flex flex-col lg:ml-[20%]">
             <div className="flex flex-row items-start gap-3 justify-between">
