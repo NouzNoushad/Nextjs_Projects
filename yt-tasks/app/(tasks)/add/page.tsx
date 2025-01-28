@@ -4,7 +4,7 @@ import { TaskFormAction } from '@/actions/TaskFormAction'
 import { categories } from '@/lib/TaskHelpers'
 export default function AddTask() {
 
-    const { handleTaskSubmit, handleImageUpload, file, errors, task, gTask, setGCategory, setGPriority, setGStatus, setGDueDate } = TaskFormAction()
+    const { handleTaskSubmit, handleImageUpload, file, errors, task, setCategory, selectedCategory, selectedDueDate, setDueDate, setPriority, setStatus, selectedPriority, selectedStatus } = TaskFormAction()
 
     return (
         <main className='py-[3rem]'>
@@ -22,7 +22,7 @@ export default function AddTask() {
                             <div className="">
                                 {
                                     categories.map((category, index) => (
-                                        <button type='button' onClick={() => setGCategory(category)} className={`rounded-lg px-3 py-2 bg-color inline-block text-[0.8rem] mx-1 my-1 ${(task ? (task?.category == category) : (gTask?.category == category)) ? 'border-2 border-white' : 'border-2 border-transparent'}`} key={index} >{category}</button>
+                                        <button type='button' onClick={() => setCategory(category)} className={`rounded-lg px-3 py-2 bg-color inline-block text-[0.8rem] mx-1 my-1 ${(selectedCategory == category) ? 'border-2 border-white' : 'border-2 border-transparent'}`} key={index} >{category}</button>
                                     ))
                                 }
                             </div>
@@ -30,7 +30,7 @@ export default function AddTask() {
                         <div className="flex flex-row items-center gap-3">
                             <div className="flex flex-col gap-1 w-[50%]">
                                 <label htmlFor="priority" className='text-[0.8rem]'>Priority</label>
-                                <select name="priority" id="priority" className='bg-color px-1 py-2 rounded-lg text-[0.9rem]' value={task?.priority} onChange={(e) => setGPriority(e.target.value)}>
+                                <select name="priority" id="priority" className='bg-color px-1 py-2 rounded-lg text-[0.9rem]' value={selectedPriority} onChange={(e) => setPriority(e.target.value)}>
                                     <option value="high">High</option>
                                     <option value="medium">Medium</option>
                                     <option value="low">Low</option>
@@ -38,7 +38,7 @@ export default function AddTask() {
                             </div>
                             <div className="flex flex-col gap-1 w-[50%]">
                                 <label htmlFor="priority" className='text-[0.8rem]'>Status</label>
-                                <select name="status" id="status" className='bg-color px-1 py-2 rounded-lg text-[0.9rem]' value={task?.status} onChange={(e) => setGStatus(e.target.value)}>
+                                <select name="status" id="status" className='bg-color px-1 py-2 rounded-lg text-[0.9rem]' value={selectedStatus} onChange={(e) => setStatus(e.target.value)}>
                                     <option value="completed">Completed</option>
                                     <option value="on review">On review</option>
                                     <option value="on hold">On hold</option>
@@ -48,7 +48,7 @@ export default function AddTask() {
                         </div>
                         <div className="flex flex-col gap-1">
                             <label htmlFor="dueDate" className='text-[0.8rem]'>Due date</label>
-                            <input type="date" value={task ? task.due_date.toString().split('T')[0] : gTask?.due_date} onChange={(e) => setGDueDate(e.target.value)} className='w-[50%] rounded-lg px-2 py-2 bg-color text-[0.9rem]' style={{ colorScheme: 'dark' }} />
+                            <input type="date" value={selectedDueDate} onChange={(e) => setDueDate(e.target.value)} className='w-[50%] rounded-lg px-2 py-2 bg-color text-[0.9rem]' style={{ colorScheme: 'dark' }} />
                         </div>
                         <div className="flex flex-col gap-1">
                             <label htmlFor="assignee" className='text-[0.8rem]'>Assignee</label>

@@ -10,7 +10,7 @@ export const TaskAction = (tasks: Task[]) => {
     const [searchQuery, setSearchQuery] = useState("")
 
     const queryClient = useQueryClient()
-    const { resetGTask, setGTasks, gTasks, setSidebarStatus } = useGlobalState()
+    const { setGTasks, gTasks, setSidebarStatus } = useGlobalState()
 
     const deleteMutation = useMutation({
         mutationFn: async (id: string) => {
@@ -62,7 +62,6 @@ export const TaskAction = (tasks: Task[]) => {
     }, [searchQuery])
 
     useEffect(() => {
-        resetGTask()
         setGTasks(tasks)
     }, [])
 

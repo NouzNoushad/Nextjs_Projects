@@ -1,5 +1,3 @@
-import { Task } from "@/interface/task_interface"
-
 // format date
 export const formatDate = (dateString: string) => {
     const date = new Date(dateString)
@@ -24,18 +22,3 @@ export const statusList = ["completed",
     "in progress",
     "on review",
     "on hold",]
-
-export const copyWith = (task: Task, updates: Partial<Task>): Task => {
-    return {
-        ...task,
-        ...updates,
-        assignee: {
-            ...task.assignee,
-            ...updates.assignee,
-            image: {
-                ...task.assignee.image,
-                ...updates.assignee?.image,
-            }
-        }
-    }
-}
