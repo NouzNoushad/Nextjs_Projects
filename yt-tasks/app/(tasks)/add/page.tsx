@@ -55,7 +55,7 @@ export default function AddTask() {
                             <div className="flex flex-row items-center gap-3">
                                 <input type="text" name='username' placeholder='Assignee name' className='w-[50%] rounded-lg px-2 py-2 bg-color text-[0.9rem] placeholder:text-[0.9rem]' defaultValue={task?.assignee.username} />
                                 <div className="flex flex-row items-center justify-between gap-2 w-[50%] rounded-lg px-2 py-2 bg-color text-[0.8rem]">
-                                    <h4 className={`overflow-hidden text-ellipsis whitespace-nowrap ${file ? 'text-white' : 'text-gray-400'}`}>{file ? file.name : 'Upload image'}</h4>
+                                    <h4 className={`overflow-hidden text-ellipsis whitespace-nowrap ${file || task?.assignee.image.filename ? 'text-white' : 'text-gray-400'}`}>{file ? file!.name : task?.assignee.image.filename || 'Upload image'}</h4>
                                     <label>
                                         <span className='primary-color px-5 py-1 text-white rounded-md text-[0.8rem] cursor-pointer'>Upload</span>
                                         <input type="file" id='name' onChange={handleImageUpload} accept="image/*" className='hidden' />
