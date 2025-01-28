@@ -6,7 +6,7 @@ import { SidebarAction } from '@/actions/SidebarAction'
 import { Task } from '@/interface/task_interface'
 import { statusList } from '@/lib/TaskHelpers'
 
-export default function Categories({ tasks }: { tasks: Task[] }) {
+export default function SidebarStatus({ tasks }: { tasks: Task[] }) {
     const { onChangeStatus, status } = SidebarAction()
     return (
         <ul className='mt-8 space-y-4'>

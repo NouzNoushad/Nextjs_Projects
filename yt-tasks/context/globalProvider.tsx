@@ -8,6 +8,7 @@ interface GlobalContextType {
     gTasks: Task[]
     gTask: Task | undefined
     sidebarStatus: string
+    showMenu: boolean
     setGTask: (task: Task) => void
     setGTasks: (tasks: Task[]) => void
     setGCategory: (category: string) => void
@@ -16,6 +17,8 @@ interface GlobalContextType {
     setSidebarStatus: (status: string) => void
     setGDueDate: (date: string) => void
     resetGTask: () => void
+    setShowMenu: () => void
+    resetShowMenu: () => void
 }
 
 export const GlobalContext = createContext<GlobalContextType | undefined>(undefined)
@@ -24,6 +27,8 @@ export const GlobalProvider = ({ children }: Readonly<{ children: React.ReactNod
     const [gTask, setTask] = useState<Task>()
     const [gTasks, setTasks] = useState<Task[]>([])
     const [sidebarStatus, setSideStatus] = useState<string>('tasks')
+    const [showMenu, setMenu] = useState(false)
+
     const due_date = new Date().toISOString().split('T')[0]
 
     const initialTask: Task = {
@@ -57,11 +62,16 @@ export const GlobalProvider = ({ children }: Readonly<{ children: React.ReactNod
 
     const setSidebarStatus = (status: string) => setSideStatus(status)
 
+    const setShowMenu = () => setMenu(!showMenu)
+    const resetShowMenu = () => setMenu(false)
+
     return (
         <GlobalContext.Provider value={{
             gTask,
             gTasks,
             sidebarStatus,
+            showMenu,
+            setShowMenu,
             setSidebarStatus,
             setGTask,
             setGTasks,
@@ -70,6 +80,7 @@ export const GlobalProvider = ({ children }: Readonly<{ children: React.ReactNod
             setGStatus,
             setGDueDate,
             resetGTask,
+            resetShowMenu,
         }}>
             {children}
         </GlobalContext.Provider>
