@@ -1,4 +1,5 @@
 import React from 'react'
+import { BarChart, DoughnutChart } from './Charts'
 
 export default function MainContent() {
     return (
@@ -126,7 +127,7 @@ export default function MainContent() {
                             </div>
                         </div>
                         <div className="relative p-4 h-72">
-                            Bar Chart
+                            <BarChart />
                         </div>
                     </div>
 
@@ -144,12 +145,12 @@ export default function MainContent() {
                             </div>
                         </div>
                         <div className="relative p-4 h-72">
-                            Doughnut chart
+                            <DoughnutChart />
                         </div>
                     </div>
-                 </div>
-                 {/* Two grid columns */}
-                 <div className="grid lg:grid-cols-3 grid-cols-1 p-4 space-y-8 lg:gap-8 lg:space-y-0">
+                </div>
+                {/* Two grid columns */}
+                <div className="grid lg:grid-cols-3 grid-cols-1 p-4 space-y-8 lg:gap-8 lg:space-y-0">
                     <div className="col-span-1 bg-white rounded-md">
                         <div className="p-4 border-b">
                             <h4 className='text-lg font-semibold text-gray-500'>Active users right now</h4>
@@ -178,7 +179,7 @@ export default function MainContent() {
                             Line Chart
                         </div>
                     </div>
-                 </div>
+                </div>
             </div>
         </main>
     )
