@@ -1,12 +1,36 @@
-import React from 'react'
+'use client'
+
+import React, { useState } from 'react'
 
 export default function Sidebar() {
+    const [isDashboardOpen, setIsDashboardOpen] = useState(true)
+    const [isComponentsOpen, setIsComponentsOpen] = useState(false)
+    const [isPagesOpen, setIsPagesOpen] = useState(false)
+    const [isAuthenticationOpen, setIsAuthenticationOpen] = useState(false)
+    const [isLayoutOpen, setIsLayoutOpen] = useState(false)
+
+    const handleDashboardChange = () => {
+        setIsDashboardOpen(!isDashboardOpen)
+    }
+    const handleComponentChange = () => {
+        setIsComponentsOpen(!isComponentsOpen)
+    }
+    const handlePagesChange = () => {
+        setIsPagesOpen(!isPagesOpen)
+    }
+    const handleAuthenticationChange = () => {
+        setIsAuthenticationOpen(!isAuthenticationOpen)
+    }
+    const handleLayoutChange = () => {
+        setIsLayoutOpen(!isLayoutOpen)
+    }
+
     return (
         <aside className="flex-shrink-0 w-64 bg-white border-r hidden md:block">
             <div className="flex flex-col h-full">
                 <nav aria-label='main' className='flex-1 px-2 py-4 space-y-2 overflow-y-hidden hover:overflow-y-auto'>
                     <div className="">
-                        <a href="#" className='flex flex-row items-center p-2 rounded-md text-gray-500 bg-primary-100'>
+                        <button onClick={handleDashboardChange} className='w-full flex flex-row items-center p-2 rounded-md text-gray-500 bg-primary-100 focus:outline-none focus:ring-0'>
                             <span>
                                 <svg
                                     className="w-5 h-5"
@@ -28,7 +52,7 @@ export default function Sidebar() {
                             </span>
                             <span className='ml-auto'>
                                 <svg
-                                    className="w-4 h-4 transition-transform transform"
+                                    className={`w-4 h-4 transition-transform transform ${isDashboardOpen ? "rotate-180": "rotate-0"}`}
                                     xmlns="http://www.w3.org/2000/svg"
                                     fill="none"
                                     viewBox="0 0 24 24"
@@ -37,8 +61,8 @@ export default function Sidebar() {
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
                                 </svg>
                             </span>
-                        </a>
-                        <div role='menu' className="mt-2 space-y-2 px-7">
+                        </button>
+                        <div role='menu' className={`mt-2 space-y-2 px-7 ${isDashboardOpen ? "block" : "hidden"}`} aria-label='dashboard'>
                             <a href="#" className='block p-2 text-sm text-gray-700 transition-colors duration-200 hover:text-gray-700'>
                                 Default
                             </a>
@@ -51,7 +75,7 @@ export default function Sidebar() {
                         </div>
                     </div>
                     <div className="">
-                        <a href="#" className='flex flex-row items-center p-2 rounded-md text-gray-500 bg-primary-100'>
+                        <button onClick={handleComponentChange} className='w-full flex flex-row items-center p-2 rounded-md text-gray-500 bg-primary-100 focus:outline-none focus:ring-0'>
                             <span>
                                 <svg
                                     className="w-5 h-5"
@@ -73,7 +97,7 @@ export default function Sidebar() {
                             </span>
                             <span className='ml-auto'>
                                 <svg
-                                    className="w-4 h-4 transition-transform transform"
+                                    className={`w-4 h-4 transition-transform transform ${isComponentsOpen ? "rotate-180": "rotate-0"}`}
                                     xmlns="http://www.w3.org/2000/svg"
                                     fill="none"
                                     viewBox="0 0 24 24"
@@ -82,8 +106,8 @@ export default function Sidebar() {
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
                                 </svg>
                             </span>
-                        </a>
-                        <div role='menu' className="mt-2 space-y-2 px-7">
+                        </button>
+                        <div role='menu' className={`mt-2 space-y-2 px-7 ${isComponentsOpen ? "block" : "hidden"}`} aria-label='dashboard'>
                             <a href="#" className='block p-2 text-sm text-gray-400 transition-colors duration-200 hover:text-gray-700'>
                                 Alerts
                             </a>
@@ -111,7 +135,7 @@ export default function Sidebar() {
                         </div>
                     </div>
                     <div className="">
-                        <a href="#" className='flex flex-row items-center p-2 rounded-md text-gray-500 bg-primary-100'>
+                        <button onClick={handlePagesChange} className='w-full flex flex-row items-center p-2 rounded-md text-gray-500 bg-primary-100 focus:outline-none focus:ring-0'>
                             <span>
                                 <svg
                                     className="w-5 h-5"
@@ -133,7 +157,7 @@ export default function Sidebar() {
                             </span>
                             <span className='ml-auto'>
                                 <svg
-                                    className="w-4 h-4 transition-transform transform"
+                                    className={`w-4 h-4 transition-transform transform ${isPagesOpen ? "rotate-180": "rotate-0"}`}
                                     xmlns="http://www.w3.org/2000/svg"
                                     fill="none"
                                     viewBox="0 0 24 24"
@@ -142,8 +166,8 @@ export default function Sidebar() {
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
                                 </svg>
                             </span>
-                        </a>
-                        <div role='menu' className="mt-2 space-y-2 px-7">
+                        </button>
+                        <div role='menu' className={`mt-2 space-y-2 px-7 ${isPagesOpen ? "block" : "hidden"}`} aria-label='dashboard'>
                             <a href="#" className='block p-2 text-sm text-gray-400 transition-colors duration-200 hover:text-gray-700'>
                                 Blank
                             </a>
@@ -165,7 +189,7 @@ export default function Sidebar() {
                         </div>
                     </div>
                     <div className="">
-                        <a href="#" className='flex flex-row items-center p-2 rounded-md text-gray-500 bg-primary-100'>
+                        <button onClick={handleAuthenticationChange} className='w-full flex flex-row items-center p-2 rounded-md text-gray-500 bg-primary-100 focus:outline-none focus:ring-0'>
                             <span>
                                 <svg
                                     className="w-5 h-5"
@@ -187,7 +211,7 @@ export default function Sidebar() {
                             </span>
                             <span className='ml-auto'>
                                 <svg
-                                    className="w-4 h-4 transition-transform transform"
+                                    className={`w-4 h-4 transition-transform transform ${isAuthenticationOpen ? "rotate-180": "rotate-0"}`}
                                     xmlns="http://www.w3.org/2000/svg"
                                     fill="none"
                                     viewBox="0 0 24 24"
@@ -196,8 +220,8 @@ export default function Sidebar() {
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
                                 </svg>
                             </span>
-                        </a>
-                        <div role='menu' className="mt-2 space-y-2 px-7">
+                        </button>
+                        <div role='menu' className={`mt-2 space-y-2 px-7 ${isAuthenticationOpen ? "block" : "hidden"}`} aria-label='dashboard'>
                             <a href="#" className='block p-2 text-sm text-gray-400 transition-colors duration-200 hover:text-gray-700'>
                                 Register
                             </a>
@@ -213,7 +237,7 @@ export default function Sidebar() {
                         </div>
                     </div>
                     <div className="">
-                        <a href="#" className='flex flex-row items-center p-2 rounded-md text-gray-500 bg-primary-100'>
+                        <button onClick={handleLayoutChange} className='w-full flex flex-row items-center p-2 rounded-md text-gray-500 bg-primary-100 focus:outline-none focus:ring-0'>
                             <span>
                                 <svg
                                     className="w-5 h-5"
@@ -235,7 +259,7 @@ export default function Sidebar() {
                             </span>
                             <span className='ml-auto'>
                                 <svg
-                                    className="w-4 h-4 transition-transform transform"
+                                    className={`w-4 h-4 transition-transform transform ${isLayoutOpen ? "rotate-180" : "rotate-0"}`}
                                     xmlns="http://www.w3.org/2000/svg"
                                     fill="none"
                                     viewBox="0 0 24 24"
@@ -244,8 +268,8 @@ export default function Sidebar() {
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
                                 </svg>
                             </span>
-                        </a>
-                        <div role='menu' className="mt-2 space-y-2 px-7">
+                        </button>
+                        <div role='menu' className={`mt-2 space-y-2 px-7 ${isLayoutOpen ? "block" : "hidden"}`} aria-label='dashboard'>
                             <a href="#" className='block p-2 text-sm text-gray-400 transition-colors duration-200 hover:text-gray-700'>
                                 Two Column Sidebar
                             </a>
