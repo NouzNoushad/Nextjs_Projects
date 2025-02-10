@@ -1,5 +1,5 @@
 import React from 'react'
-import { BarChart, DoughnutChart } from './Charts'
+import { ActiveUsersChart, BarChart, DoughnutChart, LineChart } from './Charts'
 
 export default function MainContent() {
     return (
@@ -160,7 +160,7 @@ export default function MainContent() {
                             <span className='text-sm font-medium text-gray-500 ml-1'>Users</span>
                         </p>
                         <div className="relative p-4 h-52">
-                            Chart
+                            <ActiveUsersChart />
                         </div>
                     </div>
 
@@ -176,7 +176,7 @@ export default function MainContent() {
                             </div>
                         </div>
                         <div className="relative p-4 h-52">
-                            Line Chart
+                            <LineChart />
                         </div>
                     </div>
                 </div>

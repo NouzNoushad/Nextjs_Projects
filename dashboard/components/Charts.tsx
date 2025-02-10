@@ -1,9 +1,9 @@
 'use client'
 
-import { ChartOptions, Chart as ChartJs, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend, ArcElement } from "chart.js"
-import { Bar, Doughnut } from "react-chartjs-2"
+import { ChartOptions, Chart as ChartJs, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend, ArcElement, PointElement, LineElement } from "chart.js"
+import { Bar, Doughnut, Line } from "react-chartjs-2"
 
-ChartJs.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend, ArcElement)
+ChartJs.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend, ArcElement, PointElement, LineElement)
 
 const colors = {
     primary: "#0891b2",
@@ -93,7 +93,71 @@ const DoughnutChart = () => {
         options={options} />
 }
 
+const ActiveUsersChart = () => {
+    const data = {
+        labels: [...randomData(), ...randomData()],
+        datasets: [
+            {
+                data: [...randomData(), ...randomData()],
+                backgroundColor: colors.primary,
+                borderWidth: 0,
+                categoryPercentage: 1,
+            }
+        ]
+    }
+
+    const options: ChartOptions<"bar"> = {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: { legend: { display: false } },
+        scales: {
+            x: { display: false },
+            y: { display: false },
+        },
+        hover: { mode: "nearest", intersect: true }
+    }
+
+    return <Bar data={data} options={options} />
+}
+
+const LineChart = () => {
+    const data = {
+        labels: months,
+        datasets: [
+            {
+                data: randomData(),
+                fill: false,
+                borderColor: colors.primary,
+                borderWidth: 2,
+                pointRadius: 0,
+                pointHoverRadius: 0,
+            }
+        ]
+    }
+
+    const options: ChartOptions<"line"> = {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: { legend: { display: false } },
+        scales: {
+            y: {
+                ticks: {
+                    stepSize: 50,
+                    font: { size: 12, family: "Open Sans, sans-serif" },
+                    color: "#97a4af",
+                    padding: 20
+                }
+            },
+            x: { grid: { display: false } }
+        }
+    }
+
+    return <Line data={data} options={options} />
+}
+
 export {
     BarChart,
     DoughnutChart,
+    ActiveUsersChart,
+    LineChart,
 }

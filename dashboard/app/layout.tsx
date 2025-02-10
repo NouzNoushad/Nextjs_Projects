@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Cairo } from "next/font/google";
 import "./globals.css";
 import "../public/css/tailwind.css"
+import GlobalProvider from "@/context/GlobalProvider";
 
 const cario = Cairo({
     subsets: ['latin'],
@@ -24,7 +25,9 @@ export default function RootLayout({
             <body
                 className={`${cario.className}`}
             >
-                {children}
+                <GlobalProvider>
+                    {children}
+                </GlobalProvider>
             </body>
         </html>
     );
