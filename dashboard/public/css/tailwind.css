@@ -230,3 +230,15 @@ video {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+
+.border-transparent {
+    border-color: transparent;
+}
+
+.border-gray-900 {
+    border-color: rgba(17, 24, 39, 1);
+}
+
+.border-primary-dark {
+    border-color: var(--color-primary-dark);
+}

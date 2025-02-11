@@ -5,7 +5,7 @@ import React from 'react'
 
 export default function Navbar() {
 
-    const { setIsSettingsOpen, setIsSearchOpen } = useGlobalState()
+    const { setIsSettingsOpen, setIsSearchOpen, setIsNotificationOpen } = useGlobalState()
     return (
         <header className='relative bg-white'>
             <div className="flex items-center justify-between p-2 border-b">
@@ -68,7 +68,7 @@ export default function Navbar() {
                         </div>
                     </button>
                     {/* Notification button */}
-                    <button className='p-2 transition-colors duration-200 rounded-full text-primary-lighter bg-primary-50 hover:text-primary hover:bg-primary-100 focus:outline-none focus:bg-primary-100'>
+                    <button onClick={() => setIsNotificationOpen(true)} className='p-2 transition-colors duration-200 rounded-full text-primary-lighter bg-primary-50 hover:text-primary hover:bg-primary-100 focus:outline-none focus:bg-primary-100'>
                         <svg
                             className="w-7 h-7"
                             xmlns="http://www.w3.org/2000/svg"

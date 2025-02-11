@@ -10,13 +10,13 @@ export default function SettingsPanel() {
             {/* Overlay */}
             {
                 isSettingsOpen && (
-                    <div className="fixed inset-0 z-10 bg-primary-darker bg-opacity-30 transition-opacity" onClick={() => setIsSettingsOpen(false)} style={{opacity: "0.5"}}></div>
+                    <div className="fixed inset-0 z-10 bg-primary-darker bg-opacity-30 transition-opacity" onClick={() => setIsSettingsOpen(false)} style={{ opacity: "0.5" }}></div>
                 )
             }
 
             {/* Panel */}
-            <div className={`fixed inset-y-0 right-[-50px] z-20 w-full max-w-sm sm:max-w-md bg-white shadow-xl transition-all duration-500 ${isSettingsOpen ? "translate-x-0" : "translate-x-full"}`}>
-                <button onClick={() => setIsSettingsOpen(false)} className='absolute top-2 left-[-45px] p-2 rounded-md text-white focus:outline-2 focus:outline-none focus:ring'>
+            <div className={`fixed inset-y-0 right-0 z-20 w-full max-w-sm sm:max-w-md bg-white shadow-xl transition-all duration-500 ${isSettingsOpen ? "translate-x-0" : "translate-x-full"}`}>
+                <button onClick={() => setIsSettingsOpen(false)} className={`absolute top-2 p-2 rounded-md text-white focus:outline-2 focus:outline-none focus:ring ${isSettingsOpen ? "left-[-45px]" : "left-0 focus:ring-0"}`}>
                     <svg
                         className="w-5 h-5"
                         xmlns="http://www.w3.org/2000/svg"

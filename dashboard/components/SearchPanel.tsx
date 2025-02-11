@@ -16,7 +16,7 @@ export default function SearchPanel() {
 
             {/* Panel */}
             <div className={`fixed inset-y-0 left-0 z-50 w-full max-w-sm sm:max-w-md bg-white shadow-xl transition-all duration-500 ${isSearchOpen ? "translate-x-0" : "-translate-x-full"}`}>
-                <button onClick={() => setIsSearchOpen(false)} className={`absolute top-2 p-2 rounded-md text-white focus:outline-2 focus:outline-none focus:ring ${isSearchOpen ? "right-[-45px]" : "right-0 focus:ring-0"}`}>
+                <button onClick={() => setIsSearchOpen(false)} className={`absolute top-2 p-2 rounded-md text-white focus:outline-none focus:ring ${isSearchOpen ? "right-[-45px]" : "right-0 focus:ring-0"}`}>
                     <svg
                         className="w-5 h-5"
                         xmlns="http://www.w3.org/2000/svg"
