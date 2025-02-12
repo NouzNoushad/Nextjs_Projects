@@ -248,6 +248,10 @@ video {
     color: var(--color-primary-darker)
 }
 
+.text-primary {
+    color: var(--color-primary)
+}
+
 .hover\:text-primary-100:hover {
     color: var(--color-primary-100)
 }
@@ -266,6 +270,10 @@ video {
 
 .hover\:text-primary-darker:hover {
     color: var(--color-primary-darker)
+}
+
+.hover\:text-primary:hover {
+    color: var(--color-primary)
 }
 
 .truncate {
@@ -345,4 +353,16 @@ video {
 
 .dark .hover\:text-light:hover {
     color: var(--light);
+}
+
+* {
+    --tw-ring-color: rgba(59, 130, 246, 0.5);
+}
+
+.focus\:ring-primary-dark:focus {
+    --tw-ring-color: var(--color-primary-dark);
+}
+
+.focus\:bg-primary-100:focus {
+    background-color: var(--color-primary-100);
 }

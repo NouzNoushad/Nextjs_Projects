@@ -266,7 +266,7 @@ export default function Sidebar() {
                     </div>
                 </nav>
                 <div className="flex-shrink-0 px-2 py-4 space-y-2">
-                    <button className='bg-primary rounded-md transition-colors duration-200 hover:bg-primary-darker px-4 py-2 text-sm text-white flex items-center justify-center w-full'>
+                    <button className='bg-primary rounded-md transition-colors duration-200 hover:bg-primary-darker px-4 py-2 text-sm text-white flex items-center justify-center w-full focus:outline-none focus:ring focus:ring-primary-dark focus:ring-offset-1 focus:ring-offset-white dark:focus:ring-offset-dark'>
                         <span>
                             <svg
                                 className="w-4 h-4 mr-2"
