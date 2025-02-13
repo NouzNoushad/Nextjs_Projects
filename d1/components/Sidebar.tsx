@@ -1,13 +1,37 @@
-import React from 'react'
+'use client'
+
+import React, { useState } from 'react'
 
 export default function Sidebar() {
+    const [isDashboardsOpen, setIsDashboardsOpen] = useState(true)
+    const [isComponentsOpen, setIsComponentsOpen] = useState(false)
+    const [isPagesOpen, setIsPagesOpen] = useState(false)
+    const [isAuthenticationOpen, setIsAuthenticationOpen] = useState(false)
+    const [isLayoutsOpen, setIsLayoutsOpen] = useState(false)
+
+    const handleDashboardChange = () => {
+        setIsDashboardsOpen(!isDashboardsOpen)
+    }
+    const handleComponentChange = () => {
+        setIsComponentsOpen(!isComponentsOpen)
+    }
+    const handlePagesChange = () => {
+        setIsPagesOpen(!isPagesOpen)
+    }
+    const handleAuthenticationChange = () => {
+        setIsAuthenticationOpen(!isAuthenticationOpen)
+    }
+    const handleLayoutsChange = () => {
+        setIsLayoutsOpen(!isLayoutsOpen)
+    }
+
     return (
         <aside className='flex-shrink-0 bg-white w-64 border-r hidden md:block dark:border-primary-darker dark:bg-darker'>
             <div className="flex flex-col h-full">
-                <nav className="flex-1 px-2 py-4 overflow-y-hidden hover:overflow-y-auto">
+                <nav className="flex-1 px-2 py-4 overflow-y-hidden hover:overflow-y-auto space-y-2">
                     {/* Dashboards */}
                     <div>
-                        <button className='w-full flex flex-row items-center bg-primary-100 text-gray-500 rounded-lg p-2 focus:outline-none focus:ring-0 dark:text-light dark:bg-primary'>
+                        <button onClick={handleDashboardChange} className={`w-full flex flex-row items-center hover:bg-primary-100 text-gray-500 rounded-lg p-2 focus:outline-none focus:ring-0 dark:text-light dark:bg-primary ${isDashboardsOpen ? "bg-primary-100" : "bg-transparent"}`}>
                             <span>
                                 <svg
                                     className="w-5 h-5"
@@ -29,7 +53,7 @@ export default function Sidebar() {
                             </span>
                             <span className='ml-auto'>
                                 <svg
-                                    className={`w-4 h-4 transition-transform transform`}
+                                    className={`w-4 h-4 transition-transform transform ${isDashboardsOpen ? "rotate-180" : "rotate-0"}`}
                                     xmlns="http://www.w3.org/2000/svg"
                                     fill="none"
                                     viewBox="0 0 24 24"
@@ -40,7 +64,7 @@ export default function Sidebar() {
                             </span>
                         </button>
                         {/* SubNav */}
-                        <div className="mt-2 px-7">
+                        <div className={`mt-2 space-y-2 px-7 ${isDashboardsOpen ? "block" : "hidden"}`}>
                             <a href="#" className='block p-2 text-sm text-gray-700 transition-colors duration-200 hover:text-gray-700 dark:text-light'>
                                 Default
                             </a>
@@ -54,7 +78,7 @@ export default function Sidebar() {
                     </div>
                     {/* Components */}
                     <div>
-                        <button className='w-full flex flex-row items-center bg-primary-100 text-gray-500 rounded-lg p-2 focus:outline-none focus:ring-0 dark:text-light dark:bg-primary'>
+                        <button onClick={handleComponentChange} className={`w-full flex flex-row items-center hover:bg-primary-100 text-gray-500 rounded-lg p-2 focus:outline-none focus:ring-0 dark:text-light dark:bg-primary ${isComponentsOpen ? "bg-primary-100" : "bg-transparent"}`}>
                             <span>
                                 <svg
                                     className="w-5 h-5"
@@ -76,7 +100,7 @@ export default function Sidebar() {
                             </span>
                             <span className='ml-auto'>
                                 <svg
-                                    className={`w-4 h-4 transition-transform transform`}
+                                    className={`w-4 h-4 transition-transform transform ${isComponentsOpen ? "rotate-180" : "rotate-0"}`}
                                     xmlns="http://www.w3.org/2000/svg"
                                     fill="none"
                                     viewBox="0 0 24 24"
@@ -87,7 +111,7 @@ export default function Sidebar() {
                             </span>
                         </button>
                         {/* SubNav */}
-                        <div className="mt-2 px-7">
+                        <div className={`mt-2 space-y-2 px-7 ${isComponentsOpen ? "block" : "hidden"}`}>
                             <a href="#" className='block p-2 text-sm text-gray-500 transition-colors duration-200 hover:text-gray-700 dark:hover:text-light'>
                                 Alerts
                             </a>
@@ -113,7 +137,7 @@ export default function Sidebar() {
                     </div>
                     {/* Pages */}
                     <div>
-                        <button className='w-full flex flex-row items-center bg-primary-100 text-gray-500 rounded-lg p-2 focus:outline-none focus:ring-0 dark:text-light dark:bg-primary'>
+                        <button onClick={handlePagesChange} className={`w-full flex flex-row items-center hover:bg-primary-100 text-gray-500 rounded-lg p-2 focus:outline-none focus:ring-0 dark:text-light dark:bg-primary ${isPagesOpen ? "bg-primary-100" : "bg-transparent"}`}>
                             <span>
                                 <svg
                                     className="w-5 h-5"
@@ -135,7 +159,7 @@ export default function Sidebar() {
                             </span>
                             <span className='ml-auto'>
                                 <svg
-                                    className={`w-4 h-4 transition-transform transform`}
+                                    className={`w-4 h-4 transition-transform transform ${isPagesOpen ? "rotate-180" : "rotate-0"}`}
                                     xmlns="http://www.w3.org/2000/svg"
                                     fill="none"
                                     viewBox="0 0 24 24"
@@ -146,7 +170,7 @@ export default function Sidebar() {
                             </span>
                         </button>
                         {/* SubNav */}
-                        <div className="mt-2 px-7">
+                        <div className={`mt-2 space-y-2 px-7 ${isPagesOpen ? "block" : "hidden"}`}>
                             <a href="#" className='block p-2 text-sm text-gray-500 transition-colors duration-200 hover:text-gray-700 dark:hover:text-light'>
                                 Blank
                             </a>
@@ -169,7 +193,7 @@ export default function Sidebar() {
                     </div>
                     {/* Authentication */}
                     <div>
-                        <button className='w-full flex flex-row items-center bg-primary-100 text-gray-500 rounded-lg p-2 focus:outline-none focus:ring-0 dark:text-light dark:bg-primary'>
+                        <button onClick={handleAuthenticationChange} className={`w-full flex flex-row items-center hover:bg-primary-100 text-gray-500 rounded-lg p-2 focus:outline-none focus:ring-0 dark:text-light dark:bg-primary ${isAuthenticationOpen ? "bg-primary-100" : "bg-transparent"}`}>
                             <span>
                                 <svg
                                     className="w-5 h-5"
@@ -191,7 +215,7 @@ export default function Sidebar() {
                             </span>
                             <span className='ml-auto'>
                                 <svg
-                                    className={`w-4 h-4 transition-transform transform`}
+                                    className={`w-4 h-4 transition-transform transform ${isAuthenticationOpen ? "rotate-180" : "rotate-0"}`}
                                     xmlns="http://www.w3.org/2000/svg"
                                     fill="none"
                                     viewBox="0 0 24 24"
@@ -202,11 +226,11 @@ export default function Sidebar() {
                             </span>
                         </button>
                         {/* SubNav */}
-                        <div className="mt-2 px-7">
-                            <a href="#" className='block p-2 text-sm text-gray-500 transition-colors duration-200 hover:text-gray-700 dark:hover:text-light'>
+                        <div className={`mt-2 space-y-2 px-7 ${isAuthenticationOpen ? "block" : "hidden"}`}>
+                            <a href={`auth/register`} className='block p-2 text-sm text-gray-500 transition-colors duration-200 hover:text-gray-700 dark:hover:text-light'>
                                 Register
                             </a>
-                            <a href="#" className='block p-2 text-sm text-gray-500 transition-colors duration-200 hover:text-gray-700 dark:hover:text-light'>
+                            <a href={`auth/login`} className='block p-2 text-sm text-gray-500 transition-colors duration-200 hover:text-gray-700 dark:hover:text-light'>
                                 Login
                             </a>
                             <a href="#" className='block p-2 text-sm text-gray-500 transition-colors duration-200 hover:text-gray-700 dark:hover:text-light'>
@@ -219,7 +243,7 @@ export default function Sidebar() {
                     </div>
                     {/* Layouts */}
                     <div>
-                        <button className='w-full flex flex-row items-center bg-primary-100 text-gray-500 rounded-lg p-2 focus:outline-none focus:ring-0 dark:text-light dark:bg-primary'>
+                        <button onClick={handleLayoutsChange} className={`w-full flex flex-row items-center hover:bg-primary-100 text-gray-500 rounded-lg p-2 focus:outline-none focus:ring-0 dark:text-light dark:bg-primary ${isLayoutsOpen ? "bg-primary-100" : "bg-transparent"}`}>
                             <span>
                                 <svg
                                     className="w-5 h-5"
@@ -241,7 +265,7 @@ export default function Sidebar() {
                             </span>
                             <span className='ml-auto'>
                                 <svg
-                                    className={`w-4 h-4 transition-transform transform`}
+                                    className={`w-4 h-4 transition-transform transform ${isLayoutsOpen ? "rotate-180" : "rotate-0"}`}
                                     xmlns="http://www.w3.org/2000/svg"
                                     fill="none"
                                     viewBox="0 0 24 24"
@@ -252,7 +276,7 @@ export default function Sidebar() {
                             </span>
                         </button>
                         {/* SubNav */}
-                        <div className="mt-2 px-7">
+                        <div className={`mt-2 space-y-2 px-7 ${isLayoutsOpen ? "block" : "hidden"}`}>
                             <a href="#" className='block p-2 text-sm text-gray-500 transition-colors duration-200 hover:text-gray-700 dark:hover:text-light'>
                                 Two Column Sidebar
                             </a>

@@ -359,8 +359,28 @@ video {
     --tw-ring-color: rgba(59, 130, 246, 0.5);
 }
 
+.focus\:ring-primary-100:focus {
+    --tw-ring-color: var(--color-primary-100)
+}
+
+.focus\:ring-primary:focus {
+    --tw-ring-color: var(--color-primary)
+}
+
+.focus\:ring-primary-light:focus {
+    --tw-ring-color: var(--color-primary-light)
+}
+
+.focus\:ring-primary-lighter:focus {
+    --tw-ring-color: var(--color-primary-lighter)
+}
+
 .focus\:ring-primary-dark:focus {
     --tw-ring-color: var(--color-primary-dark);
+}
+
+.focus\:ring-primary-darker:focus {
+    --tw-ring-color: var(--color-primary-darker)
 }
 
 .focus\:bg-primary-100:focus {
