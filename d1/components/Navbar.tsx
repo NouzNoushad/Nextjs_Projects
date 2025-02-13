@@ -1,12 +1,19 @@
-import React from 'react'
+'use client'
+
+import React, { useState } from 'react'
 import NavButtons from './NavButtons'
+import MobileMenu from './MobileMenu'
 
 export default function Navbar() {
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+
+    const handleMobileMenuOpen = () => setIsMobileMenuOpen(!isMobileMenuOpen)
+
     return (
         <header className='relative bg-white'>
             <div className="flex items-center justify-between p-2 border-b">
                 {/* Mobile menu button */}
-                <button className='p-1 bg-primary-50 rounded-md transition-colors duration-200 hover:text-primary hover:bg-primary-100 focus:outline-none focus:ring md:hidden'>
+                <button onClick={handleMobileMenuOpen} className='p-1 bg-primary-50 rounded-md transition-colors duration-200 text-primary-lighter hover:text-primary hover:bg-primary-100 focus:outline-none focus:ring md:hidden'>
                     <span aria-hidden="true">
                         <svg
                             className="w-8 h-8"
@@ -44,6 +51,8 @@ export default function Navbar() {
                 {/* Nav Section */}
                 <NavButtons />
             </div>
+            {/* Mobile Main menu */}
+            <MobileMenu menuOpen={isMobileMenuOpen} />
         </header>
     )
 }
