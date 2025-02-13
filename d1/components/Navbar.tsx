@@ -6,13 +6,16 @@ import MobileMenu from './MobileMenu'
 
 export default function Navbar() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+    const [isMobileSubmenuOpen, setIsMobileSubmenuOpen] = useState(false)
 
     const handleMobileMenuOpen = () => setIsMobileMenuOpen(!isMobileMenuOpen)
+
+    const handleMobileSubmenuOpen = () => setIsMobileSubmenuOpen(!isMobileSubmenuOpen)
 
     return (
         <header className='relative bg-white'>
             <div className="flex items-center justify-between p-2 border-b">
-                {/* Mobile menu button */}
+                {/* Mobile Main menu button */}
                 <button onClick={handleMobileMenuOpen} className='p-1 bg-primary-50 rounded-md transition-colors duration-200 text-primary-lighter hover:text-primary hover:bg-primary-100 focus:outline-none focus:ring md:hidden'>
                     <span aria-hidden="true">
                         <svg
@@ -29,8 +32,8 @@ export default function Navbar() {
                 <a href="#" className='inline-block text-2xl font-bold tracking-wider uppercase text-primary-dark'>
                     Dashboard
                 </a>
-                {/* Mobile submenu button */}
-                <button className='p-1 bg-primary-50 rounded-md transition-colors text-primary-lighter duration-200 hover:text-primary hover:bg-primary-100 focus:outline-none focus:ring md:hidden'>
+                {/* Mobile Submenu button */}
+                <button onClick={handleMobileSubmenuOpen} className='p-1 bg-primary-50 rounded-md transition-colors text-primary-lighter duration-200 hover:text-primary hover:bg-primary-100 focus:outline-none focus:ring md:hidden'>
                     <span aria-hidden="true">
                         <svg
                             className="w-8 h-8"
@@ -49,8 +52,14 @@ export default function Navbar() {
                     </span>
                 </button>
                 {/* Nav Section */}
-                <NavButtons />
+                <nav className='hidden space-x-2 md:flex md:items-center'>
+                    <NavButtons />
+                </nav>
             </div>
+            {/* Mobile Sub menu */}
+            <nav className={`absolute top-16 flex items-center justify-between bg-white rounded-md shadow-lg inset-x-4 p-4 space-x-2 md:hidden transition duration-200 ease-in-out transform sm:duration-500 ${isMobileSubmenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-[150px] opacity-0'}`}>
+                <NavButtons />
+            </nav>
             {/* Mobile Main menu */}
             <MobileMenu menuOpen={isMobileMenuOpen} />
         </header>
