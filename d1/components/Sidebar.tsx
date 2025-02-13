@@ -233,10 +233,10 @@ export default function Sidebar() {
                             <a href={`auth/login`} className='block p-2 text-sm text-gray-500 transition-colors duration-200 hover:text-gray-700 dark:hover:text-light'>
                                 Login
                             </a>
-                            <a href="#" className='block p-2 text-sm text-gray-500 transition-colors duration-200 hover:text-gray-700 dark:hover:text-light'>
+                            <a href={`auth/forgot_password`} className='block p-2 text-sm text-gray-500 transition-colors duration-200 hover:text-gray-700 dark:hover:text-light'>
                                 Forgot Password
                             </a>
-                            <a href="#" className='block p-2 text-sm text-gray-500 transition-colors duration-200 hover:text-gray-700 dark:hover:text-light'>
+                            <a href={`auth/reset_password`} className='block p-2 text-sm text-gray-500 transition-colors duration-200 hover:text-gray-700 dark:hover:text-light'>
                                 Reset Password
                             </a>
                         </div>

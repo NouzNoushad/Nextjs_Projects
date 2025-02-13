@@ -11,10 +11,10 @@ export default function RegisterUser() {
                         <h1 className='text-xl font-semibold text-center'>Register</h1>
                         <form action="#" className='space-y-6'>
                             <input type="text" className='w-full px-4 py-3 border rounded-md focus:outline-none focus:ring focus:ring-primary-100' name="username" placeholder='Username' required />
-                            <input type="text" className='w-full px-4 py-3 border rounded-md focus:outline-none focus:ring focus:ring-primary-100' 
+                            <input type="email" className='w-full px-4 py-3 border rounded-md focus:outline-none focus:ring focus:ring-primary-100' 
                             name="email" placeholder='Email address' required />
-                            <input type="text" className='w-full px-4 py-3 border rounded-md focus:outline-none focus:ring focus:ring-primary-100' name="password" placeholder='Password' required />
-                            <input type="text" className='w-full px-4 py-3 border rounded-md focus:outline-none focus:ring focus:ring-primary-100'
+                            <input type="password" className='w-full px-4 py-3 border rounded-md focus:outline-none focus:ring focus:ring-primary-100' name="password" placeholder='Password' required />
+                            <input type="password" className='w-full px-4 py-3 border rounded-md focus:outline-none focus:ring focus:ring-primary-100'
                                 name="confirm_password" placeholder='Confirm Password' required />
                             <div className="flex items-center justify-between">
                                 {/* Remember toggle */}
