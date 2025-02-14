@@ -1,6 +1,7 @@
 :root {
     --primary-color: #202B46;
     --primary-light: #3E97FF;
+    --primary-light-dark: #3C86FF;
     --secondary-color: #F9F9F9;
 }
 
@@ -184,6 +185,14 @@ video {
     background-color: var(--primary-light);
 }
 
+.bg-primary-light-dark {
+    background-color: var(--primary-light-dark);
+}
+
+.text-primary-light-dark {
+    color: var(--primary-light-dark);
+}
+
 .text-primary-light {
     color: var(--primary-light);
 }
@@ -206,6 +215,26 @@ video {
 
 .hover\:bg-primary-light:hover {
     background-color: var(--primary-light);
+}
+
+.hover\:bg-primary-light-dark:hover {
+    color: var(--primary-light-dark);
+}
+
+.hover\:text-primary-light-dark:hover {
+    color: var(--primary-light);
+}
+
+.hover\:text-primary-light:hover {
+    color: var(--primary-light);
+}
+
+.hover\:text-primary:hover {
+    color: var(--primary-color);
+}
+
+.hover\:bg-primary-light:hover {
+    color: var(--secondary-color)
 }
 
 .focus\:bg-primary-light:focus {
