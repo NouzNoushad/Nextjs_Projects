@@ -195,3 +195,19 @@ video {
 .text-secondary {
     color: var(--secondary-color)
 }
+
+.hover\:bg-primary:hover {
+    background-color: var(--primary-color);
+}
+
+.hover\:bg-secondary:hover {
+    background-color: var(--secondary-color);
+}
+
+.hover\:bg-primary-light:hover {
+    background-color: var(--primary-light);
+}
+
+.focus\:bg-primary-light:focus {
+    background-color: var(--primary-light);
+}
