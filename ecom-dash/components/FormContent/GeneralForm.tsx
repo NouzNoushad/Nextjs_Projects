@@ -1,14 +1,12 @@
 'use client'
 
-import { DiscountType } from '@/utils/Constants'
+import { DiscountType } from '@/lib/Constants'
 import MDEditor from '@uiw/react-md-editor'
 import React, { useState } from 'react'
 
 export default function GeneralForm() {
     const [description, setDescription] = useState("")
     const [discountType, setDiscountType] = useState<DiscountType>(DiscountType.NoDiscount)
-
-    const handleDiscountType = (discountType: DiscountType) => setDiscountType(discountType)
 
     return (
         <div className='my-5 space-y-5'>
@@ -70,7 +68,7 @@ export default function GeneralForm() {
                         </div>
                         <div className="grid md:grid-cols-3 grid-cols-1 space-x-4">
                             {/* No Discount */}
-                            <button type='button' onClick={() => handleDiscountType(DiscountType.NoDiscount)} className={` border border-dashed px-6 py-5 rounded-md focus:outline-none focus:ring-0 ${discountType == DiscountType.NoDiscount ? "bg-blue-50 border-blue-500" : "bg-transparent border-gray-200"}`}>
+                            <button type='button' onClick={() => setDiscountType(DiscountType.NoDiscount)} className={` border border-dashed px-6 py-5 rounded-md focus:outline-none focus:ring-0 ${discountType == DiscountType.NoDiscount ? "bg-blue-50 border-blue-500" : "bg-transparent border-gray-200"}`}>
                                 <div className="flex items-center space-x-2">
                                     <span>
                                         <input type="radio" checked={discountType == DiscountType.NoDiscount} readOnly className='size-4' />
@@ -81,7 +79,7 @@ export default function GeneralForm() {
                                 </div>
                             </button>
                             {/* Percentage */}
-                            <button type='button' onClick={() => handleDiscountType(DiscountType.Percentage)} className={` border border-dashed px-6 py-5 rounded-md focus:outline-none focus:ring-0 ${discountType == DiscountType.Percentage ? "bg-blue-50 border-blue-500" : "bg-transparent border-gray-200"}`}>
+                            <button type='button' onClick={() => setDiscountType(DiscountType.Percentage)} className={` border border-dashed px-6 py-5 rounded-md focus:outline-none focus:ring-0 ${discountType == DiscountType.Percentage ? "bg-blue-50 border-blue-500" : "bg-transparent border-gray-200"}`}>
                                 <div className="flex items-center space-x-2">
                                     <span>
                                         <input type="radio" checked={discountType == DiscountType.Percentage} readOnly className='size-4' />
@@ -92,7 +90,7 @@ export default function GeneralForm() {
                                 </div>
                             </button>
                             {/* Fixed Price */}
-                            <button type='button' onClick={() => handleDiscountType(DiscountType.FixedPrice)} className={` border border-dashed px-6 py-5 rounded-md focus:outline-none focus:ring-0 ${discountType == DiscountType.FixedPrice ? "bg-blue-50 border-blue-500" : "bg-transparent border-gray-200"}`}>
+                            <button type='button' onClick={() => setDiscountType(DiscountType.FixedPrice)} className={` border border-dashed px-6 py-5 rounded-md focus:outline-none focus:ring-0 ${discountType == DiscountType.FixedPrice ? "bg-blue-50 border-blue-500" : "bg-transparent border-gray-200"}`}>
                                 <div className="flex items-center space-x-2">
                                     <span>
                                         <input type="radio" checked={discountType == DiscountType.FixedPrice} readOnly className='size-4' />
