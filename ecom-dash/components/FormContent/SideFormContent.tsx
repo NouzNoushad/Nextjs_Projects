@@ -53,7 +53,7 @@ export default function SideFormContent() {
                     </select>
                     <p className='mt-1 text-[12.5px] text-gray-400'>Add product to a category.</p>
                 </div>
-                <div className="px-3 py-2 bg-blue-100 rounded-md inline-block">
+                <div className="px-3 py-2 bg-blue-50 rounded-md inline-block">
                     <div className="flex items-center space-x-1">
                         <span>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-4 text-primary-light-dark">

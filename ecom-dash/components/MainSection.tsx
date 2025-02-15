@@ -1,7 +1,7 @@
 import React from 'react'
 import MainHeader from './MainHeader'
-import SideFormContent from './SideFormContent'
-import MainFormContent from './MainFormContent'
+import SideFormContent from './FormContent/SideFormContent'
+import MainFormContent from './FormContent/MainFormContent'
 
 export default function MainSection() {
     return (
@@ -14,7 +14,7 @@ export default function MainSection() {
                     <h1 className='text-lg font-semibold'>Product Form</h1>
                     <p className='text-gray-400 text-xs font-medium'>Catalog</p>
                 </div>
-                <div className="flex-1 mt-6 grid md:grid-cols-3 grid-cols-1 gap-4">
+                <div className="flex-1 mt-6 grid md:grid-cols-3 grid-cols-1 gap-6">
                     {/* Side Form Content */}
                     <SideFormContent />
                     {/* Main Form Content */}

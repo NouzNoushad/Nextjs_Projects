@@ -6,7 +6,7 @@ import "../public/css/tailwind.css"
 const inter = Inter({
     variable: "--font-inter",
     subsets: ["latin"],
-    weight: ['200', '300', '400', '600', '900']
+    weight: ['200', '300', '400', '500', '600', '900']
 });
 
 export const metadata: Metadata = {
