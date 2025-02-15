@@ -39,10 +39,10 @@ export default function CatalogLink() {
             </button>
             {/* Sub Nav */}
             <div className={`mt-1 px-4 space-y-1 transition-transform ${showCatalog ? "overflow-y-auto" : "hidden overflow-y-hidden"}`}>
-                <a href="#" className='nav-link group group-transition-colors group-duration-300 focus:bg-primary-light'>
-                    <span className='block w-1 h-1 bg-gray-400 group-focus:bg-white group-hover:bg-white rounded-full'></span>
-                    <span className='text-[13px] font-normal'>Products</span>
-                </a>
+                <button onClick={() => handleCatalogChange(CatalogType.Products, "/products")} className={`nav-link group group-transition-colors group-duration-300 focus:outline-none focus:ring-0 w-full ${selectedCatalog == CatalogType.Products ? "bg-primary-light" : "bg-transparent"}`}>
+                    <span className={`block w-1 h-1 group-hover:bg-white rounded-full ${selectedCatalog == CatalogType.Products ? "bg-white" : "bg-gray-400"}`}></span>
+                    <span className={`text-[13px] font-normal group-hover:text-white ${selectedCatalog == CatalogType.Products ? "text-white" : "text-gray-400"}`}>Products</span>
+                </button>
                 <a href="#" className='nav-link group group-transition-colors group-duration-300 focus:bg-primary-light'>
                     <span className='block w-1 h-1 bg-gray-400 group-focus:bg-white group-hover:bg-white rounded-full'></span>
                     <span className='text-[13px] font-normal'>Categories</span>

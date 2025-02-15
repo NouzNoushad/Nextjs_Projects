@@ -9,7 +9,7 @@ export default function DashboardLayout({ children }: Readonly<{ children: React
             {/* Sidebar */}
             <Sidebar />
             {/* MainSection */}
-            <div className="flex-1 overflow-x-hidden overflow-y-auto">
+            <div className="flex-1 h-full overflow-x-hidden overflow-y-auto">
                 <MainHeader />
                 {children}
                 <MainFooter />
