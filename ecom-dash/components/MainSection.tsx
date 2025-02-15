@@ -2,6 +2,7 @@ import React from 'react'
 import MainHeader from './MainHeader'
 import SideFormContent from './FormContent/SideFormContent'
 import MainFormContent from './FormContent/MainFormContent'
+import MainFooter from './MainFooter'
 
 export default function MainSection() {
     return (
@@ -12,7 +13,7 @@ export default function MainSection() {
             <main className='px-8 py-5 flex flex-col'>
                 <div className="flex-shrink-0">
                     <h1 className='text-lg font-semibold'>Product Form</h1>
-                    <p className='text-gray-400 text-xs font-medium'>Catalog</p>
+                    <p className='text-gray-400 text-xs font-medium'>Home - Catalog</p>
                 </div>
                 <div className="flex-1 mt-6 grid md:grid-cols-3 grid-cols-1 gap-6">
                     {/* Side Form Content */}
@@ -21,6 +22,8 @@ export default function MainSection() {
                     <MainFormContent />
                 </div>
             </main>
+            {/* Main Footer */}
+            <MainFooter />
         </div>
     )
 }
