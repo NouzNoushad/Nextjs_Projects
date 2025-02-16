@@ -1,11 +1,22 @@
 'use client'
 
+import { useGlobalState } from '@/context/GlobalContext'
+import { LinksType } from '@/lib/Constants'
+import { useRouter } from 'next/navigation'
 import React, { useState } from 'react'
 
 export default function SalesLink() {
     const [showSales, setShowSales] = useState(false)
+    const { selectedLink, setSelectedLink } = useGlobalState()
 
     const handleSales = () => setShowSales(!showSales)
+
+    const router = useRouter()
+
+    const handleCatalogChange = (sales: LinksType, path: string) => {
+        setSelectedLink(sales)
+        router.push(path)
+    }
 
     return (
         <div>
@@ -25,10 +36,11 @@ export default function SalesLink() {
             </button>
             {/* Sub Nav */}
             <div className={`mt-1 px-4 space-y-1 transition-transform ${showSales ? "overflow-y-auto" : "hidden overflow-y-hidden"}`}>
-                <a href="#" className='nav-link group group-transition-colors group-duration-300 focus:bg-primary-light'>
-                    <span className='block w-1 h-1 bg-gray-400 group-focus:bg-white group-hover:bg-white rounded-full'></span>
-                    <span className='text-[13px] font-normal'>Orders Listing</span>
-                </a>
+                {/* Orders Listing */}
+                <button onClick={() => handleCatalogChange(LinksType.OrdersListing, "/orders/order-listing")} className={`nav-link group group-transition-colors group-duration-300 focus:outline-none focus:ring-0 w-full ${selectedLink == LinksType.OrdersListing ? "bg-primary-light" : "bg-transparent"}`}>
+                    <span className={`block w-1 h-1 group-hover:bg-white rounded-full ${selectedLink == LinksType.OrdersListing ? "bg-white" : "bg-gray-400"}`}></span>
+                    <span className={`text-[13px] font-normal group-hover:text-white ${selectedLink == LinksType.OrdersListing ? "text-white" : "text-gray-400"}`}>Orders Listing</span>
+                </button>
                 <a href="#" className='nav-link group group-transition-colors group-duration-300 focus:bg-primary-light'>
                     <span className='block w-1 h-1 bg-gray-400 group-focus:bg-white group-hover:bg-white rounded-full'></span>
                     <span className='text-[13px] font-normal'>Orders Details</span>

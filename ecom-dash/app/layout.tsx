@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import "../public/css/tailwind.css"
+import { GlobalProvider } from "@/context/GlobalContext";
 
 const inter = Inter({
     variable: "--font-inter",
@@ -24,7 +25,9 @@ export default function RootLayout({
             <body
                 className={`${inter.className} antialiased`}
             >
-                {children}
+                <GlobalProvider>
+                    {children}
+                </GlobalProvider>
             </body>
         </html>
     );
