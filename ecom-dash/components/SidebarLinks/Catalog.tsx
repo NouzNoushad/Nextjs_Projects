@@ -2,11 +2,11 @@
 
 import { CatalogType } from '@/lib/Constants'
 import { useRouter } from 'next/navigation'
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 
 export default function CatalogLink() {
     const [showCatalog, setShowCatalog] = useState(true)
-    const [selectedCatalog, setSelectedCatalog] = useState<CatalogType>(CatalogType.AddProduct)
+    const [selectedCatalog, setSelectedCatalog] = useState<CatalogType>(CatalogType.Products)
 
     const router = useRouter()
 
@@ -16,10 +16,6 @@ export default function CatalogLink() {
         setSelectedCatalog(catalog)
         router.push(path)
     }
-
-    useEffect(() => {
-        router.push("/add-product")
-    }, [router])
 
     return (
         <div>
@@ -39,7 +35,7 @@ export default function CatalogLink() {
             </button>
             {/* Sub Nav */}
             <div className={`mt-1 px-4 space-y-1 transition-transform ${showCatalog ? "overflow-y-auto" : "hidden overflow-y-hidden"}`}>
-                <button onClick={() => handleCatalogChange(CatalogType.Products, "/products")} className={`nav-link group group-transition-colors group-duration-300 focus:outline-none focus:ring-0 w-full ${selectedCatalog == CatalogType.Products ? "bg-primary-light" : "bg-transparent"}`}>
+                <button onClick={() => handleCatalogChange(CatalogType.Products, "/")} className={`nav-link group group-transition-colors group-duration-300 focus:outline-none focus:ring-0 w-full ${selectedCatalog == CatalogType.Products ? "bg-primary-light" : "bg-transparent"}`}>
                     <span className={`block w-1 h-1 group-hover:bg-white rounded-full ${selectedCatalog == CatalogType.Products ? "bg-white" : "bg-gray-400"}`}></span>
                     <span className={`text-[13px] font-normal group-hover:text-white ${selectedCatalog == CatalogType.Products ? "text-white" : "text-gray-400"}`}>Products</span>
                 </button>
