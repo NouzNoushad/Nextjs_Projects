@@ -45,10 +45,11 @@ export default function SalesLink() {
                     <span className='block w-1 h-1 bg-gray-400 group-focus:bg-white group-hover:bg-white rounded-full'></span>
                     <span className='text-[13px] font-normal'>Orders Details</span>
                 </a>
-                <a href="#" className='nav-link group group-transition-colors group-duration-300 focus:bg-primary-light'>
-                    <span className='block w-1 h-1 bg-gray-400 group-focus:bg-white group-hover:bg-white rounded-full'></span>
-                    <span className='text-[13px] font-normal'>Add Order</span>
-                </a>
+                {/* Add Order */}
+                <button onClick={() => handleCatalogChange(LinksType.AddOrder, "/orders/add-order")} className={`nav-link group group-transition-colors group-duration-300 focus:outline-none focus:ring-0 w-full ${selectedLink == LinksType.AddOrder ? "bg-primary-light" : "bg-transparent"}`}>
+                    <span className={`block w-1 h-1 group-hover:bg-white rounded-full ${selectedLink == LinksType.AddOrder ? "bg-white" : "bg-gray-400"}`}></span>
+                    <span className={`text-[13px] font-normal group-hover:text-white ${selectedLink == LinksType.AddOrder ? "text-white" : "text-gray-400"}`}>Add Order</span>
+                </button>
                 <a href="#" className='nav-link group group-transition-colors group-duration-300 focus:bg-primary-light'>
                     <span className='block w-1 h-1 bg-gray-400 group-focus:bg-white group-hover:bg-white rounded-full'></span>
                     <span className='text-[13px] font-normal'>Edit Order</span>

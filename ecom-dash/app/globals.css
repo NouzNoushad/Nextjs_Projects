@@ -26,3 +26,9 @@ body {
         @apply flex items-center space-x-3 text-gray-400 hover:text-white focus:text-white px-2 py-2 rounded-md
     }
 }
+
+@layer utilities {
+    .scrollbar {
+        scrollbar-width: thin;
+    }
+}

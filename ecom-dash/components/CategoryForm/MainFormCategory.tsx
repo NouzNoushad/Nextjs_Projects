@@ -14,7 +14,7 @@ export default function MainFormCategory() {
             <div className='mb-5 space-y-5'>
                 {/* General */}
                 <div className="px-8 py-9 bg-white rounded-md ring-1 ring-gray-100 space-y-5 shadow-[0px_3px_4px_0px_rgba(0,0,0,0.03)]">
-                    <h3 className='text-lg font-semibold'>General</h3>
+                    <h3 className='text-[19px] font-semibold'>General</h3>
                     <div className='space-y-6'>
                         <div className="space-y-2">
                             <h6 className='text-[13.5px] font-medium'>Category Name <span className='text-red-500'>*</span></h6>
@@ -34,7 +34,7 @@ export default function MainFormCategory() {
                 </div>
                 {/* Meta Options */}
                 <div className="px-8 py-9 bg-white rounded-md ring-1 ring-gray-100 space-y-5 shadow-[0px_3px_4px_0px_rgba(0,0,0,0.03)]">
-                    <h3 className='text-lg font-semibold'>Meta Options</h3>
+                    <h3 className='text-[19px] font-semibold'>Meta Options</h3>
                     <div className='space-y-6'>
                         <div className="space-y-2">
                             <h6 className='text-[13.5px] font-medium'>Meta Tag Title</h6>
@@ -59,7 +59,7 @@ export default function MainFormCategory() {
                 </div>
                 {/* Automation */}
                 <div className="px-8 py-9 bg-white rounded-md ring-1 ring-gray-100 space-y-5 shadow-[0px_3px_4px_0px_rgba(0,0,0,0.03)]">
-                    <h3 className='text-lg font-semibold'>Automation</h3>
+                    <h3 className='text-[19px] font-semibold'>Automation</h3>
                     <div className="">
                         <h6 className='text-[13.5px] font-medium mb-4'>Product assignment method</h6>
                         <button onClick={() => setAutomationType(AutomationType.Manual)} className="flex items-center space-x-4 focus:outline-none focus:ring-0">

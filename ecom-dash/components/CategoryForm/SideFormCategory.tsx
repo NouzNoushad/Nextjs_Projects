@@ -5,7 +5,7 @@ export default function SideFormCategory() {
         <div className="col-span-1 space-y-8">
             {/* Thumbnail */}
             <div className="px-8 py-9 bg-white rounded-md ring-1 ring-gray-100 space-y-4 shadow-[0px_3px_4px_0px_rgba(0,0,0,0.03)]">
-                <h3 className='text-lg font-semibold'>Thumbnail</h3>
+                <h3 className='text-[19px] font-semibold'>Thumbnail</h3>
                 <div className="flex items-center justify-center">
                     <div className="relative h-[10rem] w-[10rem]">
                         <div className="h-full w-full bg-white rounded-md shadow-[0_0.5rem_1.5rem_0.5rem_rgba(0,0,0,0.075)]"></div>
@@ -17,7 +17,7 @@ export default function SideFormCategory() {
             {/* Status */}
             <div className="px-8 py-9 bg-white rounded-md ring-1 ring-gray-100 space-y-4 shadow-[0px_3px_4px_0px_rgba(0,0,0,0.03)]">
                 <div className="flex items-center justify-between">
-                    <h3 className='text-lg font-semibold'>Status</h3>
+                    <h3 className='text-[19px] font-semibold'>Status</h3>
                     <div className="h-4 w-4 bg-green-500 rounded-full"></div>
                 </div>
                 <div className="">
@@ -35,7 +35,7 @@ export default function SideFormCategory() {
             </div>
             {/* Product Template */}
             <div className="px-8 py-9 bg-white rounded-md ring-1 ring-gray-100 space-y-5 shadow-[0px_3px_4px_0px_rgba(0,0,0,0.03)]">
-                <h3 className='text-lg font-semibold'>Store Template</h3>
+                <h3 className='text-[19px] font-semibold'>Store Template</h3>
                 <div className="space-y-2">
                     <h6 className='text-[13.5px] font-medium'>Select a store template</h6>
                     <select name="" id="" className='w-full px-2 py-3 rounded-md border focus:outline-none focus:ring-0 text-sm'>

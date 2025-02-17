@@ -10,7 +10,7 @@ export default function AdvancedForm() {
         <div className='my-5 space-y-5'>
             {/* Inventory */}
             <div className="px-8 py-9 bg-white rounded-md ring-1 ring-gray-100 space-y-5 shadow-[0px_3px_4px_0px_rgba(0,0,0,0.03)]">
-                <h3 className='text-lg font-semibold'>Inventory</h3>
+                <h3 className='text-[19px] font-semibold'>Inventory</h3>
                 <div className='space-y-6'>
                     <div className="space-y-2">
                         <h6 className='text-[13.5px] font-medium'>SKU <span className='text-red-500'>*</span></h6>
@@ -46,7 +46,7 @@ export default function AdvancedForm() {
             </div>
             {/* Variations */}
             <div className="px-8 py-9 bg-white rounded-md ring-1 ring-gray-100 space-y-5 shadow-[0px_3px_4px_0px_rgba(0,0,0,0.03)]">
-                <h3 className='text-lg font-semibold'>Variations</h3>
+                <h3 className='text-[19px] font-semibold'>Variations</h3>
                 <div className="space-y-2">
                     <h6 className='text-[13.5px] font-medium'>Add Product Variations </h6>
                     <div className="flex items-center space-x-3">
@@ -78,7 +78,7 @@ export default function AdvancedForm() {
             </div>
             {/* Shipping */}
             <div className="px-8 py-9 bg-white rounded-md ring-1 ring-gray-100 space-y-5 shadow-[0px_3px_4px_0px_rgba(0,0,0,0.03)]">
-                <h3 className='text-lg font-semibold'>Shipping</h3>
+                <h3 className='text-[19px] font-semibold'>Shipping</h3>
                 <div className="">
                     <div className="flex items-center space-x-2">
                         <input type="checkbox" className='h-5 w-5 rounded-md bg-blue-500 border-none' />
@@ -89,7 +89,7 @@ export default function AdvancedForm() {
             </div>
             {/* Meta Options */}
             <div className="px-8 py-9 bg-white rounded-md ring-1 ring-gray-100 space-y-5 shadow-[0px_3px_4px_0px_rgba(0,0,0,0.03)]">
-                <h3 className='text-lg font-semibold'>Meta Options</h3>
+                <h3 className='text-[19px] font-semibold'>Meta Options</h3>
                 <div className='space-y-6'>
                     <div className="space-y-2">
                         <h6 className='text-[13.5px] font-medium'>Meta Tag Title</h6>

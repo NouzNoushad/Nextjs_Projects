@@ -12,7 +12,7 @@ export default function GeneralForm() {
         <div className='my-5 space-y-5'>
             {/* General */}
             <div className="px-8 py-9 bg-white rounded-md ring-1 ring-gray-100 space-y-5 shadow-[0px_3px_4px_0px_rgba(0,0,0,0.03)]">
-                <h3 className='text-lg font-semibold'>General</h3>
+                <h3 className='text-[19px] font-semibold'>General</h3>
                 <div className='space-y-6'>
                     <div className="space-y-2">
                         <h6 className='text-[13.5px] font-medium'>Product Name <span className='text-red-500'>*</span></h6>
@@ -32,7 +32,7 @@ export default function GeneralForm() {
             </div>
             {/* Media */}
             <div className="px-8 py-9 bg-white rounded-md ring-1 ring-gray-100 space-y-5 shadow-[0px_3px_4px_0px_rgba(0,0,0,0.03)]">
-                <h3 className='text-lg font-semibold'>Media</h3>
+                <h3 className='text-[19px] font-semibold'>Media</h3>
                 <div className="">
                     <div className="bg-blue-50 border border-dashed border-blue-500 px-6 py-4 rounded-md">
                         <div className="flex items-center space-x-4">
@@ -52,7 +52,7 @@ export default function GeneralForm() {
             </div>
             {/* Pricing */}
             <div className="px-8 py-9 bg-white rounded-md ring-1 ring-gray-100 space-y-5 shadow-[0px_3px_4px_0px_rgba(0,0,0,0.03)]">
-                <h3 className='text-lg font-semibold'>Pricing</h3>
+                <h3 className='text-[19px] font-semibold'>Pricing</h3>
                 <div className='space-y-6'>
                     {/* Base Price */}
                     <div className="space-y-2">
