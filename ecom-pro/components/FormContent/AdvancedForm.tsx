@@ -115,7 +115,7 @@ export default function AdvancedForm() {
             {/* Buttons */}
             <div className="pt-2 flex items-center justify-end space-x-4">
                 <button className='bg-transparent px-5 py-3 rounded-md text-sm font-medium focus:outline-none foucs:ring-0 transition-colors hover:bg-gray-200'>Cancel</button>
-                <button className='bg-primary-light text-white px-5 py-3 rounded-md text-sm font-medium focus:outline-none foucs:ring-0'>Save Changes</button>
+                <button className='bg-green-500 text-white px-5 py-3 rounded-md text-sm font-medium focus:outline-none foucs:ring-0 transition-colors hover:bg-green-600'>Save Changes</button>
             </div>
         </div>
     )

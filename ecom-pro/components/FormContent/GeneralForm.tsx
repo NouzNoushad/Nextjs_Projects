@@ -34,10 +34,10 @@ export default function GeneralForm() {
             <div className="px-8 py-9 bg-white rounded-md ring-1 ring-gray-100 space-y-5 shadow-[0px_3px_4px_0px_rgba(0,0,0,0.03)]">
                 <h3 className='text-[19px] font-semibold'>Media</h3>
                 <div className="">
-                    <div className="bg-blue-50 border border-dashed border-green-500 px-6 py-4 rounded-md">
+                    <div className="bg-green-50 border border-dashed border-green-500 px-6 py-4 rounded-md">
                         <div className="flex items-center space-x-4">
-                            <div className='bg-blue-200 p-2 rounded-md'>
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-6 text-primary-light">
+                            <div className='bg-green-200 p-2 rounded-md'>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-6 text-green-500">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5m-13.5-9L12 3m0 0 4.5 4.5M12 3v13.5" />
                                 </svg>
                             </div>
@@ -68,7 +68,7 @@ export default function GeneralForm() {
                         </div>
                         <div className="grid md:grid-cols-3 grid-cols-1 space-x-4">
                             {/* No Discount */}
-                            <button type='button' onClick={() => setDiscountType(DiscountType.NoDiscount)} className={` border border-dashed px-6 py-5 rounded-md focus:outline-none focus:ring-0 ${discountType == DiscountType.NoDiscount ? "bg-blue-50 border-green-500" : "bg-transparent border-gray-200"}`}>
+                            <button type='button' onClick={() => setDiscountType(DiscountType.NoDiscount)} className={` border border-dashed px-6 py-5 rounded-md focus:outline-none focus:ring-0 ${discountType == DiscountType.NoDiscount ? "bg-green-50 border-green-500" : "bg-transparent border-gray-200"}`}>
                                 <div className="flex items-center space-x-2">
                                     <span>
                                         <input type="radio" checked={discountType == DiscountType.NoDiscount} readOnly className='size-4 accent-transparent' />
@@ -79,7 +79,7 @@ export default function GeneralForm() {
                                 </div>
                             </button>
                             {/* Percentage */}
-                            <button type='button' onClick={() => setDiscountType(DiscountType.Percentage)} className={` border border-dashed px-6 py-5 rounded-md focus:outline-none focus:ring-0 ${discountType == DiscountType.Percentage ? "bg-blue-50 border-green-500" : "bg-transparent border-gray-200"}`}>
+                            <button type='button' onClick={() => setDiscountType(DiscountType.Percentage)} className={` border border-dashed px-6 py-5 rounded-md focus:outline-none focus:ring-0 ${discountType == DiscountType.Percentage ? "bg-green-50 border-green-500" : "bg-transparent border-gray-200"}`}>
                                 <div className="flex items-center space-x-2">
                                     <span>
                                         <input type="radio" checked={discountType == DiscountType.Percentage} readOnly className='size-4 accent-transparent' />
@@ -90,7 +90,7 @@ export default function GeneralForm() {
                                 </div>
                             </button>
                             {/* Fixed Price */}
-                            <button type='button' onClick={() => setDiscountType(DiscountType.FixedPrice)} className={` border border-dashed px-6 py-5 rounded-md focus:outline-none focus:ring-0 ${discountType == DiscountType.FixedPrice ? "bg-blue-50 border-green-500" : "bg-transparent border-gray-200"}`}>
+                            <button type='button' onClick={() => setDiscountType(DiscountType.FixedPrice)} className={` border border-dashed px-6 py-5 rounded-md focus:outline-none focus:ring-0 ${discountType == DiscountType.FixedPrice ? "bg-green-50 border-green-500" : "bg-transparent border-gray-200"}`}>
                                 <div className="flex items-center space-x-2">
                                     <span>
                                         <input type="radio" checked={discountType == DiscountType.FixedPrice} readOnly className='size-4 accent-transparent' />
