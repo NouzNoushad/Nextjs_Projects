@@ -1,10 +1,8 @@
-'use client'
-
 import React from 'react'
 import CatalogLink from './SidebarLinks/Catalog'
-import SalesLink from './SidebarLinks/Sales'
 import CustomersLink from './SidebarLinks/Customers'
 import ReportsLink from './SidebarLinks/Reports'
+import SalesLink from './SidebarLinks/Sales'
 
 export default function SidebarLinks() {
   return (
