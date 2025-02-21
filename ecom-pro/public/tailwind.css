@@ -2,7 +2,7 @@
     --primary-color: #0B333D;
     --primary-light-dark: #22c55e;
     --primary-light: #A4E030;
-    --secondary-color: #f1f1f1;
+    --secondary-color: #f5f5f5;
 }
 
 *,
@@ -239,4 +239,12 @@ video {
 
 .focus\:bg-primary-light:focus {
     background-color: var(--primary-light);
+}
+
+.select-arrow {
+    appearance: none;
+    background-image: url('https://www.svgrepo.com/show/80156/down-arrow.svg');
+    background-size: 10px 10px;
+    background-repeat: no-repeat;
+    background-position: calc(100% - 10px);
 }
