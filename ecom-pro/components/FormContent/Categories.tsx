@@ -1,9 +1,10 @@
 'use client'
 
-import React, { useState } from 'react'
+import { useGlobalStore } from '@/context/GlobalStore'
+import React from 'react'
 
 export default function Categories() {
-    const [selectedCategory, setSelectedCategory] = useState('')
+    const { selectedCategory, setSelectedCategory } = useGlobalStore()
 
     const handleCategoryChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
         setSelectedCategory(e.target.value)

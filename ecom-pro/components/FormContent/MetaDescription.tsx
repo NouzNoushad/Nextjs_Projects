@@ -1,12 +1,14 @@
 'use client'
 
+import { useGlobalStore } from '@/context/GlobalStore'
 import MDEditor from '@uiw/react-md-editor'
-import React, { useState } from 'react'
+import React from 'react'
 
 export default function MetaDescription() {
-    const [tagDescription, setTagDescription] = useState("")
+    const { selectedMetaDescription, setSelectedMetaDescription } = useGlobalStore()
+
     return (
-        <MDEditor value={tagDescription} onChange={(value) => setTagDescription(value as string)} height={150} preview='edit' style={{ borderRadius: 8, overflow: "hidden" }} textareaProps={{
+        <MDEditor value={selectedMetaDescription} onChange={(value) => setSelectedMetaDescription(value as string)} height={150} preview='edit' style={{ borderRadius: 8, overflow: "hidden" }} textareaProps={{
             placeholder: 'Type your text here...'
         }} previewOptions={{
             disallowedElements: ['style']

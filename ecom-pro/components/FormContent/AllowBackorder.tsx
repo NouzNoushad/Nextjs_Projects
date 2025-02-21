@@ -1,9 +1,11 @@
 'use client'
 
-import React, { useState } from 'react'
+import { useGlobalStore } from '@/context/GlobalStore'
+import React from 'react'
 
 export default function AllowBackorder() {
-    const [isBackorder, setIsBackorder] = useState<boolean>(false)
+
+    const { isBackorder, setIsBackorder } = useGlobalStore()
 
     const handleBackOrderChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setIsBackorder(Boolean(e.target.checked))

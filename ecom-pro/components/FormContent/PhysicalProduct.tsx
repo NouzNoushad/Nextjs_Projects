@@ -1,9 +1,10 @@
 'use client'
 
-import React, { useState } from 'react'
+import { useGlobalStore } from '@/context/GlobalStore'
+import React from 'react'
 
 export default function PhysicalProduct() {
-    const [isPhysical, setIsPhysical] = useState<boolean>(false)
+    const { isPhysical, setIsPhysical } = useGlobalStore()
 
     const handleIsPhysical = (e: React.ChangeEvent<HTMLInputElement>) => {
         setIsPhysical(e.target.checked)

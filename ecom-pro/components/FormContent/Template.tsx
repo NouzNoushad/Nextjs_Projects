@@ -1,9 +1,10 @@
 'use client'
 
-import React, { useState } from 'react'
+import { useGlobalStore } from '@/context/GlobalStore'
+import React from 'react'
 
 export default function Template() {
-    const [selectedTemplate, setSelectedTemplate] = useState("default template")
+    const { selectedTemplate, setSelectedTemplate } = useGlobalStore()
 
     const handleTemplateChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
         setSelectedTemplate(e.target.value)

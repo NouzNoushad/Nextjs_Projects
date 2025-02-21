@@ -1,11 +1,12 @@
 'use client'
 
+import { useGlobalStore } from '@/context/GlobalStore'
 import { DiscountType } from '@/lib/Constants'
-import React, { useState } from 'react'
+import React from 'react'
 
 export default function Discount() {
-    const [discountType, setDiscountType] = useState<DiscountType>(DiscountType.NoDiscount)
-    
+    const { discountType, setDiscountType } = useGlobalStore()
+
     return (
         <div className="grid md:grid-cols-3 grid-cols-1 gap-4">
             {/* No Discount */}

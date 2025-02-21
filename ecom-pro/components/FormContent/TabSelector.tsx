@@ -1,15 +1,16 @@
 'use client'
 
-import React, { useState } from 'react'
+import React from 'react'
 // lazy loading
 const GeneralForm = dynamic(() => import("./GeneralForm"), { ssr: false })
 const AdvancedForm = dynamic(() => import("./AdvancedForm"), { ssr: false })
 import { TabState } from '@/lib/Constants'
 import dynamic from 'next/dynamic'
 import SaveButton from './SaveButton'
+import { useTabStore } from '@/context/TabStore'
 
 export default function TabSelector() {
-    const [selectedTab, setSelectedTab] = useState<TabState>(TabState.General)
+    const { selectedTab, setSelectedTab } = useTabStore()
 
     return (
         <>

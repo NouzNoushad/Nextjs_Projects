@@ -1,9 +1,10 @@
 'use client'
 
-import React, { useState } from 'react'
+import { useGlobalStore } from '@/context/GlobalStore'
+import React from 'react'
 
 export default function TaxClass() {
-    const [selectedTaxClass, setSelectedTaxClass] = useState("tax free")
+    const { selectedTaxClass, setSelectedTaxClass } = useGlobalStore()
 
     const handleTaxClassChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
         setSelectedTaxClass(e.target.value)
