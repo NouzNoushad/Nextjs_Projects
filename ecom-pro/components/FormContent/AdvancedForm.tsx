@@ -35,7 +35,7 @@ export default function AdvancedForm() {
                         <Quantity />
                     </div>
                     <div className="space-y-2">
-                        <h6 className='text-[13.5px] font-medium'>Allow Backorders <span className='text-red-500'>*</span></h6>
+                        <h6 className='text-[13.5px] font-medium'>Allow Backorders</h6>
                         <div className="flex items-center space-x-2">
                             <AllowBackorder />
                             <span className='text-xs text-gray-400'>Yes</span>

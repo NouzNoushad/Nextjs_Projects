@@ -1,4 +1,5 @@
 import { DiscountType } from "@/lib/Constants"
+import { ProductFormError } from "@/lib/ValidationSchema"
 import { create } from "zustand"
 
 type GlobalStore = {
@@ -27,6 +28,7 @@ type GlobalStore = {
     selectedMetaTitle: string,
     selectedMetaDescription: string,
     selectedMetaKeywords: string,
+    errors: Partial<Record<keyof ProductFormError, string[]>>,
     setSelectedFile: (value: File) => void
     setImagePreview: (value: string) => void
     setSelectedStatus: (value: string) => void
@@ -52,6 +54,7 @@ type GlobalStore = {
     setSelectedMetaTitle: (value: string) => void
     setSelectedMetaDescription: (value: string) => void
     setSelectedMetaKeywords: (value: string) => void
+    setErrors: (value: Partial<Record<keyof ProductFormError, string[]>>) => void
     resetForm: () => void
 }
 
@@ -68,7 +71,7 @@ export const useGlobalStore = create<GlobalStore>((set) => ({
     selectedDescription: '',
     selectedPrice: '',
     discountType: DiscountType.NoDiscount,
-    selectedTaxClass: 'tax free',
+    selectedTaxClass: '',
     selectedVATAmount: '',
     selectedSKUNumber: '',
     selectedBarcodeNumber: '',
@@ -81,6 +84,7 @@ export const useGlobalStore = create<GlobalStore>((set) => ({
     selectedMetaTitle: '',
     selectedMetaDescription: '',
     selectedMetaKeywords: '',
+    errors: {},
     setSelectedFile: (value) => set({ selectedFile: value }),
     setImagePreview: (value) => set({ imagePreview: value }),
     setSelectedStatus: (value) => set({ selectedStatus: value }),
@@ -106,6 +110,7 @@ export const useGlobalStore = create<GlobalStore>((set) => ({
     setSelectedMetaTitle: (value) => set({ selectedMetaTitle: value }),
     setSelectedMetaDescription: (value) => set({ selectedMetaDescription: value }),
     setSelectedMetaKeywords: (value) => set({ selectedMetaKeywords: value }),
+    setErrors: (value) => set({ errors: value }),
     resetForm: () => set({
         selectedFile: null,
         imagePreview: '',

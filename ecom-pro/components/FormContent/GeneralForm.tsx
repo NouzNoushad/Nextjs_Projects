@@ -41,7 +41,7 @@ export default function GeneralForm() {
                 <div className='space-y-6'>
                     {/* Base Price */}
                     <div className="space-y-2">
-                        <h6 className='text-[13.5px] font-medium'>Base Price<span className='text-red-500'>*</span></h6>
+                        <h6 className='text-[13.5px] font-medium'>Base Price <span className='text-red-500'>*</span></h6>
                         <ProductPrice />
                         <p className='mt-1 text-[12.5px] text-gray-400'>Set the product price.</p>
                     </div>
@@ -56,7 +56,7 @@ export default function GeneralForm() {
                     {/* Tax and Amount */}
                     <div className="grid md:grid-cols-2 grid-cols-1 space-x-4">
                         <div className="space-y-2">
-                            <h6 className='text-[13.5px] font-medium'>Tax Class<span className='text-red-500'>*</span></h6>
+                            <h6 className='text-[13.5px] font-medium'>Tax Class <span className='text-red-500'>*</span></h6>
                             <TaxClass />
                             <p className='mt-1 text-[12.5px] text-gray-400'>Set the product tax class.</p>
                         </div>
