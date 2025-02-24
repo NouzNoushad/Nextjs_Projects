@@ -7,6 +7,10 @@ import PhysicalProduct from './PhysicalProduct'
 import MetaTitle from './MetaTitle'
 import MetaDescription from './MetaDescription'
 import MetaKeywords from './MetaKeywords'
+import VariationColor from './variations/Color'
+import VariationMaterial from './variations/Material'
+import VariationSize from './variations/Size'
+import VariationStyle from './variations/Style'
 
 export default function AdvancedForm() {
 
@@ -46,29 +50,28 @@ export default function AdvancedForm() {
                 <div className="space-y-2">
                     <h6 className='text-[13.5px] font-medium'>Add Product Variations </h6>
                     <div className="flex items-center space-x-3">
-                        <select name="" id="" className='select-arrow md:w-1/3 px-2 py-3 rounded-md border focus:outline-none focus:ring-0 text-sm'>
-                            <option value="">Color</option>
-                            <option value="">Size</option>
-                            <option value="">Material</option>
-                            <option value="">Style</option>
-                        </select>
-                        <input type="text" className='md:w-1/3 border px-2 py-3 rounded-md placeholder:text-[13.5px] focus:outline-none focus:ring-0' placeholder='Variation' />
-                        <div className="bg-red-50 px-2 py-2 rounded-md">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-5 text-red-500">
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
-                            </svg>
-
+                        <div className="md:w-1/3 px-2 py-3 rounded-md border text-sm">
+                            Color
                         </div>
+                        <VariationColor />
                     </div>
-                </div>
-                <div className="px-3 py-2 bg-blue-50 rounded-md inline-block">
-                    <div className="flex items-center space-x-1">
-                        <span>
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-4 text-primary-light-dark">
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
-                            </svg>
-                        </span>
-                        <small className='text-xs text-primary-light-dark font-semibold'>Add another variation</small>
+                    <div className="flex items-center space-x-3">
+                        <div className="md:w-1/3 px-2 py-3 rounded-md border text-sm">
+                            Size
+                        </div>
+                        <VariationSize />
+                    </div>
+                    <div className="flex items-center space-x-3">
+                        <div className="md:w-1/3 px-2 py-3 rounded-md border text-sm">
+                            Material
+                        </div>
+                        <VariationMaterial />
+                    </div>
+                    <div className="flex items-center space-x-3">
+                        <div className="md:w-1/3 px-2 py-3 rounded-md border text-sm">
+                            Style
+                        </div>
+                        <VariationStyle />
                     </div>
                 </div>
             </div>

@@ -19,6 +19,10 @@ type GlobalStore = {
     selectedOnShelf: string
     selectedInWarehouse: string
     isBackorder: boolean
+    variationColor: string
+    variationSize: string
+    variationMaterial: string
+    variationStyle: string
     isPhysical: boolean
     selectedMetaTitle: string,
     selectedMetaDescription: string,
@@ -40,6 +44,10 @@ type GlobalStore = {
     setSelectedOnShelf: (value: string) => void
     setSelectedInWarehouse: (value: string) => void
     setIsBackorder: (value: boolean) => void
+    setVariationColor: (value: string) => void
+    setVariationSize: (value: string) => void
+    setVariationMaterial: (value: string) => void
+    setVariationStyle: (value: string) => void
     setIsPhysical: (value: boolean) => void
     setSelectedMetaTitle: (value: string) => void
     setSelectedMetaDescription: (value: string) => void
@@ -65,6 +73,10 @@ export const useGlobalStore = create<GlobalStore>((set) => ({
     selectedSKUNumber: '',
     selectedBarcodeNumber: '',
     isBackorder: false,
+    variationColor: '',
+    variationSize: '',
+    variationMaterial: '',
+    variationStyle: '',
     isPhysical: false,
     selectedMetaTitle: '',
     selectedMetaDescription: '',
@@ -86,6 +98,10 @@ export const useGlobalStore = create<GlobalStore>((set) => ({
     setSelectedOnShelf: (value) => set({ selectedOnShelf: value }),
     setSelectedInWarehouse: (value) => set({ selectedInWarehouse: value }),
     setIsBackorder: (value) => set({ isBackorder: value }),
+    setVariationColor: (value) => set({ variationColor: value }),
+    setVariationSize: (value) => set({ variationSize: value }),
+    setVariationMaterial: (value) => set({ variationMaterial: value }),
+    setVariationStyle: (value) => set({ variationStyle: value }),
     setIsPhysical: (value) => set({ isPhysical: value }),
     setSelectedMetaTitle: (value) => set({ selectedMetaTitle: value }),
     setSelectedMetaDescription: (value) => set({ selectedMetaDescription: value }),
