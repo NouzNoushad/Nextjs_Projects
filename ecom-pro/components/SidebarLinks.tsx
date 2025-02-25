@@ -2,12 +2,12 @@
 
 import { LinksType } from '@/lib/Constants'
 import { useRouter } from 'next/navigation'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import SidebarButton from './SidebarButton'
+import { useSidebarStore } from '@/context/SidebarStore'
 
 export default function SidebarLinks() {
-    const [selectedLink, setSelectedLink] = useState<LinksType>(LinksType.Products)
-
+    const {selectedLink, setSelectedLink} = useSidebarStore()
 
     const router = useRouter()
 

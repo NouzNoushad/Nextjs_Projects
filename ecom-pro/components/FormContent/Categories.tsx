@@ -17,7 +17,7 @@ export default function Categories() {
             <option value="watches">Watches</option>
             <option value="headphones">Headphones</option>
             <option value="footwear">Footwear</option>
-            <option value="camera">Camera</option>
+            <option value="cameras">Cameras</option>
             <option value="shirts">Shirts</option>
             <option value="household">Households</option>
             <option value="handbags">Handbags</option>

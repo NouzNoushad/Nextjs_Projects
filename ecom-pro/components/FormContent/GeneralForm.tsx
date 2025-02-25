@@ -61,7 +61,7 @@ export default function GeneralForm() {
                             <p className='mt-1 text-[12.5px] text-gray-400'>Set the product tax class.</p>
                         </div>
                         <div className="space-y-2">
-                            <h6 className='text-[13.5px] font-medium'>VAT Amount (%)<span className='text-red-500'>*</span></h6>
+                            <h6 className='text-[13.5px] font-medium'>VAT Amount (%)</h6>
                             <VATAmount />
                             <p className='mt-1 text-[12.5px] text-gray-400'>Set the product VAT about.</p>
                         </div>

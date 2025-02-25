@@ -1,11 +1,12 @@
 'use client'
 
+import { useGlobalStore } from '@/context/GlobalStore'
 import Image from 'next/image'
-import React, { useState } from 'react'
+import React from 'react'
 
 export default function Media() {
-    const [imageFiles, setImageFiles] = useState<File[]>([])
-    const [imagePreviews, setImagePreviews] = useState<string[]>([])
+
+    const { setFiles, imageFiles, imagePreviews, removeFiles } = useGlobalStore()
 
     const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
         e.preventDefault()
@@ -14,9 +15,7 @@ export default function Media() {
         const file = e.target.files?.[0]
 
         if (file != null) {
-            setImageFiles((prev) => [...prev, file])
-            const imageUrl = URL.createObjectURL(file)
-            setImagePreviews((prev) => [...prev, imageUrl])
+            setFiles(file)
         }
 
         e.target.value = ""
@@ -26,8 +25,7 @@ export default function Media() {
         event.preventDefault()
         event.stopPropagation()
 
-        setImageFiles((prev) => prev.filter((_, i) => i !== index))
-        setImagePreviews((prev) => prev.filter((_, i) => i !== index))
+        removeFiles(index)
     }
 
     return (
