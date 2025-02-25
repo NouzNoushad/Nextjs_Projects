@@ -4,10 +4,10 @@ import { LinksType } from '@/lib/Constants'
 import { useRouter } from 'next/navigation'
 import React, { useEffect } from 'react'
 import SidebarButton from './SidebarButton'
-import { useSidebarStore } from '@/context/SidebarStore'
+import { useSidebarStore } from '@/context/Store/SidebarStore'
 
 export default function SidebarLinks() {
-    const {selectedLink, setSelectedLink} = useSidebarStore()
+    const { selectedLink, setSelectedLink } = useSidebarStore()
 
     const router = useRouter()
 

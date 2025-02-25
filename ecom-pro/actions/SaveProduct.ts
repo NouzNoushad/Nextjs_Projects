@@ -1,10 +1,10 @@
-import { useGlobalStore } from "@/context/GlobalStore"
+import { useGlobalStore } from "@/context/Store/GlobalStore"
 import { convertDiscountTypeToString, LinksType } from "@/lib/Constants"
 import { productValidation } from "./Validation"
 import { useMutation, useQueryClient } from "@tanstack/react-query"
 import { useRouter } from "next/navigation"
 import Swal from "sweetalert2"
-import { useSidebarStore } from "@/context/SidebarStore"
+import { useSidebarStore } from "@/context/Store/SidebarStore"
 
 export const SaveProductAction = () => {
 

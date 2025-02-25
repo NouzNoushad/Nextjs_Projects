@@ -1,6 +1,6 @@
 'use client'
 
-import { useGlobalStore } from '@/context/GlobalStore'
+import { useGlobalStore } from '@/context/Store/GlobalStore'
 import MDEditor from '@uiw/react-md-editor'
 import React from 'react'
 

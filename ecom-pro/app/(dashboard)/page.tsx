@@ -1,4 +1,4 @@
-import ProductsCard from '@/components/ProductsCard'
+import ProductsCard from '@/components/Products/ProductsCard'
 import React from 'react'
 
 export default function Products() {

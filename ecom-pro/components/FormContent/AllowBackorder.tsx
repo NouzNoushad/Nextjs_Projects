@@ -1,6 +1,6 @@
 'use client'
 
-import { useGlobalStore } from '@/context/GlobalStore'
+import { useGlobalStore } from '@/context/Store/GlobalStore'
 import React from 'react'
 
 export default function AllowBackorder() {

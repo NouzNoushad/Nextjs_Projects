@@ -3,6 +3,8 @@ export enum TabState { General, Advanced }
 export enum DiscountType { NoDiscount, Percentage, FixedPrice }
 export enum AutomationType { Manual, Automatic }
 
+export const LIMIT = 10
+
 export const convertDiscountTypeToString = (type: DiscountType): string => {
     switch (type) {
         case DiscountType.NoDiscount:
