@@ -11,7 +11,7 @@ export default async function ProductsCard() {
     const products: Product[] = responseJson.data
 
     return (
-        <div className="px-8 py-9 w-full bg-white rounded-md ring-1 ring-gray-100 space-y-5 shadow-[0px_3px_4px_0px_rgba(0,0,0,0.03)]">
+        <div className="px-8 py-9 w-full bg-white rounded-md ring-1 ring-gray-100 space-y-5 shadow-[0px_3px_4px_0px_rgba(0,0,0,0.03)] relative">
             {/* Products Header */}
             <ProductsHeader />
             {/* Products Table */}

@@ -7,10 +7,10 @@ import PhysicalProduct from './PhysicalProduct'
 import MetaTitle from './MetaTitle'
 import MetaDescription from './MetaDescription'
 import MetaKeywords from './MetaKeywords'
-import VariationColor from './variations/Color'
-import VariationMaterial from './variations/Material'
-import VariationSize from './variations/Size'
-import VariationStyle from './variations/Style'
+import VariationColor from './Variations/Color'
+import VariationMaterial from './Variations/Material'
+import VariationSize from './Variations/Size'
+import VariationStyle from './Variations/Style'
 
 export default function AdvancedForm() {
 
