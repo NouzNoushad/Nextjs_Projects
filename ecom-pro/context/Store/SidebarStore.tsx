@@ -3,10 +3,14 @@ import { create } from "zustand"
 
 type SidebarStore = {
     selectedLink: LinksType,
+    showMenu: boolean,
     setSelectedLink: (link: LinksType) => void
+    setShowMenu: (menu: boolean) => void
 }
 
 export const useSidebarStore = create<SidebarStore>((set) => ({
     selectedLink: LinksType.Products,
-    setSelectedLink: (link) => set({ selectedLink: link })
+    showMenu: false,
+    setSelectedLink: (link) => set({ selectedLink: link }),
+    setShowMenu: (menu) => set({ showMenu: !menu })
 }))

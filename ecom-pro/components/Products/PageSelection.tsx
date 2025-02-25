@@ -17,7 +17,7 @@ export default function PageSelection({ products }: { products: Product[] }) {
 
     return (
         <div className="flex items-center justify-between gap-2">
-            <div className="relative w-[10%]">
+            <div className="relative w-[5rem]">
                 <select name="" id="" className='w-full px-2 py-3 appearance-none rounded-md bg-gray-100 focus:outline-none focus:ring-0 text-sm'>
                     <option value="">10</option>
                     <option value="">25</option>

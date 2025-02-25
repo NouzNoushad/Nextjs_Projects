@@ -8,7 +8,7 @@ import Template from './Template'
 export default function SideFormContent() {
 
     return (
-        <div className="col-span-1 space-y-8">
+        <div className="md:col-span-1 col-span-2 space-y-8 w-full">
             {/* Thumbnail */}
             <div className="px-8 py-9 bg-white rounded-md ring-1 ring-gray-100 space-y-4 shadow-[0px_3px_4px_0px_rgba(0,0,0,0.03)]">
                 <h3 className='text-[19px] font-semibold'>Thumbnail</h3>

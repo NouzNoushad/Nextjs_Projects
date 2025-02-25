@@ -54,7 +54,7 @@ export default function GeneralForm() {
                         <Discount />
                     </div>
                     {/* Tax and Amount */}
-                    <div className="grid md:grid-cols-2 grid-cols-1 space-x-4">
+                    <div className="grid md:grid-cols-2 grid-cols-1 gap-4">
                         <div className="space-y-2">
                             <h6 className='text-[13.5px] font-medium'>Tax Class <span className='text-red-500'>*</span></h6>
                             <TaxClass />

@@ -1,8 +1,5 @@
 import { create } from "zustand"
 
-// const [showAction, setShowAction] = useState(false)
-//     const [actionIndex, setActionIndex] = useState(-1)
-
 type ProductsStore = {
     currentPage: number,
     showAction: boolean,

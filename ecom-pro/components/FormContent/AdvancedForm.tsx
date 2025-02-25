@@ -47,28 +47,28 @@ export default function AdvancedForm() {
             {/* Variations */}
             <div className="px-8 py-9 bg-white rounded-md ring-1 ring-gray-100 space-y-5 shadow-[0px_3px_4px_0px_rgba(0,0,0,0.03)]">
                 <h3 className='text-[19px] font-semibold'>Variations</h3>
-                <div className="space-y-2">
+                <div className="md:space-y-2 space-y-4">
                     <h6 className='text-[13.5px] font-medium'>Add Product Variations </h6>
-                    <div className="flex items-center space-x-3">
-                        <div className="md:w-1/3 px-2 py-3 rounded-md border text-sm">
+                    <div className="flex sm:flex-row flex-col items-center gap-2">
+                        <div className="w-full sm:w-1/3 px-2 sm:py-3 py-2 rounded-md border text-sm">
                             Color
                         </div>
                         <VariationColor />
                     </div>
-                    <div className="flex items-center space-x-3">
-                        <div className="md:w-1/3 px-2 py-3 rounded-md border text-sm">
+                    <div className="flex sm:flex-row flex-col items-center gap-2">
+                        <div className="w-full sm:w-1/3 px-2 sm:py-3 py-2 rounded-md border text-sm">
                             Size
                         </div>
                         <VariationSize />
                     </div>
-                    <div className="flex items-center space-x-3">
-                        <div className="md:w-1/3 px-2 py-3 rounded-md border text-sm">
+                    <div className="flex sm:flex-row flex-col items-center gap-2">
+                        <div className="w-full sm:w-1/3 px-2 sm:py-3 py-2 rounded-md border text-sm">
                             Material
                         </div>
                         <VariationMaterial />
                     </div>
-                    <div className="flex items-center space-x-3">
-                        <div className="md:w-1/3 px-2 py-3 rounded-md border text-sm">
+                    <div className="flex sm:flex-row flex-col items-center gap-2">
+                        <div className="w-full sm:w-1/3 px-2 sm:py-3 py-2 rounded-md border text-sm">
                             Style
                         </div>
                         <VariationStyle />
