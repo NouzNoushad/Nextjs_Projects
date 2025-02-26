@@ -1,5 +1,4 @@
-import MainFormContent from '@/components/FormContent/MainFormContent'
-import SideFormContent from '@/components/FormContent/SideFormContent'
+import AddProductForm from '@/components/AddProductForm'
 import React from 'react'
 
 export default function AddProduct() {
@@ -9,12 +8,7 @@ export default function AddProduct() {
                 <h1 className='text-lg font-semibold'>Product Form</h1>
                 <p className='text-gray-400 text-xs font-medium'>Home</p>
             </div>
-            <div className="flex-1 mt-6 grid md:grid-cols-3 grid-cols-1 gap-6">
-                {/* Side Form Content */}
-                <SideFormContent />
-                {/* Main Form Content */}
-                <MainFormContent />
-            </div>
+            <AddProductForm />
         </main>
     )
 }

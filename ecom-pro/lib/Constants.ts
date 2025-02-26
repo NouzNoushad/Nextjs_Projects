@@ -17,3 +17,16 @@ export const convertDiscountTypeToString = (type: DiscountType): string => {
             return "no discount"
     }
 }
+
+export const convertStringToDiscountType = (type: string): DiscountType => {
+    switch (type) {
+        case "no discount":
+            return DiscountType.NoDiscount
+        case "percentage":
+            return DiscountType.Percentage
+        case "fixed price":
+            return DiscountType.FixedPrice
+        default:
+            return DiscountType.NoDiscount
+    }
+}

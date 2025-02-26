@@ -6,7 +6,7 @@ import React from 'react'
 
 export default function Thumbnail() {
 
-    const { selectedFile, imagePreview, setSelectedFile, setImagePreview } = useGlobalStore()
+    const {imagePreview, setSelectedFile, setImagePreview } = useGlobalStore()
 
     const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
         if (!e.target.files) return
@@ -26,7 +26,7 @@ export default function Thumbnail() {
         <div className="relative h-[10rem] w-[10rem]">
             <div className="h-full w-full bg-white rounded-md shadow-[0_0.5rem_1.5rem_0.5rem_rgba(0,0,0,0.075)]">
                 {
-                    selectedFile && imagePreview && (
+                     imagePreview && (
                         <Image src={imagePreview} height={100} width={100} alt='Thumbnail' className='h-full w-full rounded-md' />
                     )
                 }

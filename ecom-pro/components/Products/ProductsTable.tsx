@@ -74,8 +74,8 @@ export default function ProductsTable({ products }: { products: Product[] }) {
         });
     }
 
-    const handleEditProduct = () => {
-        router.push("/edit-product")
+    const handleEditProduct = (id: string) => {
+        router.push(`/edit-product/${id}`)
         setSelectedLink(LinksType.EditProduct)
         setAction(-1)
     }
@@ -114,7 +114,7 @@ export default function ProductsTable({ products }: { products: Product[] }) {
                                 <div className='text-sm font-semibold text-gray-500'>{product.price}</div>
                             </td>
                             <td className='py-4'>
-                                <StarRating rating={4.5}/>
+                                <StarRating rating={4.5} />
                             </td>
                             <td className='py-4 text-end'>
                                 <div className='text-[11px] font-semibold bg-green-100 text-green-500 inline-block p-1 rounded-md'>{product.status}</div>
@@ -129,7 +129,7 @@ export default function ProductsTable({ products }: { products: Product[] }) {
                                     </span>
                                 </button>
                                 <div className={`absolute z-50 right-[3%] w-28 bg-white rounded-md shadow-lg top-15 py-1 ring-1 ring-opacity-5 ring-black transition-all transform ease-out text-start ${showAction && (actionIndex === index) ? "translate-y-0 opacity-100 pointer-events-auto" : "translate-y-1/2 opacity-0 pointer-events-none"}`}>
-                                    <button onClick={handleEditProduct} className='block px-4 py-2 text-xs text-start text-gray-700 transition-colors hover:bg-gray-100 w-full focus:outline-none focus:ring-0'>
+                                    <button onClick={() => handleEditProduct(product.id)} className='block px-4 py-2 text-xs text-start text-gray-700 transition-colors hover:bg-gray-100 w-full focus:outline-none focus:ring-0'>
                                         Edit
                                     </button>
                                     <button onClick={() => handleDeleteProduct(product.id)} className='block px-4 py-2 text-start text-xs text-gray-700 transition-colors hover:bg-gray-100 w-full focus:outline-none focus:ring-0'>

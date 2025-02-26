@@ -39,7 +39,8 @@ type GlobalStore = {
     setSelectedTemplate: (value: string) => void
     setSelectedName: (value: string) => void
     setSelectedDescription: (value: string) => void
-    setFiles: (file: File) => void
+    setImageFiles: (file: File) => void
+    setImagePreviews: (value: string) => void
     removeFiles: (index: number) => void
     setSelectedPrice: (value: string) => void
     setDiscountType: (value: DiscountType) => void
@@ -60,6 +61,7 @@ type GlobalStore = {
     setSelectedMetaKeywords: (value: string) => void
     setErrors: (value: Partial<Record<keyof ProductFormError, string[]>>) => void
     resetForm: () => void
+    resetImages: () => void
 }
 
 export const useGlobalStore = create<GlobalStore>((set) => ({
@@ -99,13 +101,19 @@ export const useGlobalStore = create<GlobalStore>((set) => ({
     setSelectedTemplate: (value) => set({ selectedTemplate: value }),
     setSelectedName: (value) => set({ selectedName: value }),
     setSelectedDescription: (value) => set({ selectedDescription: value }),
-    setFiles: (file) => set((state) => ({
-        imageFiles: [...state.imageFiles, file],
-        imagePreviews: [...state.imagePreviews, URL.createObjectURL(file)]
+    setImageFiles: (file) => set((state) => ({
+        imageFiles: [...state.imageFiles, file]
+    })),
+    setImagePreviews: (value) => set((state) => ({
+        imagePreviews: [...state.imagePreviews, value]
     })),
     removeFiles: (index) => set((state) => ({
         imageFiles: state.imageFiles.filter((_, i) => i != index),
         imagePreviews: state.imagePreviews.filter((_, i) => i != index),
+    })),
+    resetImages: () => set(() => ({
+        imageFiles: [],
+        imagePreviews: [],
     })),
     setSelectedPrice: (value) => set({ selectedPrice: value }),
     setDiscountType: (value) => set({ discountType: value }),
@@ -144,6 +152,8 @@ export const useGlobalStore = create<GlobalStore>((set) => ({
         selectedBarcodeNumber: '',
         isBackorder: false,
         isPhysical: false,
+        imageFiles: [],
+        imagePreviews: [],
         variationColor: '',
         variationSize: '',
         variationMaterial: '',

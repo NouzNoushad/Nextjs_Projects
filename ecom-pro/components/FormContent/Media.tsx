@@ -6,7 +6,7 @@ import React from 'react'
 
 export default function Media() {
 
-    const { setFiles, imageFiles, imagePreviews, removeFiles } = useGlobalStore()
+    const { setImageFiles, setImagePreviews, imagePreviews, removeFiles } = useGlobalStore()
 
     const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
         e.preventDefault()
@@ -15,7 +15,8 @@ export default function Media() {
         const file = e.target.files?.[0]
 
         if (file != null) {
-            setFiles(file)
+            setImageFiles(file)
+            setImagePreviews(URL.createObjectURL(file))
         }
 
         e.target.value = ""
@@ -30,7 +31,7 @@ export default function Media() {
 
     return (
         <div className="bg-green-50 border border-dashed border-green-500 px-6 py-4 rounded-md cursor-pointer">
-            {imageFiles.length != 0 && imagePreviews.length != 0 ? <label className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4 py-4">
+            { imagePreviews.length != 0 ? <label className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4 py-4">
                 <input type="file" onChange={handleFileUpload} name='image' accept='image/*' hidden />
                 {
                     imagePreviews.map((image, index) => (

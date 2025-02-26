@@ -8,8 +8,8 @@ export default function MainHeader() {
     return (
         <header className='sticky top-0 z-40 h-[4.5rem] bg-white shadow-sm px-4 py-2'>
             <div className="flex items-center justify-between space-x-2 h-full">
-                {/* <a href="#" className='text-sm font-medium p-3 bg-transparent text-gray-600 rounded-md transition-colors duration-200 hover:bg-[#f5f6f5] hover:text-primary-light'>Dashboard</a> */}
-                <button onClick={() => setShowMenu(showMenu)} className='focus:outline-none focus:ring-0 border p-2 rounded-md'>
+                <a href="#" className='hidden lg:block text-sm font-medium p-3 bg-transparent text-gray-600 rounded-md transition-colors duration-200 hover:bg-[#f5f6f5] hover:text-primary-light'>Dashboard</a>
+                <button onClick={() => setShowMenu(showMenu)} className='block lg:hidden focus:outline-none focus:ring-0 border p-2 rounded-md'>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-6">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                     </svg>

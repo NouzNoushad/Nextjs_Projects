@@ -3,6 +3,10 @@ export interface ProductResponse {
     items: string
 }
 
+export interface ProductByIDResponse {
+    data: Product
+}
+
 export interface Product {
     id: string
     thumbnail_name: string
