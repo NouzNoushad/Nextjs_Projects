@@ -7,11 +7,12 @@ import SidebarButton from './SidebarButton'
 import { useSidebarStore } from '@/context/Store/SidebarStore'
 
 export default function SidebarLinks() {
-    const { selectedLink, setSelectedLink } = useSidebarStore()
+    const { selectedLink, setSelectedLink, showMenu, setShowMenu } = useSidebarStore()
 
     const router = useRouter()
 
     const handleCatalogChange = (catalog: LinksType, path: string) => {
+        setShowMenu(showMenu)
         setSelectedLink(catalog)
         router.push(path)
     }
