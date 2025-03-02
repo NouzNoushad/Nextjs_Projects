@@ -2,7 +2,7 @@ import { useGlobalStore } from "@/context/Store/GlobalStore"
 import { convertDiscountTypeToString, LinksType } from "@/lib/Constants"
 import { productValidation } from "./Validation"
 import { useMutation, useQueryClient } from "@tanstack/react-query"
-import { useRouter } from "next/navigation"
+import { useParams, useRouter } from "next/navigation"
 import Swal from "sweetalert2"
 import { useSidebarStore } from "@/context/Store/SidebarStore"
 
@@ -11,13 +11,15 @@ export const SaveProductAction = () => {
     const { selectedFile, selectedStatus, selectedCategory, selectedTag, selectedTemplate, selectedName, selectedDescription, selectedPrice, discountType, selectedTaxClass, selectedVATAmount, selectedSKUNumber, selectedBarcodeNumber, selectedOnShelf, selectedInWarehouse, isBackorder, isPhysical, selectedMetaTitle, selectedMetaDescription, selectedMetaKeywords, variationColor, variationSize, variationMaterial, variationStyle, resetForm, setErrors, imageFiles } = useGlobalStore()
     const { setSelectedLink } = useSidebarStore()
 
+    const { id } = useParams()
+
     const queryClient = useQueryClient()
     const router = useRouter()
 
     const productFormMutation = useMutation({
         mutationFn: async (formData: FormData) => {
-            const endPoint = 'http://localhost:8004/product'
-            const method = "POST"
+            const endPoint = id ? `http://localhost:8004/product/${id}` : 'http://localhost:8004/product'
+            const method = id ? "PUT" : "POST"
             const response = await fetch(endPoint, {
                 method,
                 body: formData,
@@ -26,7 +28,7 @@ export const SaveProductAction = () => {
             const data = await response.json()
 
             if (!response.ok) {
-                throw new Error(`Failed: ${data.error}`)
+                throw new Error(`${data.error}`)
             }
 
             return data
