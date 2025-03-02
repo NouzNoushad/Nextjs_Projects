@@ -12,7 +12,7 @@ export default function LoginForm() {
           </div>
           <a href='#' className='mt-3 self-end text-end text-primary-light-dark font-semibold text-sm transition-all duration-200 hover:text-primary'>Forget password ?</a>
           <button className='block my-8 w-full bg-primary-light rounded-md px-3 py-3 text-center focus:outline-none focus:ring-0 text-[15px] tracking-wide text-white font-medium transition-colors duration-200 hover:bg-primary'>Login</button>
-          <h5 className='text-gray-500 text-[15px] font-medium'>Not a memeber yet? <a href="" className='text-primary-light-dark transition-all duration-200 hover:text-primary'>Sign up</a></h5>
+          <h5 className='text-gray-500 text-[15px] font-medium'>Not a memeber yet? <a href="/users/sign-up" className='text-primary-light-dark transition-all duration-200 hover:text-primary'>Sign up</a></h5>
       </form>
   )
 }
