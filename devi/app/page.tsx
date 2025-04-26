@@ -1,5 +1,7 @@
 import Header from "@/components/header";
 import ScrollUpButton from "@/components/scrollUpButton";
+import { CheckIcon, PlayIcon } from "@/lib/icons";
+import Image from "next/image";
 
 export default function Home() {
     return (
@@ -16,8 +18,48 @@ export default function Home() {
                     <div className="flex md:flex-row flex-col items-center gap-3">
                         <button className="border-2 border-[#FF4A17] px-3 py-2 rounded-sm uppercase text-sm min-w-[10rem] font-medium tracking-wider cursor-pointer transition-colors duration-150 bg-[#FF4A17] hover:bg-[#FF4A17] hover:text-white hover:border-[#FF4A17]">Get Started</button>
                         <a href="" className="flex flex-row items-center space-x-2">
-                            <svg className="size-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="#FF4A17" d="M0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zM188.3 147.1c-7.6 4.2-12.3 12.3-12.3 20.9l0 176c0 8.7 4.7 16.7 12.3 20.9s16.8 4.1 24.3-.5l144-88c7.1-4.4 11.5-12.1 11.5-20.5s-4.4-16.1-11.5-20.5l-144-88c-7.4-4.5-16.7-4.7-24.3-.5z" /></svg>
+                            <PlayIcon className="size-8" />
                             <span>Watch Video</span></a>
+                    </div>
+                </div>
+            </div>
+            {/* About */}
+            <div className="bg-white">
+                <div className="container-width py-[5rem]">
+                    <div className="grid lg:grid-cols-2 grid-cols-1 gap-[20px] lg:gap-[40px] font-medium">
+                        <div className="space-y-5">
+                            <h3 className="text-[28px] leading-9 font-bold text-[#273D4E]">Voluptatem dignissimos provident laboris nisi ut aliquip ex ea commodo</h3>
+                            <Image src="/images/about.jpg" alt="about" width={1000} height={1000} className="w-full h-fit rounded-2xl" />
+                            <p>Ut fugiat ut sunt quia veniam. Voluptate perferendis perspiciatis quod nisi et. Placeat debitis quia recusandae odit et consequatur voluptatem. Dignissimos pariatur consectetur fugiat voluptas ea.</p>
+                            <p>Temporibus nihil enim deserunt sed ea. Provident sit expedita aut cupiditate nihil vitae quo officia vel. Blanditiis eligendi possimus et in cum. Quidem eos ut sint rem veniam qui. Ut ut repellendus nobis tempore doloribus debitis explicabo similique sit. Accusantium sed ut omnis beatae neque deleniti repellendus.</p>
+                        </div>
+                        <div className="space-y-5">
+                            <p className="italic text-gray-400">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                                magna aliqua.
+                            </p>
+                            <ul className="space-y-2">
+                                <li className="flex flex-row items-center gap-2">
+                                    <div><CheckIcon className="size-5" /></div>
+                                    <p>Ullamco laboris nisi ut aliquip ex ea commodo consequat.</p></li>
+                                <li className="flex flex-row items-center gap-2">
+                                    <div><CheckIcon className="inline-block size-5" /></div>
+                                    <p>Duis aute irure dolor in reprehenderit in voluptate velit.</p></li>
+                                <li className="flex flex-row items-start gap-2">
+                                    <div><CheckIcon className="inline-block size-5" /> </div>
+                                    <p>Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</p></li>
+                            </ul>
+                            <p>
+                                Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+                                velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident
+                            </p>
+                            <div className="relative">
+                                <Image src="/images/about-2.jpg" height={1000} width={1000} alt="" className="w-full h-fit rounded-2xl" />
+                                <div className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] bg-white rounded-full">
+                                    <PlayIcon className="md:size-18 size-12" />
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
