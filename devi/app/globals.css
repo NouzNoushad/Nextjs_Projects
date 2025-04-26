@@ -17,3 +17,9 @@ body {
     color: var(--foreground);
     font-family: Arial, Helvetica, sans-serif;
 }
+
+@layer components {
+    .nav-link {
+        @apply relative inline-block after:absolute after:bottom-[-6px] after:left-0 after:h-[0.13rem] after:bg-[#FF4A17] after:w-0 after:transition-all after:duration-200 hover:after:w-full whitespace-nowrap;
+    }
+}
