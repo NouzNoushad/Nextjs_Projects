@@ -30,4 +30,12 @@ body {
     .client-img {
         @apply filter grayscale opacity-[0.5] transition-all duration-200 hover:grayscale-0 hover:opacity-100;
     }
+
+    .subtitle-text {
+        @apply relative inline-block uppercase text-gray-500 tracking-wider after:absolute after:h-[0.1rem] after:w-[120px] after:bg-[#FF4A17] after:ml-3 after:my-3;
+    }
+
+    .title-text {
+        @apply lg:text-4xl md:text-3xl text-2xl leading-9 font-extrabold text-[#273D4E];
+    }
 }
