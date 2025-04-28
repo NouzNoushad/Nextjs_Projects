@@ -71,3 +71,8 @@ export const EmojiBrightnessHigh = ({ fillColor, className }: { fillColor: strin
 export const EmojiCommand = ({ fillColor, className }: { fillColor: string, className: string }) => <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill={fillColor} className={`bi bi-command ${className}`} viewBox="0 0 16 16">
     <path d="M3.5 2A1.5 1.5 0 0 1 5 3.5V5H3.5a1.5 1.5 0 1 1 0-3M6 5V3.5A2.5 2.5 0 1 0 3.5 6H5v4H3.5A2.5 2.5 0 1 0 6 12.5V11h4v1.5a2.5 2.5 0 1 0 2.5-2.5H11V6h1.5A2.5 2.5 0 1 0 10 3.5V5zm4 1v4H6V6zm1-1V3.5A1.5 1.5 0 1 1 12.5 5zm0 6h1.5a1.5 1.5 0 1 1-1.5 1.5zm-6 0v1.5A1.5 1.5 0 1 1 3.5 11z" />
 </svg>
+
+export const EmojiCheckAll = ({className}: {className: string}) => <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#FF4A17" className={`bi bi-check2-all ${className}`} viewBox="0 0 16 16">
+    <path d="M12.354 4.354a.5.5 0 0 0-.708-.708L5 10.293 1.854 7.146a.5.5 0 1 0-.708.708l3.5 3.5a.5.5 0 0 0 .708 0zm-4.208 7-.896-.897.707-.707.543.543 6.646-6.647a.5.5 0 0 1 .708.708l-7 7a.5.5 0 0 1-.708 0" />
+    <path d="m5.354 7.146.896.897-.707.707-.897-.896a.5.5 0 1 1 .708-.708" />
+</svg>
