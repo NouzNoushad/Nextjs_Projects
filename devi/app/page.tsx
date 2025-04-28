@@ -7,6 +7,7 @@ import ScrollUpButton from "@/components/scrollUpButton";
 import Services2 from "@/components/services_2";
 import Status from "@/components/status";
 import Features from "@/components/features";
+import Teams from "@/components/teams";
 
 export default function Home() {
     return (
@@ -32,6 +33,7 @@ export default function Home() {
             {/* Portfolio */}
             <Portfolio />
             {/* Team */}
+            <Teams/>
         </div>
     );
 }

@@ -38,4 +38,8 @@ body {
     .title-text {
         @apply lg:text-4xl md:text-3xl text-2xl leading-9 font-extrabold text-[#273D4E];
     }
+
+    .team-text {
+        @apply relative font-bold text-base pb-[10px] mb-[10px] after:absolute after:bottom-0 after:left-0 after:w-[50px] after:h-[1px] after:bg-gray-300 after:block;
+    }
 }
