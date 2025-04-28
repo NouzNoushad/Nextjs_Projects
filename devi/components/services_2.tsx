@@ -39,7 +39,7 @@ export default function Services2() {
                     </div>
                     <div className="bg-white px-6 py-8 border border-gray-300 flex flex-row gap-5 transition-colors duration-200 group hover:border-[#FF4A17] cursor-pointer">
                         <div className="">
-                            <EmojiBinoculars />
+                            <EmojiBinoculars fillColor='"#FF4A17"' className='size-10' />
                         </div>
                         <div className="space-y-2">
                             <h4 className="font-bold text-[#273D4E] text-lg transition-colors duration-200 group-hover:text-[#FF4A17]"><a href="#">Magni Dolores</a></h4>
