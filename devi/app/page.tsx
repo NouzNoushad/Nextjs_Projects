@@ -9,6 +9,7 @@ import Status from "@/components/status";
 import Features from "@/components/features";
 import Teams from "@/components/teams";
 import Services from "@/components/services";
+import Testimonials from "@/components/testimonials";
 
 export default function Home() {
     return (
@@ -32,6 +33,7 @@ export default function Home() {
             {/* Services 2 */}
             <Services2 />
             {/* Testimonials */}
+            <Testimonials />
             {/* Portfolio */}
             <Portfolio />
             {/* Team */}
