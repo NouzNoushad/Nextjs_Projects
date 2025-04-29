@@ -56,15 +56,20 @@ export default function Footer() {
                             <h4 className='text-[16px] font-bold pb-[12px]'>Our Newsletter</h4>
                             <p className='text-sm'>Subscribe to our newsletter and receive the latest news about our products and services!</p>
                             <form action="" className='mt-8'>
-                                <div className="border-2 border-gray-400 rounded-md flex relative">
+                                <div className="border border-gray-400 rounded-md flex relative">
                                     <input type="email" name='email' className='px-[8px] py-[8px] w-full outline-none' />
-                                    <input type="submit" value="Subscribe" className='px-[20px] bg-[#FF4A17] rounded-tr-md rounded-br-md mt-[-2px] mb-[-2px] mr-[-2px]' />
+                                    <input type="submit" value="Subscribe" className='px-[20px] bg-[#FF4A17] rounded-tr-md rounded-br-md mt-[-1px] mb-[-1px] mr-[-1px]' />
                                 </div>
                             </form>
                         </div>
                     </div>
                 </div>
-                <div className=""></div>
+                <div className="mt-[30px] text-center text-white border-t-[0.1px] border-gray-500">
+                    <p className='text-sm mt-5'>© <span>Copyright</span> <strong className="px-1">Dewi</strong> <span>All Rights Reserved</span></p>
+                    <div className="text-xs mt-2 font-medium">
+                        Designed by <a href="#" className='text-[#FF4A17]'>BootstrapMade</a> Distributed by <a href="#" className='text-[#FF4A17]'>ThemeWagon</a>
+                    </div>
+                </div>
             </div>
         </div>
     )
