@@ -17,10 +17,10 @@ export default function Teams() {
                             <h4 className='team-text'>Walter White</h4>
                             <span className='italic text-[13px] block'>Chief Executive Officer</span>
                             <div className="flex flex-row items-center gap-[5px] absolute right-[15px] bottom-[15px]">
-                                <a href=""><Twitter /></a>
-                                <a href=""><Facebook /></a>
-                                <a href=""><Instagram /></a>
-                                <a href=""><Linkedin /></a>
+                                <a href=""><Twitter className='' /></a>
+                                <a href=""><Facebook className='' /></a>
+                                <a href=""><Instagram className='' /></a>
+                                <a href=""><Linkedin className='' /></a>
                             </div>
                         </div>
                     </div>
@@ -30,10 +30,10 @@ export default function Teams() {
                             <h4 className='team-text'>Sarah Jhonson</h4>
                             <span className='italic text-[13px] block'>Product Managerr</span>
                             <div className="flex flex-row items-center gap-[5px] absolute right-[15px] bottom-[15px]">
-                                <a href=""><Twitter /></a>
-                                <a href=""><Facebook /></a>
-                                <a href=""><Instagram /></a>
-                                <a href=""><Linkedin /></a>
+                                <a href=""><Twitter className='' /></a>
+                                <a href=""><Facebook className='' /></a>
+                                <a href=""><Instagram className='' /></a>
+                                <a href=""><Linkedin className='' /></a>
                             </div>
                         </div>
                     </div>
@@ -43,10 +43,10 @@ export default function Teams() {
                             <h4 className='team-text'>William Anderson</h4>
                             <span className='italic text-[13px] block'>CTO</span>
                             <div className="flex flex-row items-center gap-[5px] absolute right-[15px] bottom-[15px]">
-                                <a href=""><Twitter /></a>
-                                <a href=""><Facebook /></a>
-                                <a href=""><Instagram /></a>
-                                <a href=""><Linkedin /></a>
+                                <a href=""><Twitter className='' /></a>
+                                <a href=""><Facebook className='' /></a>
+                                <a href=""><Instagram className='' /></a>
+                                <a href=""><Linkedin className='' /></a>
                             </div>
                         </div>
                     </div>
