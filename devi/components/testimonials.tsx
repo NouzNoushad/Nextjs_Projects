@@ -20,6 +20,7 @@ export default function Testimonials() {
                     spaceBetween={30}
                     slidesPerView={1}
                     autoplay={{ delay: 3000 }}
+                    loop={true}
                     className=""
                 >
                     <SwiperSlide>
@@ -105,6 +106,64 @@ export default function Testimonials() {
                             <p className='italic'>
                                 <QuoteIcon className='size-6 inline-block relative left-[-5px]' />
                                 <span>Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.</span>
+                                <QuoteIcon className='size-6 inline-block relative  right-[-5px] top-[0px] scale-x-[-1] scale-y-[-1]' />
+                            </p>
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div className="flex flex-col items-center justify-center gap-[10px] max-w-[900px] mx-auto text-center text-white">
+                            <Image src="/images/testimonials/testimonials-4.jpg" alt="about" width={1000} height={1000} className="w-[100px] h-[100px] rounded-full border-[6px] border-[rgba(255,255,255,0.15)]" />
+                            <h3 className='text-[20px] font-bold'>Matt Brandon</h3>
+                            <h4 className='text-sm text-[rgba(255,255,255,0.8)]'>Freelancer</h4>
+                            <div className="flext flex-row items-center">
+                                <div className="inline-block pr-1">
+                                    <StarFill />
+                                </div>
+                                <div className="inline-block pr-1">
+                                    <StarFill />
+                                </div>
+                                <div className="inline-block pr-1">
+                                    <StarFill />
+                                </div>
+                                <div className="inline-block pr-1">
+                                    <StarFill />
+                                </div>
+                                <div className="inline-block pr-1">
+                                    <StarFill />
+                                </div>
+                            </div>
+                            <p className='italic'>
+                                <QuoteIcon className='size-6 inline-block relative left-[-5px]' />
+                                <span>Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.</span>
+                                <QuoteIcon className='size-6 inline-block relative  right-[-5px] top-[0px] scale-x-[-1] scale-y-[-1]' />
+                            </p>
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div className="flex flex-col items-center justify-center gap-[10px] max-w-[900px] mx-auto text-center text-white">
+                            <Image src="/images/testimonials/testimonials-5.jpg" alt="about" width={1000} height={1000} className="w-[100px] h-[100px] rounded-full border-[6px] border-[rgba(255,255,255,0.15)]" />
+                            <h3 className='text-[20px] font-bold'>John Larson</h3>
+                            <h4 className='text-sm text-[rgba(255,255,255,0.8)]'>Entrepreneur</h4>
+                            <div className="flext flex-row items-center">
+                                <div className="inline-block pr-1">
+                                    <StarFill />
+                                </div>
+                                <div className="inline-block pr-1">
+                                    <StarFill />
+                                </div>
+                                <div className="inline-block pr-1">
+                                    <StarFill />
+                                </div>
+                                <div className="inline-block pr-1">
+                                    <StarFill />
+                                </div>
+                                <div className="inline-block pr-1">
+                                    <StarFill />
+                                </div>
+                            </div>
+                            <p className='italic'>
+                                <QuoteIcon className='size-6 inline-block relative left-[-5px]' />
+                                <span>Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.</span>
                                 <QuoteIcon className='size-6 inline-block relative  right-[-5px] top-[0px] scale-x-[-1] scale-y-[-1]' />
                             </p>
                         </div>
