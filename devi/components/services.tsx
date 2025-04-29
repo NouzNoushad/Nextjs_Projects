@@ -15,8 +15,8 @@ export default function Services() {
                         <div className="overflow-hidden rounded-xl">
                             <Image src="/images/services-1.jpg" alt="about" width={1000} height={1000} className="w-full h-fit rounded-xl transition-transform duration-500 group-hover:scale-110" />
                         </div>
-                        <div className="relative bg-[rgba(255,255,255,0.95)] py-[50px] px-[30px] text-center rounded-lg mt-[-100px] mx-[30px] shadow-[0px_0px_25px_rgba(0,0,0,0.1)]">
-                            <div className="h-[72px] w-[72px] bg-[#FF4A17] rounded-full text-white border-[6px] border-white absolute top-[-36px] left-[calc(50%-36px)] flex items-center justify-center">
+                        <div className="service-card bg-[rgba(255,255,255,0.95)] shadow-[0px_0px_25px_rgba(0,0,0,0.1)]">
+                            <div className="service-icon">
                                 <EmojiActivity />
                             </div>
                             <h3 className='text-[#273D4E] font-bold text-[22px] my-[10px] transition-colors duration-200 group-hover:text-[#FF4A17]'>Nesciunt Mete</h3>
@@ -27,8 +27,8 @@ export default function Services() {
                         <div className="overflow-hidden rounded-xl">
                             <Image src="/images/services-2.jpg" alt="about" width={1000} height={1000} className="w-full h-fit rounded-xl transition-transform duration-500 group-hover:scale-110" />
                         </div>
-                        <div className="relative bg-[rgba(255,255,255,0.95)] py-[50px] px-[30px] text-center rounded-lg mt-[-100px] mx-[30px] shadow-[0px_0px_25px_rgba(0,0,0,0.1)]">
-                            <div className="h-[72px] w-[72px] bg-[#FF4A17] rounded-full text-white border-[6px] border-white absolute top-[-36px] left-[calc(50%-36px)] flex items-center justify-center">
+                        <div className="service-card bg-[rgba(255,255,255,0.95)] shadow-[0px_0px_25px_rgba(0,0,0,0.1)]">
+                            <div className="service-icon">
                                 <EmojiBroadcast />
                             </div>
                             <h3 className='text-[#273D4E] font-bold text-[22px] my-[10px] transition-colors duration-200 group-hover:text-[#FF4A17]'>Eosle Commodi</h3>
@@ -39,8 +39,8 @@ export default function Services() {
                         <div className="overflow-hidden rounded-xl">
                             <Image src="/images/services-3.jpg" alt="about" width={1000} height={1000} className="w-full h-fit rounded-xl transition-transform duration-500 group-hover:scale-110" />
                         </div>
-                        <div className="relative bg-[rgba(255,255,255,0.95)] py-[50px] px-[30px] text-center rounded-lg mt-[-100px] mx-[30px] shadow-[0px_0px_25px_rgba(0,0,0,0.1)]">
-                            <div className="h-[72px] w-[72px] bg-[#FF4A17] rounded-full text-white border-[6px] border-white absolute top-[-36px] left-[calc(50%-36px)] flex items-center justify-center">
+                        <div className="service-card bg-[rgba(255,255,255,0.95)] shadow-[0px_0px_25px_rgba(0,0,0,0.1)]">
+                            <div className="service-icon">
                                 <EmojiEasel />
                             </div>
                             <h3 className='text-[#273D4E] font-bold text-[22px] my-[10px] transition-colors duration-200 group-hover:text-[#FF4A17]'>Ledo Markt</h3>
