@@ -10,6 +10,7 @@ import Features from "@/components/features";
 import Teams from "@/components/teams";
 import Services from "@/components/services";
 import Testimonials from "@/components/testimonials";
+import Contact from "@/components/contact";
 
 export default function Home() {
     return (
@@ -38,6 +39,8 @@ export default function Home() {
             <Portfolio />
             {/* Team */}
             <Teams />
+            {/* Contact */}
+            <Contact />
         </div>
     );
 }

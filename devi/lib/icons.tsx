@@ -109,6 +109,19 @@ export const StarFill = () => <svg xmlns="http://www.w3.org/2000/svg" width="16"
     <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
 </svg>
 
-export const QuoteIcon = ({className}: {className: string}) => <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff" className={`bi bi-quote ${className}`} viewBox="0 0 16 16">
+export const QuoteIcon = ({ className }: { className: string }) => <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#888" className={`bi bi-quote ${className}`} viewBox="0 0 16 16">
     <path d="M12 12a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1h-1.388q0-.527.062-1.054.093-.558.31-.992t.559-.683q.34-.279.868-.279V3q-.868 0-1.52.372a3.3 3.3 0 0 0-1.085.992 4.9 4.9 0 0 0-.62 1.458A7.7 7.7 0 0 0 9 7.558V11a1 1 0 0 0 1 1zm-6 0a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1H4.612q0-.527.062-1.054.094-.558.31-.992.217-.434.559-.683.34-.279.868-.279V3q-.868 0-1.52.372a3.3 3.3 0 0 0-1.085.992 4.9 4.9 0 0 0-.62 1.458A7.7 7.7 0 0 0 3 7.558V11a1 1 0 0 0 1 1z" />
+</svg>
+
+export const EmojiGeoAlt = ({ className }: { className: string }) => <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#FF4A17" className={`bi bi-geo-alt ${className}`} viewBox="0 0 16 16">
+    <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A32 32 0 0 1 8 14.58a32 32 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10" />
+    <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+</svg>
+
+export const EmojiTelephone = ({ className }: { className: string }) => <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#FF4A17" className={`bi bi-telephone-fill ${className}`} viewBox="0 0 16 16">
+    <path fillRule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z" />
+</svg>
+
+export const EmojiEnvelope = ({ className }: { className: string }) => <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#FF4A17" className={`bi bi-envelope-fill ${className}`} viewBox="0 0 16 16">
+    <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414zM0 4.697v7.104l5.803-3.558zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586zm3.436-.586L16 11.801V4.697z" />
 </svg>
