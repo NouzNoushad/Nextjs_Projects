@@ -39,7 +39,25 @@ export default function Contact() {
                             </div>
                         </div>
                     </div>
-                    <div className=""></div>
+                    <div className="bg-white px-[25px] py-[25px] shadow-[0px_0px_20px_rgba(0,0,0,0.1)]">
+                        <div className="grid grid-cols-12 gap-[25px]">
+                            <div className="col-span-6">
+                                <input type="text" name='name' placeholder='Your Name' className='input-text' />
+                            </div>
+                            <div className="col-span-6">
+                                <input type="email" name='email' placeholder='Your Email' className='input-text' />
+                            </div>
+                            <div className="col-span-12">
+                                <input type="text" name='subject' placeholder='Subject' className='input-text' />
+                            </div>
+                            <div className="col-span-12">
+                                <textarea rows={4} name='message' placeholder='Message' className='input-text' />
+                            </div>
+                            <div className="col-span-12 text-center">
+                                <button className='bg-[#FF4A17] py-[10px] px-[30px] text-white rounded-[50px] cursor-pointer transition-colors duration-200 hover:bg-[#ff4917ee]'>Send Message</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
