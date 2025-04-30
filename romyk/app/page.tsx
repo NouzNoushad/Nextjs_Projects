@@ -1,3 +1,4 @@
+import Header from "@/components/header";
 import ScrollUpButton from "@/components/scrollUpButton";
 
 export default function Home() {
@@ -5,6 +6,8 @@ export default function Home() {
         <div>
             {/* Scroll Up Button */}
             <ScrollUpButton />
+            {/* Header */}
+            <Header />
         </div>
     );
 }

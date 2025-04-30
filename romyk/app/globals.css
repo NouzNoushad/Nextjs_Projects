@@ -17,3 +17,9 @@ body {
     color: var(--foreground);
     font-family: Arial, Helvetica, sans-serif;
 }
+
+@layer components {
+    .container-width {
+        @apply max-w-[1150px] mx-auto px-6 xl:px-0;
+    }
+}
