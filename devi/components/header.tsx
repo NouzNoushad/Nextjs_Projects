@@ -1,8 +1,27 @@
-import React from 'react'
+'use client'
+
+import React, { useEffect, useState } from 'react'
 
 export default function Header() {
+    const [stickyHeader, setStickyHeader] = useState("bg-transparent h-[12vh]")
+
+    const handleScroll = () => {
+        const windowHeight = window.scrollY;
+
+        setStickyHeader(
+            windowHeight > 500 ? "bg-[#000910] opacity-80 h-[13vh]" : "bg-transparent h-[12vh]"
+        )
+    }
+
+    useEffect(() => {
+        handleScroll()
+
+        window.addEventListener('scroll', handleScroll)
+        return () => window.removeEventListener('scroll', handleScroll)
+    }, [])
+
     return (
-        <header className="h-[12vh] py-8 fixed top-0 left-0 w-full bg-transparent z-50 transition-all duration-200">
+        <header className={`fixed top-0 left-0 w-full z-50 py-8 transition-all duration-200 ${stickyHeader}`}>
             <div className="container-width text-white flex flex-row items-center justify-between h-full">
                 <a href="#">
                     <h1 className="text-3xl font-bold">Dewi</h1>
