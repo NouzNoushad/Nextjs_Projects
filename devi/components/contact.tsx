@@ -3,7 +3,7 @@ import React from 'react'
 
 export default function Contact() {
     return (
-        <div className="bg-white">
+        <section id='contact' className="bg-white">
             <div className="container-width py-[3rem]">
                 <div className="space-y-1">
                     <h2 className="subtitle-text">Contact</h2>
@@ -60,6 +60,6 @@ export default function Contact() {
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     )
 }

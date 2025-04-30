@@ -61,7 +61,7 @@ export default function Footer() {
                                     <input type="submit" value="Subscribe" className='px-[20px] bg-[#FF4A17] rounded-tr-md rounded-br-md mt-[-1px] mb-[-1px] mr-[-1px]' />
                                 </div>
                             </form>
-                        </div>
+                        </div>12
                     </div>
                 </div>
                 <div className="mt-[30px] text-center text-white border-t-[0.1px] border-gray-500">

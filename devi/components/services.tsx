@@ -4,7 +4,7 @@ import React from 'react'
 
 export default function Services() {
     return (
-        <div className="bg-white">
+        <section id='services' className="bg-white">
             <div className="container-width py-[3rem]">
                 <div className="space-y-1">
                     <h2 className="subtitle-text">Services</h2>
@@ -49,6 +49,6 @@ export default function Services() {
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     )
 }

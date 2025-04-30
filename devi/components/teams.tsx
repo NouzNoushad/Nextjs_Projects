@@ -4,7 +4,7 @@ import React from 'react'
 
 export default function Teams() {
     return (
-        <div className="bg-[#F0F3F9]">
+        <section id='team' className="bg-[#F0F3F9]">
             <div className="container-width py-[3rem]">
                 <div className="space-y-1">
                     <h2 className="subtitle-text">Team</h2>
@@ -52,6 +52,6 @@ export default function Teams() {
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     )
 }
