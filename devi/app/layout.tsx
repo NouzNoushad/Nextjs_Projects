@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Roboto, Raleway, Inter } from "next/font/google";
 
-import "./globals.css"; const roboto = Roboto({
+import "./globals.css"; 
+const roboto = Roboto({
     variable: "--font-roboto",
     subsets: ["latin"],
     weight: ['200', '300', '400', '500', '600', '700', '800', '900']
