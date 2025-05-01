@@ -6,7 +6,7 @@ export default function Header() {
         <header className={`fixed top-0 left-0 w-full z-50 py-8 transition-all duration-200 h-[12vh] bg-transparent`}>
             <div className="container-width text-white flex flex-row items-center justify-between h-full">
                 <a href="#">
-                    <Image src="/images/logo.png" alt="about" width={100} height={100} className="w-full h-fit" />
+                    <Image src="/images/logo.png" alt="" width={100} height={100} className="w-full h-full" />
                 </a>
                 <ul className="hidden lg:flex flex-row items-center justify-center gap-[35px] font-normal text-[17px] text-black">
                     <li><a className="text-primary" href="#">Home</a></li>
