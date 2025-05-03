@@ -4,6 +4,7 @@ import Header from "@/components/header";
 import MainHome from "@/components/home";
 import ScrollUpButton from "@/components/scrollUpButton";
 import Service from "@/components/service";
+import Testimonial from "@/components/testimonial";
 
 export default function Home() {
     return (
@@ -20,6 +21,8 @@ export default function Home() {
             <Featured />
             {/* Service */}
             <Service />
+            {/* Testimonial */}
+            <Testimonial />
         </div>
     );
 }
