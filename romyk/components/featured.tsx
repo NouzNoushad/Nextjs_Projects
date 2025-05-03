@@ -47,6 +47,9 @@ export default function Featured() {
                         <div className="mt-[20px] text-center"><p className='inline-block min-w-[150px] rounded-[40px] text-base py-[8px] px-[4px] text-[#fc95c4]' style={{ border: "1px solid #fc95c4" }}>Add To Cart</p></div>
                     </div>
                 </div>
+                <div className="mt-10 flex items-center justify-center">
+                    <div className="bg-[#FC95C4] px-[10px] py-[8px] text-white text-center text-[17px] rounded-[5px] self-start w-[170px] transition-colors duration-200  hover:text-white hover:bg-black cursor-pointer"><a href="#">See More</a></div>
+                </div>
             </div>
         </div>
     )
