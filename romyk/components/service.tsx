@@ -10,7 +10,7 @@ export default function Service() {
                     <p className="py-2">tempor incididunt ut labore et dolore magna aliqua</p>
                 </div>
                 <div className="mt-8 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-[20px]">
-                    <div className="py-[20px] px-[20px] md:px-[30px]" style={{ border: '1px solid #FC95C4'}}>
+                    <div className="py-[20px] px-[20px] md:px-[30px]" style={{ border: '1px solid #FC95C4' }}>
                         <h5 className="text-[20px] flex items-center"><span className="inline-block mr-[15px]"><Image src="/images/icon-1.png" alt="about" width={1000} height={1000} className="h-full w-full" /></span>Cookies Ice Cream</h5>
                         <p className="pt-3">commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fat </p>
                     </div>
@@ -22,6 +22,9 @@ export default function Service() {
                         <h5 className="text-[20px] flex items-center"><span className="inline-block mr-[15px]"><Image src="/images/icon-1.png" alt="about" width={1000} height={1000} className="h-full w-full" /></span>Cookies Ice Cream</h5>
                         <p className="pt-3">commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fat </p>
                     </div>
+                </div>
+                <div className="mt-10 flex items-center justify-center">
+                    <div className="bg-[#FC95C4] px-[10px] py-[8px] text-white text-center text-[17px] rounded-[5px] self-start w-[170px] transition-colors duration-200  hover:text-white hover:bg-black cursor-pointer"><a href="#">Read More</a></div>
                 </div>
             </div>
         </div>
