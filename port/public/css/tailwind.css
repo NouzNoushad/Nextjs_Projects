@@ -1,6 +1,7 @@
 :root {
     --primary-color: #040b14;
     --secondary-color: rgb(245, 245, 245);
+    --white-color: #fff;
 }
 
 *,
@@ -201,4 +202,13 @@ video {
 
 .border-left {
     border-right: 1px solid color-mix(in srgb, var(--primary-color), transparent 90%)
+}
+
+.profile-border {
+    border: 8px solid color-mix(in srgb, var(--white-color), transparent 85%)
+}
+
+.link-bg {
+    background:
+        color-mix(in srgb, var(--white-color), transparent 90%)
 }
