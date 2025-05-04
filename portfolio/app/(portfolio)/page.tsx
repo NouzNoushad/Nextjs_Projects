@@ -10,7 +10,7 @@ export default function Home() {
     return (
         <>
             <Navbar />
-            <div className="xl:ml-[300px] px-8">
+            <div className="xl:ml-[300px] xl:px-8 px-0">
                 <Main />
                 <AboutMe />
                 <Projects />
