@@ -3,7 +3,7 @@ import React from 'react'
 export default function Footer() {
     return (
         <div className="bg-[#262526]">
-            <div className="container-width py-[5rem]">
+            <div className="container-width pt-[5rem]">
                 <div className="grid grid-cols-12 gap-[20px]">
                     <div className="col-span-12 md:col-span-4">
                         <h1 className="text-4xl font-bold text-white pb-[10px]" style={{ borderBottom: '1px solid #fff' }}>Contact Us</h1>
@@ -70,7 +70,9 @@ export default function Footer() {
                         </div>
                     </div>
                 </div>
-                <div className=""></div>
+                <div className="mt-[3rem] text-center text-white" style={{ borderTop: '0.1px solid gray' }}>
+                    <p className='text-base py-[25px] inline-block'>2025 All Rights Reserved. Design by Free Html Templates Distribution by ThemeWagon</p>
+                </div>
             </div>
         </div>
     )
