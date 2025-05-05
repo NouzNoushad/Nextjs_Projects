@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import "./globals.css";
 import "../public/css/tailwind.css"
+import 'bootstrap-icons/font/bootstrap-icons.css';
 
 const roboto = Roboto({
     variable: "--font-roboto",

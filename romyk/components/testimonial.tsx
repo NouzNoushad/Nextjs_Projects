@@ -14,7 +14,7 @@ export default function Testimonial() {
         <div className="bg-white">
             <div className="container-width py-[3rem]">
                 <div className="text-center text-3xl lg:text-4xl font-bold tracking-wider">Testimonial</div>
-                <div className="mt-8 mb-20 max-w-[900px] mx-auto h-[300px] pt-[50px] px-[40px] text-center" style={{ boxShadow: "0px 0px 20px 10px #ededec" }}>
+                <div className="mt-8 mb-20 max-w-[900px] mx-auto min-h-[300px] pt-[50px] px-[40px] text-center" style={{ boxShadow: "0px 0px 20px 10px #ededec" }}>
                     <Swiper
                         modules={[Autoplay]}
                         spaceBetween={30}
