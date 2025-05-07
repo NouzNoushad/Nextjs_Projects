@@ -2,6 +2,7 @@ import React from 'react'
 import MainHome from './home'
 import About from './about'
 import Stats from './stats'
+import Skills from './skills'
 
 export default function Main() {
 
@@ -10,6 +11,7 @@ export default function Main() {
             <MainHome />
             <About />
             <Stats />
+            <Skills />
         </div>
     )
 }
