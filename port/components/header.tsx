@@ -3,7 +3,7 @@ import React from 'react'
 
 export default function Header() {
     return (
-        <header className="w-[300px] fixed top-0 lg:left-0 left-[-100%] bottom-0 overflow-y-auto px-[15px] bg-[#040b14] z-50 transition-all duration-300 border-left">
+        <header className="w-[300px] fixed top-0 xl:left-0 left-[-100%] bottom-0 overflow-y-auto px-[15px] bg-[#040b14] z-50 transition-all duration-300 border-left">
             <div className="my-[15px]">
                 <Image src="/images/my-profile-img.jpg" alt="about" width={1000} height={1000} className="w-[120px] rounded-full profile-border mx-auto" />
             </div>
