@@ -3,6 +3,7 @@ import MainHome from './home'
 import About from './about'
 import Stats from './stats'
 import Skills from './skills'
+import Resume from './resume'
 
 export default function Main() {
 
@@ -12,6 +13,7 @@ export default function Main() {
             <About />
             <Stats />
             <Skills />
+            <Resume />
         </div>
     )
 }
