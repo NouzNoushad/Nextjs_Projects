@@ -4,6 +4,7 @@ import About from './about'
 import Stats from './stats'
 import Skills from './skills'
 import Resume from './resume'
+import Portfolio from './portfolio'
 
 export default function Main() {
 
@@ -14,6 +15,7 @@ export default function Main() {
             <Stats />
             <Skills />
             <Resume />
+            <Portfolio />
         </div>
     )
 }
