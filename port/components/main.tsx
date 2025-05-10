@@ -5,6 +5,7 @@ import Stats from './stats'
 import Skills from './skills'
 import Resume from './resume'
 import Portfolio from './portfolio'
+import Service from './service'
 
 export default function Main() {
 
@@ -16,6 +17,7 @@ export default function Main() {
             <Skills />
             <Resume />
             <Portfolio />
+            <Service />
         </div>
     )
 }
