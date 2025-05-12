@@ -7,6 +7,7 @@ import Resume from './resume'
 import Portfolio from './portfolio'
 import Service from './service'
 import Contact from './contact'
+import Testimonials from './testimonials'
 
 export default function Main() {
 
@@ -19,6 +20,7 @@ export default function Main() {
             <Resume />
             <Portfolio />
             <Service />
+            <Testimonials />
             <Contact />
         </div>
     )
