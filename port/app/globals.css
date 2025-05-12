@@ -22,4 +22,8 @@ body {
     .main-text {
         @apply text-3xl font-bold pb-[20px] inline-block relative after:absolute after:left-0 after:bottom-0 after:h-[0.2rem] after:w-[50px] after:bg-[#149DDD];
     }
+
+    .input-text {
+        @apply outline-none text-sm border border-gray-300 py-[10px] px-[15px] w-full focus:border-[#149DDD];
+    }
 }
